@@ -19,6 +19,8 @@ const FLOAT_VELOCITY: float = 50
 @onready var oxygen_label: Label = $PlayerUI/PlayerUi/OxygenLabel
 
 @export var placeable_objects: Node3D
+@export var plant_pot_preview: PackedScene
+var preview_instance: Node3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -43,6 +45,8 @@ var is_gaining_oxygen: bool = false
 var oxygen_down_rate: float = 1
 var oxygen_up_rate: float = 8
 
+var is_placing_plant: bool = true
+
 
 func _ready() -> void:
 	GlobalVar.reset_game()
@@ -52,6 +56,7 @@ func _ready() -> void:
 	GlobalVar.current_profits = 0
 	# Reset label
 	update_coins(0)
+	start_plant_placing()
 
 
 func _input(event: InputEvent) -> void:
@@ -67,6 +72,9 @@ func _process(delta: float) -> void:
 		return
 	
 	update_oxygen_level(delta)
+	
+	if is_placing_plant:
+		update_pot_preview()
 
 
 func _physics_process(delta: float) -> void:
@@ -177,5 +185,29 @@ func toggle_ui() -> void:
 		player_ui.hide()
 
 
-func manage_plot_placing() -> void:
-	pass
+func start_plant_placing() -> void:
+	is_placing_plant = true
+
+
+func dismiss_plant_placing() -> void:
+	is_placing_plant = false
+
+
+func update_pot_preview() -> void:
+	if ray_cast.is_colliding() and ray_cast.get_collider().is_in_group("ground"):
+		var collision_point = ray_cast.get_collision_point()
+		
+		# If preview is not displayed yet
+		if preview_instance == null:
+			preview_instance = plant_pot_preview.instantiate()
+			add_child(preview_instance)
+			
+		# Move it to the collision point
+		preview_instance.global_transform.origin = collision_point
+
+func place_plant_pot() -> void:
+	
+	# Remove the preview instance
+	preview_instance.queue_free()
+	preview_instance = null
+	is_placing_plant = false

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=11 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
+[ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
 [ext_resource type="PackedScene" uid="uid://8rjjgn7r2g22" path="res://scenes/game_ui/game_pause_scene.tscn" id="2_u7ylh"]
 [ext_resource type="PackedScene" uid="uid://lidxun3v1u3h" path="res://scenes/game_ui/game_over_scene.tscn" id="3_jljb4"]
 [ext_resource type="PackedScene" uid="uid://cpoy7p032mikq" path="res://scenes/game_ui/game_won_scene.tscn" id="4_23rr2"]
@@ -13,6 +14,7 @@
 
 [node name="FloatingPlayerScene" type="CharacterBody3D"]
 script = ExtResource("1_bkq84")
+plant_pot_preview = ExtResource("2_bm321")
 
 [node name="PlayerHead" type="Node3D" parent="."]
 
