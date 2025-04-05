@@ -16,9 +16,9 @@ func _ready() -> void:
 	self.scale = current_scale
 
 
-func set_fruit(fruit_index:int, fruit_grow_speed: int) -> void:
+func set_fruit(fruit_index:int, fruit_grow_speed: float) -> void:
 	fruit_type = fruit_index
-	grow_speed = grow_speed
+	grow_speed = fruit_grow_speed
 	
 	self.scale = current_scale
 
