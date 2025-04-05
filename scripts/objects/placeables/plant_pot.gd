@@ -4,9 +4,34 @@ extends Node3D
 @export var is_placed_in_editor: bool = false
 @export var selected_plant: int = 0
 
-@export var plant_scene: PackedScene
+@export var fruit_growth_speed: float = 0.25
+@export var current_fruit_growth: float = 0.0
 
-@onready var plant_node_placement: Node3D = $PlantNode
+@onready var plant_body: Node3D = $PlantBody
+
+# PLANT models TODO adjust once models exist
+const PLANT_A = preload("res://scenes/objects/plants/plant_a.tscn")
+const PLANT_B = preload("res://scenes/objects/plants/plant_a.tscn")
+const PLANT_C = preload("res://scenes/objects/plants/plant_a.tscn")
+const PLANT_D = preload("res://scenes/objects/plants/plant_a.tscn")
+
+# FRUIT models, TODO adjust once models exist
+const FRUIT_A = preload("res://scenes/objects/fruits/fruit_a.tscn")
+const FRUIT_B = preload("res://scenes/objects/fruits/fruit_a.tscn")
+const FRUIT_C = preload("res://scenes/objects/fruits/fruit_a.tscn")
+const FRUIT_D = preload("res://scenes/objects/fruits/fruit_a.tscn")
+
+@onready var fruit_points: Node3D = $FruitPoints
+@onready var point_a: Node3D = $FruitPoints/PointA
+@onready var point_b: Node3D = $FruitPoints/PointB
+@onready var point_c: Node3D = $FruitPoints/PointC
+@onready var point_d: Node3D = $FruitPoints/PointD
+@onready var point_e: Node3D = $FruitPoints/PointE
+@onready var point_f: Node3D = $FruitPoints/PointF
+@onready var point_g: Node3D = $FruitPoints/PointG
+@onready var point_h: Node3D = $FruitPoints/PointH
+
+var is_plant_set = false
 
 
 func _ready() -> void:
@@ -14,9 +39,53 @@ func _ready() -> void:
 		set_plant(selected_plant)
 
 
+func _process(delta: float) -> void:
+	if is_plant_set:
+		manage_growth(delta)
+
+
 func set_plant(fruit_number: int):
-	pass
-	#var plant_instance = plant_scene.instantiate()
-	#plant_node_placement.add_child(plant_instance)
-	#plant_instance.global_transform.origin = plant_node_placement.global_transform.origin
-	#plant_instance.set_fruit(selected_plant)
+	# Instantiate PLANT
+	match(fruit_number):
+		0:
+			var plant_a = PLANT_A.instantiate()
+			plant_body.add_child(plant_a)
+		1:
+			var plant_b = PLANT_A.instantiate()
+			plant_body.add_child(plant_b)
+		2:
+			var plant_c = PLANT_A.instantiate()
+			plant_body.add_child(plant_c)
+		3:
+			var plant_d = PLANT_A.instantiate()
+			plant_body.add_child(plant_d)
+	
+	# Instantiate its FRUITS
+	match(fruit_number):
+		0:
+			var fruit_a = FRUIT_A.instantiate()
+			point_a.add_child(fruit_a)
+		1:
+			var fruit_b = FRUIT_B.instantiate()
+			point_b.add_child(fruit_b)
+		2:
+			var fruit_c = FRUIT_C.instantiate()
+			point_c.add_child(fruit_c)
+		3:
+			var fruit_d = FRUIT_D.instantiate()
+			point_d.add_child(fruit_d)
+	
+	is_plant_set = true
+
+
+func manage_growth(delta: float) -> void:
+	if current_fruit_growth > 0:
+		current_fruit_growth -= delta
+	else:
+		signal_growth(delta)
+		current_fruit_growth = fruit_growth_speed
+
+
+func signal_growth(delta: float) -> void:
+	for fruit in get_tree().get_nodes_in_group("fruits"):
+		fruit.increase_fruit(delta)

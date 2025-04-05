@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhfnqkbx7q716"]
-
-[ext_resource type="Script" path="res://scripts/objects/plants/plant_scene.gd" id="1_o341a"]
+[gd_scene format=3 uid="uid://dhfnqkbx7q716"]
 
 [node name="PlantScene" type="Node3D"]
-script = ExtResource("1_o341a")
 
 [node name="PlantBody" type="Node3D" parent="."]
 

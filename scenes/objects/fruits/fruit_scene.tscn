@@ -1,12 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhj2pnqul7aaf"]
-
-[ext_resource type="Script" path="res://scripts/objects/fruits/fruit_scene.gd" id="1_s4ynq"]
+[gd_scene load_steps=2 format=3 uid="uid://dhj2pnqul7aaf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w54on"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="FruitScene" type="Node3D" groups=["fruits"]]
-script = ExtResource("1_s4ynq")
+[node name="FruitScene" type="Node3D"]
 
 [node name="FruitModel" type="Node3D" parent="."]
 
