@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=21 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://d137crrs2egx8" path="res://assets/sprites/menu_buttons/menu_btn_hover.png" id="12_8kcqu"]
 [ext_resource type="Texture2D" uid="uid://bvjqteitujpy" path="res://assets/sprites/menu_buttons/menu_btn_disabled.png" id="13_6q6ee"]
 [ext_resource type="Texture2D" uid="uid://bdhyu3xv0bhb5" path="res://assets/sprites/menu_buttons/menu_btn_focused.png" id="14_bndbm"]
+[ext_resource type="Theme" uid="uid://dqprbmxa1phvc" path="res://themes/upgrade_text_theme.tres" id="16_ukamg"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_k6e0w"]
 
@@ -552,8 +553,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+5% Oxygen 100"
+theme = ExtResource("16_ukamg")
+text = "25∅ +5% Oxygen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -572,8 +573,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+5% Speed 200"
+theme = ExtResource("16_ukamg")
+text = "50∅ +5% Speed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -592,8 +593,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+15% Oxygen 250"
+theme = ExtResource("16_ukamg")
+text = "75∅ +20% Oxygen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -612,8 +613,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+15% Speed 500"
+theme = ExtResource("16_ukamg")
+text = "100∅ +20% Speed "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -632,8 +633,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+20% Oxygen 1000"
+theme = ExtResource("16_ukamg")
+text = "150∅ +5% Profit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -652,8 +653,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+20% Speed 2000"
+theme = ExtResource("16_ukamg")
+text = "250∅ +25% Speed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -672,8 +673,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+60% Oxygen 2500"
+theme = ExtResource("16_ukamg")
+text = "500∅ +25% Oxygen "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -692,8 +693,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+60% Speed 5000"
+theme = ExtResource("16_ukamg")
+text = "750∅ +25% Profit "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -712,8 +713,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+50% Profit 10000"
+theme = ExtResource("16_ukamg")
+text = "1000∅ +50% Oxygen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -732,8 +733,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+5% Oxygen 20000"
+theme = ExtResource("16_ukamg")
+text = "1500∅ +50% Speed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -752,8 +753,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+5% Oxygen 25000"
+theme = ExtResource("16_ukamg")
+text = "2000∅ +100% Profit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -772,8 +773,8 @@ texture_focused = ExtResource("13_6q6ee")
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
-theme = ExtResource("7_gyubv")
-text = "+5% Oxygen 50000"
+theme = ExtResource("16_ukamg")
+text = "2500∅ Freedom!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

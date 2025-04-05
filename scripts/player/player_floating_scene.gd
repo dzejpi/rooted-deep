@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED: float = 5.0
+var current_speed: float = 5.0
 const FLOAT_VELOCITY: float = 50
 
 @onready var player_camera: Camera3D = $PlayerHead/Camera
@@ -51,7 +51,8 @@ var debug: bool = true
 # Last collider player looked at
 var last_looked_at: String = ""
 
-var current_currency: int = 0
+var current_currency: int = 50000
+var max_oxygen: float = 100.0
 var current_oxygen: float = 50
 var is_gaining_oxygen: bool = false
 
@@ -135,8 +136,8 @@ func _physics_process(delta: float) -> void:
 		speed_multiplier = 2.0
 	
 	# Final horizontal velocity
-	velocity.x = move_toward(velocity.x, direction.x * SPEED * speed_multiplier, SPEED * delta)
-	velocity.z = move_toward(velocity.z, direction.z * SPEED * speed_multiplier, SPEED * delta)
+	velocity.x = move_toward(velocity.x, direction.x * current_speed * speed_multiplier, current_speed * delta)
+	velocity.z = move_toward(velocity.z, direction.z * current_speed * speed_multiplier, current_speed * delta)
 	
 	move_and_slide()
 	process_collisions()
@@ -178,9 +179,9 @@ func trigger_game_won() -> void:
 
 func update_oxygen_level(delta: float) -> void:
 	if is_gaining_oxygen:
-		if current_oxygen < 100:
-			if current_oxygen >= 100.0:
-				current_oxygen = 100.0
+		if current_oxygen < max_oxygen:
+			if current_oxygen >= max_oxygen:
+				current_oxygen = max_oxygen
 			else:
 				current_oxygen += oxygen_up_rate * delta 
 	else:

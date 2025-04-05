@@ -73,18 +73,20 @@ var upgrade_j_unlocked: bool = false
 var upgrade_k_unlocked: bool = false
 var upgrade_l_unlocked: bool = false
 
-var upgrade_a_price: int = 70
-var upgrade_b_price: int = 125
-var upgrade_c_price: int = 250
-var upgrade_d_price: int = 500
-var upgrade_e_price: int = 1000
-var upgrade_f_price: int = 2000
-var upgrade_g_price: int = 2500
-var upgrade_h_price: int = 5000
-var upgrade_i_price: int = 10000
-var upgrade_j_price: int = 20000
-var upgrade_k_price: int = 25000
-var upgrade_l_price: int = 50000
+var upgrade_a_price: int = 25
+var upgrade_b_price: int = 50
+var upgrade_c_price: int = 75
+var upgrade_d_price: int = 100
+var upgrade_e_price: int = 150
+var upgrade_f_price: int = 250
+var upgrade_g_price: int = 500
+var upgrade_h_price: int = 750
+var upgrade_i_price: int = 1000
+var upgrade_j_price: int = 1500
+var upgrade_k_price: int = 2000
+var upgrade_l_price: int = 2500
+
+var profit_increase: float = 1.0
 
 
 func _ready() -> void:
@@ -159,7 +161,7 @@ func _on_upgrade_pressed() -> void:
 
 
 func sell(flower_index: int, gainz: int) -> void:
-	floating_player_scene.current_currency += gainz
+	floating_player_scene.current_currency += int(gainz * profit_increase)
 	match(flower_index):
 		0:
 			floating_player_scene.fruits_a -= 1
@@ -179,19 +181,19 @@ func sell_max(flower_index: int, gainz: int) -> void:
 		0:
 			var fruit_amount = floating_player_scene.fruits_a
 			floating_player_scene.fruits_a -= fruit_amount
-			floating_player_scene.current_currency += gainz * fruit_amount
+			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
 		1:
 			var fruit_amount = floating_player_scene.fruits_b
 			floating_player_scene.fruits_b -= fruit_amount
-			floating_player_scene.current_currency += gainz * fruit_amount
+			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
 		2:
 			var fruit_amount = floating_player_scene.fruits_c
 			floating_player_scene.fruits_c -= fruit_amount
-			floating_player_scene.current_currency += gainz * fruit_amount
+			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
 		3:
 			var fruit_amount = floating_player_scene.fruits_d
 			floating_player_scene.fruits_d -= fruit_amount
-			floating_player_scene.current_currency += gainz * fruit_amount
+			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
 	
 	update_coins()
 	update_eligibility()
@@ -445,6 +447,7 @@ func _on_upgrade_a_pressed() -> void:
 	var upgrade_price = upgrade_a_price
 	if not upgrade_a_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_oxygen(5)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_a_unlocked = true
 			update_coins()
@@ -455,6 +458,7 @@ func _on_upgrade_b_pressed() -> void:
 	var upgrade_price = upgrade_b_price
 	if not upgrade_b_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_speed(1.05)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_b_unlocked = true
 			update_coins()
@@ -465,6 +469,7 @@ func _on_upgrade_c_pressed() -> void:
 	var upgrade_price = upgrade_c_price
 	if not upgrade_c_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_oxygen(20)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_c_unlocked = true
 			update_coins()
@@ -475,6 +480,7 @@ func _on_upgrade_d_pressed() -> void:
 	var upgrade_price = upgrade_d_price
 	if not upgrade_d_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_speed(1.20)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_d_unlocked = true
 			update_coins()
@@ -485,6 +491,7 @@ func _on_upgrade_e_pressed() -> void:
 	var upgrade_price = upgrade_e_price
 	if not upgrade_e_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_profit(0.05)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_e_unlocked = true
 			update_coins()
@@ -495,6 +502,7 @@ func _on_upgrade_f_pressed() -> void:
 	var upgrade_price = upgrade_f_price
 	if not upgrade_f_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_speed(1.25)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_f_unlocked = true
 			update_coins()
@@ -505,6 +513,7 @@ func _on_upgrade_g_pressed() -> void:
 	var upgrade_price = upgrade_g_price
 	if not upgrade_g_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_oxygen(25)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_g_unlocked = true
 			update_coins()
@@ -515,6 +524,7 @@ func _on_upgrade_h_pressed() -> void:
 	var upgrade_price = upgrade_h_price
 	if not upgrade_h_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_profit(0.25)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_h_unlocked = true
 			update_coins()
@@ -525,6 +535,7 @@ func _on_upgrade_i_pressed() -> void:
 	var upgrade_price = upgrade_i_price
 	if not upgrade_i_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_oxygen(50)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_i_unlocked = true
 			update_coins()
@@ -535,6 +546,7 @@ func _on_upgrade_j_pressed() -> void:
 	var upgrade_price = upgrade_j_price
 	if not upgrade_j_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_speed(1.5)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_j_unlocked = true
 			update_coins()
@@ -545,6 +557,7 @@ func _on_upgrade_k_pressed() -> void:
 	var upgrade_price = upgrade_k_price
 	if not upgrade_k_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			increase_profit(1)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_k_unlocked = true
 			update_coins()
@@ -555,7 +568,26 @@ func _on_upgrade_l_pressed() -> void:
 	var upgrade_price = upgrade_l_price
 	if not upgrade_l_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
+			win_game()
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_l_unlocked = true
 			update_coins()
 			update_eligibility()
+
+
+func increase_oxygen(increase: int) -> void:
+	floating_player_scene.max_oxygen += increase
+
+
+func increase_speed(increase: int) -> void:
+	floating_player_scene.current_speed += floating_player_scene.current_speed * increase
+
+
+func increase_profit(increase: int) -> void:
+	profit_increase += increase
+
+
+func win_game() -> void:
+	GlobalVar.toggle_manage_ui()
+	update_manage_state()
+	floating_player_scene.trigger_game_won()
