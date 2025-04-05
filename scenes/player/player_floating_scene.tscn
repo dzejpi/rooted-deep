@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=20 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://lidxun3v1u3h" path="res://scenes/game_ui/game_over_scene.tscn" id="3_jljb4"]
 [ext_resource type="PackedScene" uid="uid://cpoy7p032mikq" path="res://scenes/game_ui/game_won_scene.tscn" id="4_23rr2"]
 [ext_resource type="PackedScene" uid="uid://d0k77qlot24nc" path="res://scenes/game_ui/typewriter_dialog_scene.tscn" id="5_pf534"]
-[ext_resource type="Script" path="res://scripts/game_ui/game_won_scene.gd" id="6_gmia8"]
 [ext_resource type="PackedScene" uid="uid://uqsnfk54cjss" path="res://scenes/game_ui/player_tooltip.tscn" id="6_utufl"]
 [ext_resource type="Theme" uid="uid://5cp3idadbxgk" path="res://themes/regular_text_theme.tres" id="7_gyubv"]
 [ext_resource type="Script" path="res://scripts/player/manage_ui.gd" id="10_f0106"]
@@ -61,7 +60,6 @@ visible = false
 
 [node name="GameWonScene" parent="PlayerUI/GameEnd" instance=ExtResource("4_23rr2")]
 visible = false
-script = ExtResource("6_gmia8")
 
 [node name="GameUI" type="Node" parent="PlayerUI"]
 

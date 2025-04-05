@@ -162,6 +162,7 @@ func _on_upgrade_pressed() -> void:
 
 func sell(flower_index: int, gainz: int) -> void:
 	floating_player_scene.current_currency += int(gainz * profit_increase)
+	GlobalVar.current_profits += int(gainz * profit_increase)
 	match(flower_index):
 		0:
 			floating_player_scene.fruits_a -= 1
@@ -182,18 +183,22 @@ func sell_max(flower_index: int, gainz: int) -> void:
 			var fruit_amount = floating_player_scene.fruits_a
 			floating_player_scene.fruits_a -= fruit_amount
 			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
+			GlobalVar.current_profits += int(gainz * profit_increase * fruit_amount)
 		1:
 			var fruit_amount = floating_player_scene.fruits_b
 			floating_player_scene.fruits_b -= fruit_amount
 			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
+			GlobalVar.current_profits += int(gainz * profit_increase * fruit_amount)
 		2:
 			var fruit_amount = floating_player_scene.fruits_c
 			floating_player_scene.fruits_c -= fruit_amount
 			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
+			GlobalVar.current_profits += int(gainz * profit_increase * fruit_amount)
 		3:
 			var fruit_amount = floating_player_scene.fruits_d
 			floating_player_scene.fruits_d -= fruit_amount
 			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
+			GlobalVar.current_profits += int(gainz * profit_increase * fruit_amount)
 	
 	update_coins()
 	update_eligibility()
