@@ -6,11 +6,12 @@ var grow_speed: float = 1
 
 var is_collectable: bool = false
 
+var empty_scale: Vector3 = Vector3(0.01, 0.01, 0.01)
 var target_scale: Vector3 = Vector3(1, 1, 1)
-var current_scale: Vector3 = Vector3(0, 0, 0)
+var current_scale: Vector3 = empty_scale
 
 func _ready() -> void:
-	current_scale = Vector3(0, 0, 0)
+	current_scale = empty_scale
 	is_collectable = false
 	self.scale = current_scale
 
@@ -35,8 +36,10 @@ func increase_fruit(delta: float) -> void:
 
 
 # Collecting just resets the scale
-func collect_fruit():
+func collect_fruit() -> int:
 	if is_collectable:
-		current_scale = Vector3(0, 0, 0)
+		current_scale = empty_scale
 		is_collectable = false
 		return fruit_type
+	else:
+		return -1

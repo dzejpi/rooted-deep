@@ -25,6 +25,11 @@ var preview_instance: Node3D
 @export var plant_pot_scene: PackedScene
 var currently_selected_plant = 0
 
+var fruits_a: int = 0
+var fruits_b: int = 0
+var fruits_c: int = 0
+var fruits_d: int = 0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -70,10 +75,12 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			mouse_delta = event.relative
 		
-		if event.is_action_pressed("place_pot"):
+		if event.is_action_pressed("interact"):
 			if is_pot_placeable and is_placing_plant:
 				print("Placing pot")
 				place_plant_pot()
+			else:
+				try_to_collect_fruit()
 		
 		if event.is_action_pressed("dismiss_placement"):
 			if is_placing_plant:
@@ -258,3 +265,25 @@ func place_plant_pot() -> void:
 	preview_instance = null
 	is_pot_placeable = false
 	is_placing_plant = false
+
+
+func try_to_collect_fruit() -> void:
+	var collider = ray_cast.get_collider()
+	if collider and collider.is_in_group("fruit_collision"):
+		# Get parent of collider
+		var fruit_node = collider.get_parent()
+		if fruit_node.has_method("collect_fruit"):
+			var result = fruit_node.collect_fruit()
+			
+			match(result):
+				0:
+					fruits_a += 1
+					print("Fruits A: " + str(fruits_a))
+				1:
+					fruits_b += 1
+				2:
+					fruits_c += 1
+				3:
+					fruits_d += 1
+			
+			print("Collected fruit of type: " + str(result))

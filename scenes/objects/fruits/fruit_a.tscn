@@ -9,7 +9,7 @@ size = Vector3(0.2, 0.4, 0.2)
 [node name="FruitA" groups=["fruits"] instance=ExtResource("1_wkyye")]
 script = ExtResource("2_si2yb")
 
-[node name="FruitBody" type="StaticBody3D" parent="." index="1"]
+[node name="FruitBody" type="StaticBody3D" parent="." index="1" groups=["fruit_collision"]]
 
 [node name="FruitCollisionShape" type="CollisionShape3D" parent="FruitBody" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
