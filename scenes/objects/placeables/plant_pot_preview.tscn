@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dysyj150kk535"]
+
+[ext_resource type="PackedScene" uid="uid://ceanrucc4rbqk" path="res://assets/objects/exported/placeables/plant_pot_red.gltf" id="1_xctxv"]
+[ext_resource type="Material" uid="uid://tdd4tgsp7niq" path="res://materials/items_basic_texture.tres" id="2_f37jv"]
+
+[node name="PlantPotPreview" instance=ExtResource("1_xctxv")]
+
+[node name="plant_pot_red" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_f37jv")
