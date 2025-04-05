@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtp51vkndxcrl"]
+
+[ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_2ugt7"]
+[ext_resource type="Shader" path="res://shaders/player_floating_scene.gdshader" id="2_r0wrw"]
+[ext_resource type="PackedScene" uid="uid://b10lmyx64o6t" path="res://scenes/terrain/terrain_scene.tscn" id="4_fbepo"]
+[ext_resource type="PackedScene" uid="uid://cxo3ugtqgmpdq" path="res://scenes/objects/buildings/safe_zone.tscn" id="5_v5jlg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6bjlf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk3cr"]
+render_priority = 0
+shader = ExtResource("2_r0wrw")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psv6s"]
+
+[sub_resource type="Sky" id="Sky_v1kyu"]
+sky_material = SubResource("ProceduralSkyMaterial_psv6s")
+
+[sub_resource type="Environment" id="Environment_7nmuq"]
+background_mode = 1
+background_color = Color(0.12549, 0.34902, 0.45098, 1)
+sky = SubResource("Sky_v1kyu")
+fog_enabled = true
+fog_light_color = Color(0.12549, 0.34902, 0.45098, 1)
+volumetric_fog_density = 0.8768
+
+[node name="GameScene" type="Node3D"]
+script = ExtResource("1_2ugt7")
+
+[node name="Player" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6.4079, 0)
+
+[node name="CameraShader" type="MeshInstance3D" parent="Player/Camera3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.917034)
+mesh = SubResource("QuadMesh_6bjlf")
+surface_material_override/0 = SubResource("ShaderMaterial_bk3cr")
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="TerrainScene" parent="Terrain" instance=ExtResource("4_fbepo")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="SafeZone" parent="Objects" node_paths=PackedStringArray("player_node") instance=ExtResource("5_v5jlg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 4.4, 0)
+player_node = NodePath("")
+
+[node name="Npcs" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7nmuq")

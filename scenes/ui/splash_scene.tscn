@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ygxg8rje5y7l"]
+[gd_scene load_steps=5 format=3 uid="uid://ygxg8rje5y7l"]
 
 [ext_resource type="Script" path="res://scripts/ui/splash_scene.gd" id="1_nmdo3"]
 [ext_resource type="Texture2D" uid="uid://xetn7b0vwk08" path="res://assets/sprites/splash_logos/logo_main.png" id="2_obtwm"]
 [ext_resource type="Texture2D" uid="uid://brt17o53o826k" path="res://assets/sprites/splash_logos/logo_jam.png" id="3_sdvf2"]
+[ext_resource type="PackedScene" uid="uid://dtp51vkndxcrl" path="res://scenes/game/background_scene.tscn" id="4_munvj"]
 
 [node name="SplashScene" type="Node2D"]
 script = ExtResource("1_nmdo3")
@@ -15,3 +16,7 @@ texture = ExtResource("2_obtwm")
 
 [node name="JamLogoSprite" type="Sprite2D" parent="Logos"]
 texture = ExtResource("3_sdvf2")
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="GameScene" parent="Background" instance=ExtResource("4_munvj")]
