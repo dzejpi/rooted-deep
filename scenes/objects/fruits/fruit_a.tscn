@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://6akvswedyry0"]
+
+[ext_resource type="PackedScene" uid="uid://cc133yfv7gh00" path="res://assets/objects/exported/fruits/fruit_a.gltf" id="1_wkyye"]
+
+[node name="FruitA" instance=ExtResource("1_wkyye")]

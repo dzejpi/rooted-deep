@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_w54on"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="FruitScene" type="Node3D"]
+[node name="FruitScene" type="Node3D" groups=["fruits"]]
 script = ExtResource("1_s4ynq")
 
 [node name="FruitModel" type="Node3D" parent="."]

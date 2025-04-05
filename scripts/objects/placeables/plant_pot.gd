@@ -15,7 +15,8 @@ func _ready() -> void:
 
 
 func set_plant(fruit_number: int):
-	var plant_instance = plant_scene.instantiate()
-	plant_node_placement.add_child(plant_instance)
-	plant_instance.global_transform.origin = plant_node_placement.global_transform.origin
-	plant_instance.set_fruit(selected_plant)
+	pass
+	#var plant_instance = plant_scene.instantiate()
+	#plant_node_placement.add_child(plant_instance)
+	#plant_instance.global_transform.origin = plant_node_placement.global_transform.origin
+	#plant_instance.set_fruit(selected_plant)

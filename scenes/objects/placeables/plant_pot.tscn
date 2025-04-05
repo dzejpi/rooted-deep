@@ -12,5 +12,23 @@ plant_scene = ExtResource("3_wq5rf")
 [node name="plant_pot" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_lgftr")
 
-[node name="PlantNode" type="Node3D" parent="." index="1"]
+[node name="PlantBody" type="Node3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[node name="FruitPoints" type="Node3D" parent="." index="2"]
+
+[node name="PointA" type="Node3D" parent="FruitPoints" index="0"]
+
+[node name="PointB" type="Node3D" parent="FruitPoints" index="1"]
+
+[node name="PointC" type="Node3D" parent="FruitPoints" index="2"]
+
+[node name="PointD" type="Node3D" parent="FruitPoints" index="3"]
+
+[node name="PointE" type="Node3D" parent="FruitPoints" index="4"]
+
+[node name="PointF" type="Node3D" parent="FruitPoints" index="5"]
+
+[node name="PointG" type="Node3D" parent="FruitPoints" index="6"]
+
+[node name="PointH" type="Node3D" parent="FruitPoints" index="7"]

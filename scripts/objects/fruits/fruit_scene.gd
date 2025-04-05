@@ -20,6 +20,8 @@ func _ready() -> void:
 func set_fruit(fruit_index:int, fruit_grow_speed: int) -> void:
 	fruit_type = fruit_index
 	grow_speed = grow_speed
+	
+	fruit_model.scale = current_scale
 
 
 func increase_fruit(delta: float) -> void:

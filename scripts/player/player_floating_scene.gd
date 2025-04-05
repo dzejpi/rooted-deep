@@ -23,7 +23,7 @@ const FLOAT_VELOCITY: float = 50
 var preview_instance: Node3D
 
 @export var plant_pot_scene: PackedScene
-var currently_selected_plant = 1
+var currently_selected_plant = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
