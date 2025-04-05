@@ -5,6 +5,12 @@ extends Node2D
 @onready var buy_ui: Node2D = $BuyUi
 @onready var upgrade_ui: Node2D = $UpgradeUi
 
+# Switches
+@onready var sell_button: TextureButton = $Switches/SellButton
+@onready var buy_button: TextureButton = $Switches/BuyButton
+@onready var upgrade_button: TextureButton = $Switches/UpgradeButton
+
+
 @onready var floating_player_scene: CharacterBody3D = $"../.."
 
 var selected_section: int = 0
@@ -19,6 +25,12 @@ func _input(_event) -> void:
 		GlobalVar.toggle_manage_ui()
 		update_manage_state()
 		switch_section(selected_section)
+		
+	if Input.is_action_just_pressed("game_pause"):
+		if self.visible:
+			GlobalVar.toggle_manage_ui()
+			update_manage_state()
+			switch_section(selected_section)
 
 
 func switch_section(new_section: int) -> void:
@@ -29,10 +41,13 @@ func switch_section(new_section: int) -> void:
 	match(new_section):
 		0:
 			sell_ui.show()
+			sell_button.pressed
 		1:
 			buy_ui.show()
+			buy_button.pressed
 		2:
 			upgrade_ui.show()
+			upgrade_button.pressed
 
 
 func update_manage_state() -> void:
@@ -71,9 +86,8 @@ func _on_upgrade_pressed() -> void:
 
 
 func sell(flower_index: int, gainz: int) -> void:
-	
 	floating_player_scene.current_currency += gainz
 
 
 func buy(flower_index: int, cost: int) -> void:
-	pass
+	floating_player_scene.current_currency -= cost
