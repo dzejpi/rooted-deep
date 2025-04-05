@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn4i7tal0cmhg"]
+
+[ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_5lbu1"]
+[ext_resource type="PackedScene" uid="uid://5w17t4cy1s3a" path="res://scenes/player/player_floating_scene.tscn" id="2_1xo2h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psv6s"]
+
+[sub_resource type="Sky" id="Sky_v1kyu"]
+sky_material = SubResource("ProceduralSkyMaterial_psv6s")
+
+[sub_resource type="Environment" id="Environment_7nmuq"]
+background_mode = 2
+sky = SubResource("Sky_v1kyu")
+
+[node name="GameScene" type="Node3D"]
+script = ExtResource("1_5lbu1")
+
+[node name="Player" type="Node3D" parent="."]
+
+[node name="FloatingPlayerScene" parent="Player" instance=ExtResource("2_1xo2h")]
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Npcs" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7nmuq")

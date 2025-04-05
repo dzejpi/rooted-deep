@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=3 uid="uid://bgrdefo35f2ri"]
+
+[ext_resource type="Texture2D" uid="uid://dacbuha8ns5jn" path="res://assets/sprites/menu_buttons/menu_btn_normal.png" id="1_kpkvn"]
+[ext_resource type="Script" path="res://scripts/ui/main_menu_scene.gd" id="1_mj8q0"]
+[ext_resource type="Texture2D" uid="uid://86c0wvxvogwi" path="res://assets/sprites/menu_buttons/menu_btn_pressed.png" id="2_wuwa5"]
+[ext_resource type="Texture2D" uid="uid://d137crrs2egx8" path="res://assets/sprites/menu_buttons/menu_btn_hover.png" id="3_jn4kh"]
+[ext_resource type="Texture2D" uid="uid://bvjqteitujpy" path="res://assets/sprites/menu_buttons/menu_btn_disabled.png" id="4_4ygn1"]
+[ext_resource type="Texture2D" uid="uid://bdhyu3xv0bhb5" path="res://assets/sprites/menu_buttons/menu_btn_focused.png" id="5_ig0wf"]
+[ext_resource type="Script" path="res://scripts/ui/button_quit_game.gd" id="6_gxbdg"]
+[ext_resource type="Script" path="res://scripts/ui/button_music.gd" id="6_q2mf7"]
+[ext_resource type="Script" path="res://scripts/ui/button_new_game.gd" id="6_t3iba"]
+[ext_resource type="Script" path="res://scripts/ui/button_sounds.gd" id="7_pmqqo"]
+[ext_resource type="Theme" uid="uid://bvkwjdhch4vtn" path="res://themes/buttons_theme.tres" id="8_6stw4"]
+[ext_resource type="Script" path="res://scripts/ui/button_credits.gd" id="8_8g4id"]
+[ext_resource type="Script" path="res://scripts/ui/button_back.gd" id="12_84rwi"]
+[ext_resource type="Theme" uid="uid://5cp3idadbxgk" path="res://themes/regular_text_theme.tres" id="13_ul2ti"]
+
+[node name="MainMenuScene" type="Node2D"]
+script = ExtResource("1_mj8q0")
+
+[node name="MainMenuSection" type="Node2D" parent="."]
+
+[node name="MenuButtons" type="Node2D" parent="MainMenuSection"]
+position = Vector2(128, 136)
+
+[node name="NewGameButton" type="TextureButton" parent="MainMenuSection/MenuButtons"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_kpkvn")
+texture_pressed = ExtResource("2_wuwa5")
+texture_hover = ExtResource("3_jn4kh")
+texture_disabled = ExtResource("4_4ygn1")
+texture_focused = ExtResource("5_ig0wf")
+script = ExtResource("6_t3iba")
+
+[node name="NewGameLabel" type="Label" parent="MainMenuSection/MenuButtons/NewGameButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("8_6stw4")
+text = "New game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicButton" type="TextureButton" parent="MainMenuSection/MenuButtons"]
+offset_top = 96.0
+offset_right = 256.0
+offset_bottom = 160.0
+toggle_mode = true
+texture_normal = ExtResource("1_kpkvn")
+texture_pressed = ExtResource("2_wuwa5")
+texture_hover = ExtResource("3_jn4kh")
+texture_disabled = ExtResource("4_4ygn1")
+texture_focused = ExtResource("5_ig0wf")
+script = ExtResource("6_q2mf7")
+
+[node name="MusicLabel" type="Label" parent="MainMenuSection/MenuButtons/MusicButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("8_6stw4")
+text = "Music: on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundsButton" type="TextureButton" parent="MainMenuSection/MenuButtons"]
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 256.0
+toggle_mode = true
+texture_normal = ExtResource("1_kpkvn")
+texture_pressed = ExtResource("2_wuwa5")
+texture_hover = ExtResource("3_jn4kh")
+texture_disabled = ExtResource("4_4ygn1")
+texture_focused = ExtResource("5_ig0wf")
+script = ExtResource("7_pmqqo")
+
+[node name="SoundsLabel" type="Label" parent="MainMenuSection/MenuButtons/SoundsButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("8_6stw4")
+text = "Sounds: on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsButton" type="TextureButton" parent="MainMenuSection/MenuButtons" node_paths=PackedStringArray("main_menu_scene")]
+offset_top = 288.0
+offset_right = 256.0
+offset_bottom = 352.0
+texture_normal = ExtResource("1_kpkvn")
+texture_pressed = ExtResource("2_wuwa5")
+texture_hover = ExtResource("3_jn4kh")
+texture_disabled = ExtResource("4_4ygn1")
+texture_focused = ExtResource("5_ig0wf")
+script = ExtResource("8_8g4id")
+main_menu_scene = NodePath("../../..")
+
+[node name="CreditsLabel" type="Label" parent="MainMenuSection/MenuButtons/CreditsButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("8_6stw4")
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitGameButton" type="TextureButton" parent="MainMenuSection/MenuButtons"]
+offset_top = 384.0
+offset_right = 256.0
+offset_bottom = 448.0
+texture_normal = ExtResource("1_kpkvn")
+texture_pressed = ExtResource("2_wuwa5")
+texture_hover = ExtResource("3_jn4kh")
+texture_disabled = ExtResource("4_4ygn1")
+texture_focused = ExtResource("5_ig0wf")
+script = ExtResource("6_gxbdg")
+
+[node name="QuitGameLabel" type="Label" parent="MainMenuSection/MenuButtons/QuitGameButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("8_6stw4")
+text = "Quit game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsSection" type="Node2D" parent="."]
+position = Vector2(1280, 0)
+
+[node name="CreditsText" type="Node2D" parent="CreditsSection"]
+
+[node name="CreditsLabel" type="Label" parent="CreditsSection/CreditsText"]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 528.0
+theme = ExtResource("13_ul2ti")
+text = "Credits text here."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Node2D" parent="CreditsSection"]
+position = Vector2(512, 592)
+
+[node name="BackButton" type="TextureButton" parent="CreditsSection/BackButton" node_paths=PackedStringArray("main_menu_scene")]
+offset_right = 256.0
+offset_bottom = 64.0
+texture_normal = ExtResource("1_kpkvn")
+texture_pressed = ExtResource("2_wuwa5")
+texture_hover = ExtResource("3_jn4kh")
+texture_disabled = ExtResource("4_4ygn1")
+texture_focused = ExtResource("5_ig0wf")
+script = ExtResource("12_84rwi")
+main_menu_scene = NodePath("../../..")
+
+[node name="BackButtonLabel" type="Label" parent="CreditsSection/BackButton/BackButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("8_6stw4")
+text = "Back to menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainMenuSection/MenuButtons/NewGameButton" to="MainMenuSection/MenuButtons/NewGameButton" method="_on_pressed"]
+[connection signal="pressed" from="MainMenuSection/MenuButtons/MusicButton" to="MainMenuSection/MenuButtons/MusicButton" method="_on_pressed"]
+[connection signal="pressed" from="MainMenuSection/MenuButtons/SoundsButton" to="MainMenuSection/MenuButtons/SoundsButton" method="_on_pressed"]
+[connection signal="pressed" from="MainMenuSection/MenuButtons/CreditsButton" to="MainMenuSection/MenuButtons/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="MainMenuSection/MenuButtons/QuitGameButton" to="MainMenuSection/MenuButtons/QuitGameButton" method="_on_pressed"]
+[connection signal="pressed" from="CreditsSection/BackButton/BackButton" to="CreditsSection/BackButton/BackButton" method="_on_pressed"]

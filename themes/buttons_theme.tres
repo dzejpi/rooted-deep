@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bvkwjdhch4vtn"]
+
+[ext_resource type="FontFile" uid="uid://c3n2hdtvrx0rr" path="res://assets/fonts/playpen_sans/static/playpensans_regular.ttf" id="1_fbu8x"]
+
+[resource]
+default_font = ExtResource("1_fbu8x")
+default_font_size = 32
