@@ -20,6 +20,9 @@ var is_game_won: bool = false
 # General game active state 
 var is_game_active: bool = true
 
+var current_profits = 0
+var highest_profits = 0
+
 
 func play_music() -> void:
 	if music_game_music:
@@ -74,3 +77,8 @@ func detect_active_state() -> void:
 		is_game_active = false
 	else:
 		is_game_active = true
+
+
+func update_high_score() -> void:
+	if current_profits > highest_profits:
+		highest_profits = current_profits

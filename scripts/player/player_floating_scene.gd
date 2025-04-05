@@ -14,6 +14,10 @@ const FLOAT_VELOCITY: float = 50
 @onready var game_over_scene: Node2D = $PlayerUI/GameEnd/GameOverScene
 @onready var game_won_scene: Node2D = $PlayerUI/GameEnd/GameWonScene
 
+@onready var player_ui: Node2D = $PlayerUI/PlayerUi
+@onready var currency_label: Label = $PlayerUI/PlayerUi/CurrencyLabel
+@onready var oxygen_label: Label = $PlayerUI/PlayerUi/OxygenLabel
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -31,17 +35,37 @@ var debug: bool = true
 # Last collider player looked at
 var last_looked_at: String = ""
 
+var current_currency: int = 0
+var current_oxygen: float = 10
+var is_gaining_oxygen: bool = false
+
+var oxygen_down_rate: float = 1
+var oxygen_up_rate: float = 8
+
 
 func _ready() -> void:
 	GlobalVar.reset_game()
 	TransitionOverlay.fade_out()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Reset score
+	GlobalVar.current_profits = 0
+	# Reset label
+	update_coins(0)
 
 
 func _input(event: InputEvent) -> void:
 	if GlobalVar.is_game_active:
 		if event is InputEventMouseMotion:
 			mouse_delta = event.relative
+
+
+func _process(delta: float) -> void:
+	toggle_ui()
+	
+	if not GlobalVar.is_game_active:
+		return
+	
+	update_oxygen_level(delta)
 
 
 func _physics_process(delta: float) -> void:
@@ -106,10 +130,44 @@ func process_collisions() -> void:
 
 
 func trigger_game_over() -> void:
+	GlobalVar.update_high_score()
 	GlobalVar.toggle_game_over()
 	game_over_scene.show_game_over()
 
 
 func trigger_game_won() -> void:
+	GlobalVar.update_high_score()
 	GlobalVar.toggle_game_won()
 	game_won_scene.show_game_won()
+
+
+func update_oxygen_level(delta: float) -> void:
+	if is_gaining_oxygen:
+		if current_oxygen < 100:
+			if current_oxygen >= 100.0:
+				current_oxygen = 100.0
+			else:
+				current_oxygen += oxygen_up_rate * delta 
+	else:
+		current_oxygen -= oxygen_down_rate * delta
+		if current_oxygen < 0.0:
+			current_oxygen = 0.0
+			trigger_game_over()
+	
+	oxygen_label.text = "Oxygen: " + str(int(current_oxygen)) + "%"
+
+
+func update_coins(amount: int) -> void:
+	current_currency += amount
+	
+	# Corporation always makes money 
+	GlobalVar.current_profits += abs(amount)
+	
+	currency_label.text = "∅: " + str(current_currency)
+
+
+func toggle_ui() -> void:
+	if GlobalVar.is_game_active:
+		player_ui.show()
+	else:
+		player_ui.hide()
