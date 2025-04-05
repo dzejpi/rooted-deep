@@ -73,6 +73,10 @@ func _input(event: InputEvent) -> void:
 			if is_pot_placeable and is_placing_plant:
 				print("Placing pot")
 				place_plant_pot()
+		
+		if event.is_action_pressed("dismiss_placement"):
+			if is_placing_plant:
+				dismiss_plant_placing()
 
 
 func _process(delta: float) -> void:
