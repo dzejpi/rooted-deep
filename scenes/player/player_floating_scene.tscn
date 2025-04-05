@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=20 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
 [ext_resource type="PackedScene" uid="uid://8rjjgn7r2g22" path="res://scenes/game_ui/game_pause_scene.tscn" id="2_u7ylh"]
+[ext_resource type="Shader" path="res://shaders/player_floating_scene.gdshader" id="3_0ubpt"]
 [ext_resource type="PackedScene" uid="uid://lidxun3v1u3h" path="res://scenes/game_ui/game_over_scene.tscn" id="3_jljb4"]
 [ext_resource type="PackedScene" uid="uid://cpoy7p032mikq" path="res://scenes/game_ui/game_won_scene.tscn" id="4_23rr2"]
 [ext_resource type="PackedScene" uid="uid://d0k77qlot24nc" path="res://scenes/game_ui/typewriter_dialog_scene.tscn" id="5_pf534"]
@@ -15,6 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://d137crrs2egx8" path="res://assets/sprites/menu_buttons/menu_btn_hover.png" id="12_8kcqu"]
 [ext_resource type="Texture2D" uid="uid://bvjqteitujpy" path="res://assets/sprites/menu_buttons/menu_btn_disabled.png" id="13_6q6ee"]
 [ext_resource type="Texture2D" uid="uid://bdhyu3xv0bhb5" path="res://assets/sprites/menu_buttons/menu_btn_focused.png" id="14_bndbm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_k6e0w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcjgv"]
+render_priority = 0
+shader = ExtResource("3_0ubpt")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_votpe"]
 
@@ -29,6 +36,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64966, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="PlayerHead/Camera"]
 target_position = Vector3(0, 0, -3)
+
+[node name="CameraShader" type="MeshInstance3D" parent="PlayerHead/Camera"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.85)
+mesh = SubResource("QuadMesh_k6e0w")
+surface_material_override/0 = SubResource("ShaderMaterial_tcjgv")
 
 [node name="BodyCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -81,7 +93,6 @@ text = "Oxygen: 100 %"
 script = ExtResource("10_f0106")
 
 [node name="SellUi" type="Node2D" parent="PlayerUI/ManageUi"]
-visible = false
 position = Vector2(640, 360)
 
 [node name="FruitA" type="Node2D" parent="PlayerUI/ManageUi/SellUi"]

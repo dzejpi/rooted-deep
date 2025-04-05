@@ -5,6 +5,8 @@ extends Node2D
 @onready var buy_ui: Node2D = $BuyUi
 @onready var upgrade_ui: Node2D = $UpgradeUi
 
+@onready var floating_player_scene: CharacterBody3D = $"../.."
+
 var selected_section: int = 0
 
 
@@ -66,3 +68,12 @@ func _on_buy_button_pressed() -> void:
 func _on_upgrade_pressed() -> void:
 	selected_section = 2
 	switch_section(selected_section)
+
+
+func sell(flower_index: int, gainz: int) -> void:
+	
+	floating_player_scene.current_currency += gainz
+
+
+func buy(flower_index: int, cost: int) -> void:
+	pass
