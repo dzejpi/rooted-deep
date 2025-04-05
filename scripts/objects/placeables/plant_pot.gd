@@ -1,11 +1,21 @@
 extends Node3D
 
+# True if placed directly in editor
+@export var is_placed_in_editor: bool = false
+@export var selected_plant: int = 0
 
-# Called when the node enters the scene tree for the first time.
+@export var plant_scene: PackedScene
+
+@onready var plant_node_placement: Node3D = $PlantNode
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if is_placed_in_editor:
+		set_plant(selected_plant)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_plant(fruit_number: int):
+	var plant_instance = plant_scene.instantiate()
+	plant_node_placement.add_child(plant_instance)
+	plant_instance.global_transform.origin = plant_node_placement.global_transform.origin
+	plant_instance.set_fruit(selected_plant)

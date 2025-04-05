@@ -23,6 +23,7 @@ const FLOAT_VELOCITY: float = 50
 var preview_instance: Node3D
 
 @export var plant_pot_scene: PackedScene
+var currently_selected_plant = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -245,6 +246,7 @@ func place_plant_pot() -> void:
 	placeable_objects.add_child(new_pot)
 	
 	new_pot.global_transform.origin = snapped_position
+	new_pot.set_plant(currently_selected_plant)
 	
 	# Remove pot rotation
 	var transform = new_pot.global_transform
