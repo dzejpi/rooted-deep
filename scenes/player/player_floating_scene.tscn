@@ -94,7 +94,7 @@ script = ExtResource("10_f0106")
 
 [node name="SellUi" type="Node2D" parent="PlayerUI/ManageUi"]
 visible = false
-position = Vector2(640, 360)
+position = Vector2(640, 296)
 
 [node name="FruitA" type="Node2D" parent="PlayerUI/ManageUi/SellUi"]
 position = Vector2(0, -64)
@@ -119,7 +119,7 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 metadata/_edit_use_anchors_ = true
 
 [node name="SellALabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitA/SellAButton"]
@@ -127,7 +127,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell A"
+text = "Sell One"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -140,7 +140,7 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 metadata/_edit_use_anchors_ = true
 
 [node name="SellALabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitA/SellAllAButton"]
@@ -148,7 +148,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell All A"
+text = "Sell Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -174,14 +174,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="SellBLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitB/SellBButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell B"
+text = "Sell One"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -193,14 +193,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="SellBLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitB/SellAllBButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell All B"
+text = "Sell Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -227,7 +227,7 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 metadata/_edit_use_anchors_ = true
 
 [node name="SellCLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitC/SellCButton"]
@@ -235,7 +235,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell C"
+text = "Sell One"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -248,7 +248,7 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 metadata/_edit_use_anchors_ = true
 
 [node name="SellCLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitC/SellAllCButton"]
@@ -256,7 +256,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell All C"
+text = "Sell Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -283,14 +283,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="SellDLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitD/SellDButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell D"
+text = "Sell One"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -302,19 +302,20 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="SellDLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitD/SellAllDButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Sell All D"
+text = "Sell Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuyUi" type="Node2D" parent="PlayerUI/ManageUi"]
-position = Vector2(640, 360)
+visible = false
+position = Vector2(640, 296)
 
 [node name="FruitA" type="Node2D" parent="PlayerUI/ManageUi/BuyUi"]
 position = Vector2(0, -64)
@@ -339,14 +340,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="BuyALabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitA/BuyAButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy A"
+text = "Buy One"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -359,14 +360,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="BuyALabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitA/BuyAllAButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy Maximum A"
+text = "Buy Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -393,14 +394,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="BuyBLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitB/BuyBButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy B"
+text = "Buy One"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -412,14 +413,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="BuyBLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitB/BuyAllBButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy Maximum B"
+text = "Buy Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -446,7 +447,7 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyCLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitC/BuyCButton"]
@@ -454,7 +455,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy C"
+text = "Buy One"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -467,7 +468,7 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 metadata/_edit_use_anchors_ = true
 
 [node name="BuyCLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitC/BuyAllCButton"]
@@ -475,7 +476,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy Maximum C"
+text = "Buy Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -503,14 +504,14 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="BuyDLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitD/BuyDButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy D"
+text = "Buy One"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -522,21 +523,262 @@ texture_normal = ExtResource("10_sdfuo")
 texture_pressed = ExtResource("11_x3sxh")
 texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
-texture_focused = ExtResource("14_bndbm")
+texture_focused = ExtResource("13_6q6ee")
 
 [node name="BuyDLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitD/BuyAllDButton"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy Maximum D"
+text = "Buy Max"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UpgradeUi" type="Node2D" parent="PlayerUI/ManageUi"]
+position = Vector2(0, -64)
+
+[node name="UpgradeA" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 384.0
+offset_top = 232.0
+offset_right = 640.0
+offset_bottom = 296.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeALabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeA"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+5% Oxygen 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeB" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 384.0
+offset_top = 296.0
+offset_right = 640.0
+offset_bottom = 360.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeBLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeB"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+5% Speed 200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeC" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 384.0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 424.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeALabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeC"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+15% Oxygen 250"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeD" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 384.0
+offset_top = 424.0
+offset_right = 640.0
+offset_bottom = 488.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeBLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeD"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+15% Speed 500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeE" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 640.0
+offset_top = 232.0
+offset_right = 896.0
+offset_bottom = 296.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeELabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeE"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+20% Oxygen 1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeF" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 640.0
+offset_top = 296.0
+offset_right = 896.0
+offset_bottom = 360.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeFLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeF"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+20% Speed 2000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeG" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 640.0
+offset_top = 360.0
+offset_right = 896.0
+offset_bottom = 424.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeGLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeG"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+60% Oxygen 2500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeH" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 640.0
+offset_top = 424.0
+offset_right = 896.0
+offset_bottom = 488.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeHLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeH"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+60% Speed 5000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeI" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 896.0
+offset_top = 232.0
+offset_right = 1152.0
+offset_bottom = 296.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeILabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeI"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+50% Profit 10000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeJ" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 896.0
+offset_top = 296.0
+offset_right = 1152.0
+offset_bottom = 360.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeJLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeJ"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+5% Oxygen 20000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeK" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 896.0
+offset_top = 360.0
+offset_right = 1152.0
+offset_bottom = 424.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeKLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeK"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+5% Oxygen 25000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeL" type="TextureButton" parent="PlayerUI/ManageUi/UpgradeUi"]
+offset_left = 896.0
+offset_top = 424.0
+offset_right = 1152.0
+offset_bottom = 488.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("13_6q6ee")
+
+[node name="UpgradeLLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeL"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "+5% Oxygen 50000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Switches" type="Node2D" parent="PlayerUI/ManageUi"]
-position = Vector2(-16, 0)
+position = Vector2(-16, -64)
 
 [node name="SellButton" type="TextureButton" parent="PlayerUI/ManageUi/Switches"]
 offset_left = 128.0
@@ -627,13 +869,13 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundCoins" type="Sprite2D" parent="PlayerUI/ManageUi/Switches"]
-position = Vector2(256, 584)
+position = Vector2(1040, 584)
 texture = ExtResource("10_sdfuo")
 
 [node name="LabelCoins" type="Label" parent="PlayerUI/ManageUi/Switches"]
-offset_left = 128.0
+offset_left = 912.0
 offset_top = 552.0
-offset_right = 384.0
+offset_right = 1168.0
 offset_bottom = 616.0
 theme = ExtResource("7_gyubv")
 text = "Coins:"
@@ -657,6 +899,18 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="PlayerUI/ManageUi/BuyUi/FruitC/BuyAllCButton" to="PlayerUI/ManageUi" method="_on_buy_all_c_button_pressed"]
 [connection signal="pressed" from="PlayerUI/ManageUi/BuyUi/FruitD/BuyDButton" to="PlayerUI/ManageUi" method="_on_buy_d_button_pressed"]
 [connection signal="pressed" from="PlayerUI/ManageUi/BuyUi/FruitD/BuyAllDButton" to="PlayerUI/ManageUi" method="_on_buy_all_d_button_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeA" to="PlayerUI/ManageUi" method="_on_upgrade_a_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeB" to="PlayerUI/ManageUi" method="_on_upgrade_b_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeC" to="PlayerUI/ManageUi" method="_on_upgrade_c_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeD" to="PlayerUI/ManageUi" method="_on_upgrade_d_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeE" to="PlayerUI/ManageUi" method="_on_upgrade_e_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeF" to="PlayerUI/ManageUi" method="_on_upgrade_f_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeG" to="PlayerUI/ManageUi" method="_on_upgrade_g_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeH" to="PlayerUI/ManageUi" method="_on_upgrade_h_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeI" to="PlayerUI/ManageUi" method="_on_upgrade_i_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeJ" to="PlayerUI/ManageUi" method="_on_upgrade_j_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeK" to="PlayerUI/ManageUi" method="_on_upgrade_k_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/UpgradeUi/UpgradeL" to="PlayerUI/ManageUi" method="_on_upgrade_l_pressed"]
 [connection signal="pressed" from="PlayerUI/ManageUi/Switches/SellButton" to="PlayerUI/ManageUi" method="_on_sell_button_pressed"]
 [connection signal="pressed" from="PlayerUI/ManageUi/Switches/BuyButton" to="PlayerUI/ManageUi" method="_on_buy_button_pressed"]
 [connection signal="pressed" from="PlayerUI/ManageUi/Switches/UpgradeButton" to="PlayerUI/ManageUi" method="_on_upgrade_pressed"]

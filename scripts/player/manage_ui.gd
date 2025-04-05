@@ -33,6 +33,19 @@ extends Node2D
 @onready var sell_d_button: TextureButton = $SellUi/FruitD/SellDButton
 @onready var sell_all_d_button: TextureButton = $SellUi/FruitD/SellAllDButton
 
+# Upgrades
+@onready var upgrade_a: TextureButton = $UpgradeUi/UpgradeA
+@onready var upgrade_b: TextureButton = $UpgradeUi/UpgradeB
+@onready var upgrade_c: TextureButton = $UpgradeUi/UpgradeC
+@onready var upgrade_d: TextureButton = $UpgradeUi/UpgradeD
+@onready var upgrade_e: TextureButton = $UpgradeUi/UpgradeE
+@onready var upgrade_f: TextureButton = $UpgradeUi/UpgradeF
+@onready var upgrade_g: TextureButton = $UpgradeUi/UpgradeG
+@onready var upgrade_h: TextureButton = $UpgradeUi/UpgradeH
+@onready var upgrade_i: TextureButton = $UpgradeUi/UpgradeI
+@onready var upgrade_j: TextureButton = $UpgradeUi/UpgradeJ
+@onready var upgrade_k: TextureButton = $UpgradeUi/UpgradeK
+@onready var upgrade_l: TextureButton = $UpgradeUi/UpgradeL
 
 var fruit_a_sell_price: int = 100
 var fruit_b_sell_price: int = 200
@@ -45,6 +58,33 @@ var seed_c_buy_price: int = 600
 var seed_d_buy_price: int = 800
 
 var selected_section: int = 0
+
+# Too drunk for arrays
+var upgrade_a_unlocked: bool = false
+var upgrade_b_unlocked: bool = false
+var upgrade_c_unlocked: bool = false
+var upgrade_d_unlocked: bool = false
+var upgrade_e_unlocked: bool = false
+var upgrade_f_unlocked: bool = false
+var upgrade_g_unlocked: bool = false
+var upgrade_h_unlocked: bool = false
+var upgrade_i_unlocked: bool = false
+var upgrade_j_unlocked: bool = false
+var upgrade_k_unlocked: bool = false
+var upgrade_l_unlocked: bool = false
+
+var upgrade_a_price: int = 70
+var upgrade_b_price: int = 125
+var upgrade_c_price: int = 250
+var upgrade_d_price: int = 500
+var upgrade_e_price: int = 1000
+var upgrade_f_price: int = 2000
+var upgrade_g_price: int = 2500
+var upgrade_h_price: int = 5000
+var upgrade_i_price: int = 10000
+var upgrade_j_price: int = 20000
+var upgrade_k_price: int = 25000
+var upgrade_l_price: int = 50000
 
 
 func _ready() -> void:
@@ -258,6 +298,67 @@ func update_eligibility() -> void:
 	else:
 		buy_d_button.disabled = false
 		buy_all_d_button.disabled = false
+	
+	# Upgrades
+	if current_currency < upgrade_a_price or upgrade_a_unlocked:
+		upgrade_a.disabled = true
+	else:
+		upgrade_a.disabled = false
+	
+	if current_currency < upgrade_b_price or upgrade_b_unlocked:
+		upgrade_b.disabled = true
+	else:
+		upgrade_b.disabled = false
+	
+	if current_currency < upgrade_c_price or upgrade_c_unlocked:
+		upgrade_c.disabled = true
+	else:
+		upgrade_c.disabled = false
+	
+	if current_currency < upgrade_d_price or upgrade_d_unlocked:
+		upgrade_d.disabled = true
+	else:
+		upgrade_d.disabled = false
+	
+	if current_currency < upgrade_e_price or upgrade_e_unlocked:
+		upgrade_e.disabled = true
+	else:
+		upgrade_e.disabled = false
+	
+	if current_currency < upgrade_f_price or upgrade_f_unlocked:
+		upgrade_f.disabled = true
+	else:
+		upgrade_f.disabled = false
+	
+	if current_currency < upgrade_g_price or upgrade_g_unlocked:
+		upgrade_g.disabled = true
+	else:
+		upgrade_g.disabled = false
+	
+	if current_currency < upgrade_h_price or upgrade_h_unlocked:
+		upgrade_h.disabled = true
+	else:
+		upgrade_h.disabled = false
+	
+	if current_currency < upgrade_i_price or upgrade_i_unlocked:
+		upgrade_i.disabled = true
+	else:
+		upgrade_i.disabled = false
+	
+	if current_currency < upgrade_j_price or upgrade_j_unlocked:
+		upgrade_j.disabled = true
+	else:
+		upgrade_j.disabled = false
+	
+	if current_currency < upgrade_k_price or upgrade_k_unlocked:
+		upgrade_k.disabled = true
+	else:
+		upgrade_k.disabled = false
+	
+	if current_currency < upgrade_l_price or upgrade_l_unlocked:
+		upgrade_l.disabled = true
+	else:
+		upgrade_l.disabled = false
 
 
 func _on_sell_a_button_pressed() -> void:
@@ -338,3 +439,123 @@ func _on_buy_d_button_pressed() -> void:
 func _on_buy_all_d_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_d_buy_price:
 		buy_max(3, seed_d_buy_price)
+
+
+func _on_upgrade_a_pressed() -> void:
+	var upgrade_price = upgrade_a_price
+	if not upgrade_a_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_a_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_b_pressed() -> void:
+	var upgrade_price = upgrade_b_price
+	if not upgrade_b_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_b_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_c_pressed() -> void:
+	var upgrade_price = upgrade_c_price
+	if not upgrade_c_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_c_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_d_pressed() -> void:
+	var upgrade_price = upgrade_d_price
+	if not upgrade_d_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_d_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_e_pressed() -> void:
+	var upgrade_price = upgrade_e_price
+	if not upgrade_e_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_e_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_f_pressed() -> void:
+	var upgrade_price = upgrade_f_price
+	if not upgrade_f_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_f_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_g_pressed() -> void:
+	var upgrade_price = upgrade_g_price
+	if not upgrade_g_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_g_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_h_pressed() -> void:
+	var upgrade_price = upgrade_h_price
+	if not upgrade_h_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_h_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_i_pressed() -> void:
+	var upgrade_price = upgrade_i_price
+	if not upgrade_i_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_i_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_j_pressed() -> void:
+	var upgrade_price = upgrade_j_price
+	if not upgrade_j_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_j_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_k_pressed() -> void:
+	var upgrade_price = upgrade_k_price
+	if not upgrade_k_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_k_unlocked = true
+			update_coins()
+			update_eligibility()
+
+
+func _on_upgrade_l_pressed() -> void:
+	var upgrade_price = upgrade_l_price
+	if not upgrade_l_unlocked:
+		if floating_player_scene.current_currency >= upgrade_price:
+			floating_player_scene.current_currency -= upgrade_price
+			upgrade_l_unlocked = true
+			update_coins()
+			update_eligibility()
