@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=17 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
@@ -9,6 +9,12 @@
 [ext_resource type="Script" path="res://scripts/game_ui/game_won_scene.gd" id="6_gmia8"]
 [ext_resource type="PackedScene" uid="uid://uqsnfk54cjss" path="res://scenes/game_ui/player_tooltip.tscn" id="6_utufl"]
 [ext_resource type="Theme" uid="uid://5cp3idadbxgk" path="res://themes/regular_text_theme.tres" id="7_gyubv"]
+[ext_resource type="Script" path="res://scripts/player/manage_ui.gd" id="10_f0106"]
+[ext_resource type="Texture2D" uid="uid://dacbuha8ns5jn" path="res://assets/sprites/menu_buttons/menu_btn_normal.png" id="10_sdfuo"]
+[ext_resource type="Texture2D" uid="uid://86c0wvxvogwi" path="res://assets/sprites/menu_buttons/menu_btn_pressed.png" id="11_x3sxh"]
+[ext_resource type="Texture2D" uid="uid://d137crrs2egx8" path="res://assets/sprites/menu_buttons/menu_btn_hover.png" id="12_8kcqu"]
+[ext_resource type="Texture2D" uid="uid://bvjqteitujpy" path="res://assets/sprites/menu_buttons/menu_btn_disabled.png" id="13_6q6ee"]
+[ext_resource type="Texture2D" uid="uid://bdhyu3xv0bhb5" path="res://assets/sprites/menu_buttons/menu_btn_focused.png" id="14_bndbm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_votpe"]
 
@@ -47,8 +53,10 @@ script = ExtResource("6_gmia8")
 [node name="GameUI" type="Node" parent="PlayerUI"]
 
 [node name="TypewriterDialogScene" parent="PlayerUI/GameUI" instance=ExtResource("5_pf534")]
+visible = false
 
 [node name="PlayerTooltip" parent="PlayerUI/GameUI" instance=ExtResource("6_utufl")]
+visible = false
 position = Vector2(0, 392)
 
 [node name="PlayerUi" type="Node2D" parent="PlayerUI"]
@@ -68,3 +76,387 @@ offset_right = 210.0
 offset_bottom = 70.0
 theme = ExtResource("7_gyubv")
 text = "Oxygen: 100 %"
+
+[node name="ManageUi" type="Node2D" parent="PlayerUI"]
+script = ExtResource("10_f0106")
+
+[node name="SellUi" type="Node2D" parent="PlayerUI/ManageUi"]
+visible = false
+position = Vector2(640, 360)
+
+[node name="FruitA" type="Node2D" parent="PlayerUI/ManageUi/SellUi"]
+position = Vector2(0, -64)
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/SellUi/FruitA"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitALabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitA"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit A: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SellAButton" type="TextureButton" parent="PlayerUI/ManageUi/SellUi/FruitA"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="SellALabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitA/SellAButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Sell A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FruitB" type="Node2D" parent="PlayerUI/ManageUi/SellUi"]
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/SellUi/FruitB"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitBLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitB"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit B: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SellBButton" type="TextureButton" parent="PlayerUI/ManageUi/SellUi/FruitB"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+
+[node name="SellBLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitB/SellBButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Sell B"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FruitC" type="Node2D" parent="PlayerUI/ManageUi/SellUi"]
+position = Vector2(0, 64)
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/SellUi/FruitC"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitCLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitC"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit C: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SellCButton" type="TextureButton" parent="PlayerUI/ManageUi/SellUi/FruitC"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="SellCLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitC/SellCButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Sell C"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FruitD" type="Node2D" parent="PlayerUI/ManageUi/SellUi"]
+position = Vector2(0, 128)
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/SellUi/FruitD"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitDLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitD"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit D: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SellDButton" type="TextureButton" parent="PlayerUI/ManageUi/SellUi/FruitD"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+
+[node name="SellDLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitD/SellDButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Sell D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyUi" type="Node2D" parent="PlayerUI/ManageUi"]
+visible = false
+position = Vector2(640, 360)
+
+[node name="FruitA" type="Node2D" parent="PlayerUI/ManageUi/BuyUi"]
+position = Vector2(0, -64)
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/BuyUi/FruitA"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitALabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitA"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit A: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyAButton" type="TextureButton" parent="PlayerUI/ManageUi/BuyUi/FruitA"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyALabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitA/BuyAButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Buy A"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FruitB" type="Node2D" parent="PlayerUI/ManageUi/BuyUi"]
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/BuyUi/FruitB"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitBLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitB"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit B: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyBButton" type="TextureButton" parent="PlayerUI/ManageUi/BuyUi/FruitB"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+
+[node name="BuyBLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitB/BuyBButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Buy B"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FruitC" type="Node2D" parent="PlayerUI/ManageUi/BuyUi"]
+position = Vector2(0, 64)
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/BuyUi/FruitC"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitCLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitC"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit C: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyCButton" type="TextureButton" parent="PlayerUI/ManageUi/BuyUi/FruitC"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyCLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitC/BuyCButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Buy C"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FruitD" type="Node2D" parent="PlayerUI/ManageUi/BuyUi"]
+position = Vector2(0, 128)
+
+[node name="LabelBack" type="Sprite2D" parent="PlayerUI/ManageUi/BuyUi/FruitD"]
+position = Vector2(-128, -32)
+texture = ExtResource("10_sdfuo")
+
+[node name="FruitDLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitD"]
+offset_left = -256.0
+offset_top = -64.0
+theme = ExtResource("7_gyubv")
+text = "Fruit D: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyDButton" type="TextureButton" parent="PlayerUI/ManageUi/BuyUi/FruitD"]
+offset_top = -64.0
+offset_right = 256.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+
+[node name="BuyDLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitD/BuyDButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Buy D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeUi" type="Node2D" parent="PlayerUI/ManageUi"]
+
+[node name="Switches" type="Node2D" parent="PlayerUI/ManageUi"]
+
+[node name="SellButton" type="TextureButton" parent="PlayerUI/ManageUi/Switches"]
+offset_left = 128.0
+offset_top = 232.0
+offset_right = 384.0
+offset_bottom = 296.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="SellLabel" type="Label" parent="PlayerUI/ManageUi/Switches/SellButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Sell"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyButton" type="TextureButton" parent="PlayerUI/ManageUi/Switches"]
+offset_left = 128.0
+offset_top = 296.0
+offset_right = 384.0
+offset_bottom = 360.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuyLabel" type="Label" parent="PlayerUI/ManageUi/Switches/BuyButton"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade" type="TextureButton" parent="PlayerUI/ManageUi/Switches"]
+offset_left = 128.0
+offset_top = 360.0
+offset_right = 384.0
+offset_bottom = 424.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="UpgradeLabel" type="Label" parent="PlayerUI/ManageUi/Switches/Upgrade"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="TextureButton" parent="PlayerUI/ManageUi/Switches"]
+offset_left = 128.0
+offset_top = 424.0
+offset_right = 384.0
+offset_bottom = 488.0
+texture_normal = ExtResource("10_sdfuo")
+texture_pressed = ExtResource("11_x3sxh")
+texture_hover = ExtResource("12_8kcqu")
+texture_disabled = ExtResource("13_6q6ee")
+texture_focused = ExtResource("14_bndbm")
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitLabel" type="Label" parent="PlayerUI/ManageUi/Switches/Quit"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 64.0
+theme = ExtResource("7_gyubv")
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="PlayerUI/ManageUi/Switches/SellButton" to="PlayerUI/ManageUi" method="_on_sell_button_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/Switches/BuyButton" to="PlayerUI/ManageUi" method="_on_buy_button_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/Switches/Upgrade" to="PlayerUI/ManageUi" method="_on_upgrade_pressed"]
+[connection signal="pressed" from="PlayerUI/ManageUi/Switches/Quit" to="PlayerUI/ManageUi" method="_on_quit_pressed"]

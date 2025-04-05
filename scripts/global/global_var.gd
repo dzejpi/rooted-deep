@@ -16,6 +16,7 @@ extends Node
 var is_game_paused: bool = false
 var is_game_over: bool = false
 var is_game_won: bool = false
+var is_ui_active: bool = false
 
 # General game active state 
 var is_game_active: bool = true
@@ -49,6 +50,7 @@ func reset_game() -> void:
 	is_game_paused = false
 	is_game_over = false
 	is_game_won = false
+	is_ui_active = false
 	detect_active_state()
 
 
@@ -72,8 +74,13 @@ func toggle_game_won() -> void:
 	detect_active_state()
 
 
+func toggle_manage_ui() -> void:
+	is_ui_active = not is_ui_active
+	detect_active_state()
+
+
 func detect_active_state() -> void:
-	if is_game_paused or is_game_over or is_game_won:
+	if is_game_paused or is_game_over or is_game_won or is_ui_active:
 		is_game_active = false
 	else:
 		is_game_active = true
