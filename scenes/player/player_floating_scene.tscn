@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=9 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://8rjjgn7r2g22" path="res://scenes/game_ui/game_pause_scene.tscn" id="2_u7ylh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpoy7p032mikq" path="res://scenes/game_ui/game_won_scene.tscn" id="4_23rr2"]
 [ext_resource type="PackedScene" uid="uid://d0k77qlot24nc" path="res://scenes/game_ui/typewriter_dialog_scene.tscn" id="5_pf534"]
 [ext_resource type="PackedScene" uid="uid://uqsnfk54cjss" path="res://scenes/game_ui/player_tooltip.tscn" id="6_utufl"]
+[ext_resource type="Theme" uid="uid://5cp3idadbxgk" path="res://themes/regular_text_theme.tres" id="7_gyubv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_votpe"]
 
@@ -45,3 +46,21 @@ visible = false
 
 [node name="PlayerTooltip" parent="PlayerUI/GameUI" instance=ExtResource("6_utufl")]
 position = Vector2(0, 392)
+
+[node name="Stats" type="Node" parent="PlayerUI"]
+
+[node name="CurrencyLabel" type="Label" parent="PlayerUI/Stats"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 102.0
+offset_bottom = 70.0
+theme = ExtResource("7_gyubv")
+text = "Coins: 500 €"
+
+[node name="OxygenLabel" type="Label" parent="PlayerUI/Stats"]
+offset_left = 32.0
+offset_top = 80.0
+offset_right = 126.0
+offset_bottom = 118.0
+theme = ExtResource("7_gyubv")
+text = "Oxygen: 100 %"
