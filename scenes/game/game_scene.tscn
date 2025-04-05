@@ -19,8 +19,9 @@ script = ExtResource("1_5lbu1")
 
 [node name="Player" type="Node3D" parent="."]
 
-[node name="FloatingPlayerScene" parent="Player" instance=ExtResource("2_1xo2h")]
+[node name="FloatingPlayerScene" parent="Player" node_paths=PackedStringArray("placeable_objects") instance=ExtResource("2_1xo2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.2792, 0)
+placeable_objects = NodePath("../../Objects")
 
 [node name="Terrain" type="Node3D" parent="."]
 

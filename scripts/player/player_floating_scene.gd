@@ -18,6 +18,7 @@ const FLOAT_VELOCITY: float = 50
 @onready var currency_label: Label = $PlayerUI/PlayerUi/CurrencyLabel
 @onready var oxygen_label: Label = $PlayerUI/PlayerUi/OxygenLabel
 
+@export var placeable_objects: Node3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -122,6 +123,9 @@ func process_collisions() -> void:
 			last_looked_at = collision_object
 			if debug:
 				print("Player is looking at: " + collision_object + ".")
+				
+			if ray_cast.get_collider().is_in_group("ground"):
+				print("Looking at ground")
 	else:
 		if last_looked_at != "nothing":
 			last_looked_at = "nothing"
@@ -171,3 +175,7 @@ func toggle_ui() -> void:
 		player_ui.show()
 	else:
 		player_ui.hide()
+
+
+func manage_plot_placing() -> void:
+	pass
