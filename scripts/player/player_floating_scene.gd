@@ -22,6 +22,8 @@ const FLOAT_VELOCITY: float = 50
 @export var plant_pot_preview: PackedScene
 var preview_instance: Node3D
 
+@export var plant_pot_scene: PackedScene
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -47,6 +49,9 @@ var oxygen_up_rate: float = 8
 
 var is_placing_plant: bool = true
 
+var snapped_position: Vector3
+var is_pot_placeable: bool = false
+
 
 func _ready() -> void:
 	GlobalVar.reset_game()
@@ -63,6 +68,11 @@ func _input(event: InputEvent) -> void:
 	if GlobalVar.is_game_active:
 		if event is InputEventMouseMotion:
 			mouse_delta = event.relative
+		
+		if event.is_action_pressed("place_pot"):
+			if is_pot_placeable and is_placing_plant:
+				print("Placing pot")
+				place_plant_pot()
 
 
 func _process(delta: float) -> void:
@@ -73,8 +83,7 @@ func _process(delta: float) -> void:
 	
 	update_oxygen_level(delta)
 	
-	if is_placing_plant:
-		update_pot_preview()
+	update_pot_preview()
 
 
 func _physics_process(delta: float) -> void:
@@ -131,9 +140,6 @@ func process_collisions() -> void:
 			last_looked_at = collision_object
 			if debug:
 				print("Player is looking at: " + collision_object + ".")
-				
-			if ray_cast.get_collider().is_in_group("ground"):
-				print("Looking at ground")
 	else:
 		if last_looked_at != "nothing":
 			last_looked_at = "nothing"
@@ -194,20 +200,55 @@ func dismiss_plant_placing() -> void:
 
 
 func update_pot_preview() -> void:
-	if ray_cast.is_colliding() and ray_cast.get_collider().is_in_group("ground"):
-		var collision_point = ray_cast.get_collision_point()
-		
-		# If preview is not displayed yet
-		if preview_instance == null:
-			preview_instance = plant_pot_preview.instantiate()
-			add_child(preview_instance)
+	if is_placing_plant:
+		if ray_cast.is_colliding() and ray_cast.get_collider().is_in_group("ground"):
+			var collision_point = ray_cast.get_collision_point()
 			
-		# Move it to the collision point
-		preview_instance.global_transform.origin = collision_point
+			snapped_position = Vector3(snappedf(collision_point.x, 1.0), collision_point.y, snappedf(collision_point.z, 1.0))
+			
+			# If preview is not displayed yet
+			if preview_instance == null:
+				preview_instance = plant_pot_preview.instantiate()
+				add_child(preview_instance)
+			
+			preview_instance.show()
+			
+			# Move it to the collision point
+			preview_instance.global_transform.origin = snapped_position
+			
+			# Lock rotation
+			var transform = preview_instance.global_transform
+			transform.basis = Basis()
+			preview_instance.global_transform = transform
+			
+			is_pot_placeable = true
+		else:
+			is_pot_placeable = false 
+			
+			# Hide the pot preview if not visible
+			if preview_instance != null:
+				preview_instance.hide()
+	else:
+		is_pot_placeable = false
+		if preview_instance != null:
+			preview_instance.hide()
+
 
 func place_plant_pot() -> void:
+	# Set to snapper position
+	var new_pot = plant_pot_scene.instantiate()
+	# Place object into Objects node
+	placeable_objects.add_child(new_pot)
 	
-	# Remove the preview instance
+	new_pot.global_transform.origin = snapped_position
+	
+	# Remove pot rotation
+	var transform = new_pot.global_transform
+	transform.basis = Basis()
+	preview_instance.global_transform = transform
+	
+	# Reset everything
 	preview_instance.queue_free()
 	preview_instance = null
+	is_pot_placeable = false
 	is_placing_plant = false
