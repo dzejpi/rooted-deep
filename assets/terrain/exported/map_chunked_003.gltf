@@ -18,6 +18,19 @@
 			"name":"map_chunked.003"
 		}
 	],
+	"materials":[
+		{
+			"doubleSided":true,
+			"name":"map_material",
+			"pbrMetallicRoughness":{
+				"baseColorTexture":{
+					"index":0
+				},
+				"metallicFactor":0,
+				"roughnessFactor":0.5
+			}
+		}
+	],
 	"meshes":[
 		{
 			"name":"Plane.008",
@@ -28,16 +41,30 @@
 						"NORMAL":1,
 						"TEXCOORD_0":2
 					},
-					"indices":3
+					"indices":3,
+					"material":0
 				}
 			]
+		}
+	],
+	"textures":[
+		{
+			"sampler":0,
+			"source":0
+		}
+	],
+	"images":[
+		{
+			"mimeType":"image/png",
+			"name":"spr_terrain_texture",
+			"uri":"spr_terrain_texture.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":1253,
+			"count":4224,
 			"max":[
 				-96,
 				9.511484146118164,
@@ -53,13 +80,13 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":1253,
+			"count":4224,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":1253,
+			"count":4224,
 			"type":"VEC2"
 		},
 		{
@@ -72,32 +99,38 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":15036,
+			"byteLength":50688,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":15036,
-			"byteOffset":15036,
+			"byteLength":50688,
+			"byteOffset":50688,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":10024,
-			"byteOffset":30072,
+			"byteLength":33792,
+			"byteOffset":101376,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":12672,
-			"byteOffset":40096,
+			"byteOffset":135168,
 			"target":34963
+		}
+	],
+	"samplers":[
+		{
+			"magFilter":9728,
+			"minFilter":9984
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":52768,
+			"byteLength":147840,
 			"uri":"map_chunked_003.bin"
 		}
 	]

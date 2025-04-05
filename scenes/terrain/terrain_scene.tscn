@@ -1,0 +1,198 @@
+[gd_scene load_steps=66 format=3 uid="uid://b10lmyx64o6t"]
+
+[ext_resource type="Script" path="res://scripts/terrain/terrain_scene.gd" id="1_2fp6u"]
+[ext_resource type="PackedScene" uid="uid://bdyv5ujd5w6rp" path="res://assets/terrain/exported/map_chunked_001.gltf" id="1_rurb8"]
+[ext_resource type="PackedScene" uid="uid://clmild21ethq7" path="res://assets/terrain/exported/map_chunked_002.gltf" id="2_w0tce"]
+[ext_resource type="PackedScene" uid="uid://dma1p0cd5rst1" path="res://assets/terrain/exported/map_chunked_003.gltf" id="3_8gknm"]
+[ext_resource type="PackedScene" uid="uid://cmdncobgdvrxa" path="res://assets/terrain/exported/map_chunked_004.gltf" id="4_e4k3r"]
+[ext_resource type="PackedScene" uid="uid://br6eylqrl8tuo" path="res://assets/terrain/exported/map_chunked_005.gltf" id="5_2aihr"]
+[ext_resource type="PackedScene" uid="uid://b6r6g8kcod3kp" path="res://assets/terrain/exported/map_chunked_006.gltf" id="6_201lb"]
+[ext_resource type="PackedScene" uid="uid://4c6otnxcevmi" path="res://assets/terrain/exported/map_chunked_007.gltf" id="7_fkci6"]
+[ext_resource type="PackedScene" uid="uid://bej5tlru11kfl" path="res://assets/terrain/exported/map_chunked_008.gltf" id="8_cn0uq"]
+[ext_resource type="PackedScene" uid="uid://dla4s4kugvqpo" path="res://assets/terrain/exported/map_chunked_009.gltf" id="9_qlgiu"]
+[ext_resource type="PackedScene" uid="uid://dd0cdoavyisba" path="res://assets/terrain/exported/map_chunked_010.gltf" id="10_5j0y4"]
+[ext_resource type="PackedScene" uid="uid://bhf4pirdif8e0" path="res://assets/terrain/exported/map_chunked_011.gltf" id="11_srooy"]
+[ext_resource type="PackedScene" uid="uid://dv1usd38vmoar" path="res://assets/terrain/exported/map_chunked_012.gltf" id="12_afvt4"]
+[ext_resource type="PackedScene" uid="uid://82boa5qsl2n4" path="res://assets/terrain/exported/map_chunked_013.gltf" id="13_7u1h6"]
+[ext_resource type="PackedScene" uid="uid://bfrfjfxjtel44" path="res://assets/terrain/exported/map_chunked_014.gltf" id="14_ewns3"]
+[ext_resource type="PackedScene" uid="uid://bf6ae2rs6rkca" path="res://assets/terrain/exported/map_chunked_015.gltf" id="15_2mfg6"]
+[ext_resource type="PackedScene" uid="uid://copvawfuhvrym" path="res://assets/terrain/exported/map_chunked_016.gltf" id="16_x5l1g"]
+[ext_resource type="PackedScene" uid="uid://brx04sop3hxvv" path="res://assets/terrain/exported/map_chunked_017.gltf" id="17_8xhr2"]
+[ext_resource type="PackedScene" uid="uid://tti6xyl4ebvg" path="res://assets/terrain/exported/map_chunked_018.gltf" id="18_xndyl"]
+[ext_resource type="PackedScene" uid="uid://bdibyrcxqe5hv" path="res://assets/terrain/exported/map_chunked_019.gltf" id="19_qudgp"]
+[ext_resource type="PackedScene" uid="uid://jfjwh0tvcg82" path="res://assets/terrain/exported/map_chunked_020.gltf" id="20_ejwk5"]
+[ext_resource type="PackedScene" uid="uid://c4dx03tffblqo" path="res://assets/terrain/exported/map_chunked_021.gltf" id="21_16t5v"]
+[ext_resource type="PackedScene" uid="uid://ga6xmmglh6cj" path="res://assets/terrain/exported/map_chunked_022.gltf" id="22_fcj7b"]
+[ext_resource type="PackedScene" uid="uid://b0wa2w5tv2663" path="res://assets/terrain/exported/map_chunked_023.gltf" id="23_285ta"]
+[ext_resource type="PackedScene" uid="uid://44alsk7uc2h1" path="res://assets/terrain/exported/map_chunked_024.gltf" id="24_1t6vg"]
+[ext_resource type="PackedScene" uid="uid://cm18wfjlk5w5u" path="res://assets/terrain/exported/map_chunked_025.gltf" id="25_fjuum"]
+[ext_resource type="PackedScene" uid="uid://dy4ghaxtdlv8l" path="res://assets/terrain/exported/map_chunked_026.gltf" id="26_b5jd7"]
+[ext_resource type="PackedScene" uid="uid://dehs1bogrrefv" path="res://assets/terrain/exported/map_chunked_027.gltf" id="27_3kix3"]
+[ext_resource type="PackedScene" uid="uid://cnaybiipr8n0k" path="res://assets/terrain/exported/map_chunked_028.gltf" id="28_ts8k4"]
+[ext_resource type="PackedScene" uid="uid://1ehy3w5sc306" path="res://assets/terrain/exported/map_chunked_029.gltf" id="29_fjh65"]
+[ext_resource type="PackedScene" uid="uid://dv1ls53ovahcc" path="res://assets/terrain/exported/map_chunked_030.gltf" id="30_li7m4"]
+[ext_resource type="PackedScene" uid="uid://cxvjv5xfmk6hx" path="res://assets/terrain/exported/map_chunked_031.gltf" id="31_k1xrr"]
+[ext_resource type="PackedScene" uid="uid://8i0nwo5wdvn6" path="res://assets/terrain/exported/map_chunked_032.gltf" id="32_wrjbo"]
+[ext_resource type="PackedScene" uid="uid://b4uwnxewplu7n" path="res://assets/terrain/exported/map_chunked_033.gltf" id="33_x2i8t"]
+[ext_resource type="PackedScene" uid="uid://c2vfcv8nou7ub" path="res://assets/terrain/exported/map_chunked_034.gltf" id="34_xlojp"]
+[ext_resource type="PackedScene" uid="uid://cbg2u18lqdjgs" path="res://assets/terrain/exported/map_chunked_035.gltf" id="35_y00qn"]
+[ext_resource type="PackedScene" uid="uid://ccn0d4hm0rqop" path="res://assets/terrain/exported/map_chunked_036.gltf" id="36_liqds"]
+[ext_resource type="PackedScene" uid="uid://bqu0wwfbfwebj" path="res://assets/terrain/exported/map_chunked_037.gltf" id="37_481jr"]
+[ext_resource type="PackedScene" uid="uid://co0j1eb2hxtyv" path="res://assets/terrain/exported/map_chunked_038.gltf" id="38_xl0yl"]
+[ext_resource type="PackedScene" uid="uid://cawtwr0sbw4c" path="res://assets/terrain/exported/map_chunked_039.gltf" id="39_3rihg"]
+[ext_resource type="PackedScene" uid="uid://cyy3pi07pxfwt" path="res://assets/terrain/exported/map_chunked_040.gltf" id="40_4kkqg"]
+[ext_resource type="PackedScene" uid="uid://bqmd5xkc2b0nr" path="res://assets/terrain/exported/map_chunked_041.gltf" id="41_xhpmw"]
+[ext_resource type="PackedScene" uid="uid://c4p1k5gn43epp" path="res://assets/terrain/exported/map_chunked_042.gltf" id="42_0gt0m"]
+[ext_resource type="PackedScene" uid="uid://c14na231sys1q" path="res://assets/terrain/exported/map_chunked_043.gltf" id="43_rfkum"]
+[ext_resource type="PackedScene" uid="uid://c704d0md1jhkb" path="res://assets/terrain/exported/map_chunked_044.gltf" id="44_d0yp0"]
+[ext_resource type="PackedScene" uid="uid://dlnbttvylrlkm" path="res://assets/terrain/exported/map_chunked_045.gltf" id="45_8vqsv"]
+[ext_resource type="PackedScene" uid="uid://bes5gvxdo7df5" path="res://assets/terrain/exported/map_chunked_046.gltf" id="46_7hqik"]
+[ext_resource type="PackedScene" uid="uid://ccg5whfubwp7r" path="res://assets/terrain/exported/map_chunked_047.gltf" id="47_wctsc"]
+[ext_resource type="PackedScene" uid="uid://cy4f052t3o0kl" path="res://assets/terrain/exported/map_chunked_048.gltf" id="48_m42ur"]
+[ext_resource type="PackedScene" uid="uid://bwh2faea2gtsm" path="res://assets/terrain/exported/map_chunked_049.gltf" id="49_ddcep"]
+[ext_resource type="PackedScene" uid="uid://bc5vqtd0y4ex8" path="res://assets/terrain/exported/map_chunked_050.gltf" id="50_6ubl0"]
+[ext_resource type="PackedScene" uid="uid://c814l2vu2pr1o" path="res://assets/terrain/exported/map_chunked_051.gltf" id="51_j62ia"]
+[ext_resource type="PackedScene" uid="uid://det8x21w5vau2" path="res://assets/terrain/exported/map_chunked_052.gltf" id="52_52pkb"]
+[ext_resource type="PackedScene" uid="uid://bqg410gom7yrl" path="res://assets/terrain/exported/map_chunked_053.gltf" id="53_tbgm6"]
+[ext_resource type="PackedScene" uid="uid://bt0r05yktiql7" path="res://assets/terrain/exported/map_chunked_054.gltf" id="54_ilq3t"]
+[ext_resource type="PackedScene" uid="uid://ch03s1acn6xxe" path="res://assets/terrain/exported/map_chunked_055.gltf" id="55_qqkfu"]
+[ext_resource type="PackedScene" uid="uid://55arrs7ptch8" path="res://assets/terrain/exported/map_chunked_056.gltf" id="56_hkpgk"]
+[ext_resource type="PackedScene" uid="uid://c5q2ieu32vovr" path="res://assets/terrain/exported/map_chunked_057.gltf" id="57_2fgyn"]
+[ext_resource type="PackedScene" uid="uid://cc873h2w3f1ys" path="res://assets/terrain/exported/map_chunked_058.gltf" id="58_kdt45"]
+[ext_resource type="PackedScene" uid="uid://d07ir2ta2rtv0" path="res://assets/terrain/exported/map_chunked_059.gltf" id="59_p8io4"]
+[ext_resource type="PackedScene" uid="uid://b4jx4rathisq8" path="res://assets/terrain/exported/map_chunked_060.gltf" id="60_ruv7x"]
+[ext_resource type="PackedScene" uid="uid://cw3a1xi6165ma" path="res://assets/terrain/exported/map_chunked_061.gltf" id="61_o33ef"]
+[ext_resource type="PackedScene" uid="uid://ctou6q8a0f7ho" path="res://assets/terrain/exported/map_chunked_062.gltf" id="62_y3nk5"]
+[ext_resource type="PackedScene" uid="uid://b5478hwuc04l2" path="res://assets/terrain/exported/map_chunked_063.gltf" id="63_cumxo"]
+[ext_resource type="PackedScene" uid="uid://cver7hy48nhu3" path="res://assets/terrain/exported/map_chunked_064.gltf" id="64_kf37h"]
+
+[node name="TerrainScene" type="Node3D"]
+script = ExtResource("1_2fp6u")
+
+[node name="map_chunked_0012" parent="." instance=ExtResource("1_rurb8")]
+
+[node name="map_chunked_0022" parent="." instance=ExtResource("2_w0tce")]
+
+[node name="map_chunked_0032" parent="." instance=ExtResource("3_8gknm")]
+
+[node name="map_chunked_0042" parent="." instance=ExtResource("4_e4k3r")]
+
+[node name="map_chunked_0052" parent="." instance=ExtResource("5_2aihr")]
+
+[node name="map_chunked_0062" parent="." instance=ExtResource("6_201lb")]
+
+[node name="map_chunked_0072" parent="." instance=ExtResource("7_fkci6")]
+
+[node name="map_chunked_0082" parent="." instance=ExtResource("8_cn0uq")]
+
+[node name="map_chunked_0092" parent="." instance=ExtResource("9_qlgiu")]
+
+[node name="map_chunked_0102" parent="." instance=ExtResource("10_5j0y4")]
+
+[node name="map_chunked_0112" parent="." instance=ExtResource("11_srooy")]
+
+[node name="map_chunked_0122" parent="." instance=ExtResource("12_afvt4")]
+
+[node name="map_chunked_0132" parent="." instance=ExtResource("13_7u1h6")]
+
+[node name="map_chunked_0142" parent="." instance=ExtResource("14_ewns3")]
+
+[node name="map_chunked_0152" parent="." instance=ExtResource("15_2mfg6")]
+
+[node name="map_chunked_0162" parent="." instance=ExtResource("16_x5l1g")]
+
+[node name="map_chunked_0172" parent="." instance=ExtResource("17_8xhr2")]
+
+[node name="map_chunked_0182" parent="." instance=ExtResource("18_xndyl")]
+
+[node name="map_chunked_0192" parent="." instance=ExtResource("19_qudgp")]
+
+[node name="map_chunked_0202" parent="." instance=ExtResource("20_ejwk5")]
+
+[node name="map_chunked_0212" parent="." instance=ExtResource("21_16t5v")]
+
+[node name="map_chunked_0222" parent="." instance=ExtResource("22_fcj7b")]
+
+[node name="map_chunked_0232" parent="." instance=ExtResource("23_285ta")]
+
+[node name="map_chunked_0242" parent="." instance=ExtResource("24_1t6vg")]
+
+[node name="map_chunked_0252" parent="." instance=ExtResource("25_fjuum")]
+
+[node name="map_chunked_0262" parent="." instance=ExtResource("26_b5jd7")]
+
+[node name="map_chunked_0272" parent="." instance=ExtResource("27_3kix3")]
+
+[node name="map_chunked_0282" parent="." instance=ExtResource("28_ts8k4")]
+
+[node name="map_chunked_0292" parent="." instance=ExtResource("29_fjh65")]
+
+[node name="map_chunked_0302" parent="." instance=ExtResource("30_li7m4")]
+
+[node name="map_chunked_0312" parent="." instance=ExtResource("31_k1xrr")]
+
+[node name="map_chunked_0322" parent="." instance=ExtResource("32_wrjbo")]
+
+[node name="map_chunked_0332" parent="." instance=ExtResource("33_x2i8t")]
+
+[node name="map_chunked_0342" parent="." instance=ExtResource("34_xlojp")]
+
+[node name="map_chunked_0352" parent="." instance=ExtResource("35_y00qn")]
+
+[node name="map_chunked_0362" parent="." instance=ExtResource("36_liqds")]
+
+[node name="map_chunked_0372" parent="." instance=ExtResource("37_481jr")]
+
+[node name="map_chunked_0382" parent="." instance=ExtResource("38_xl0yl")]
+
+[node name="map_chunked_0392" parent="." instance=ExtResource("39_3rihg")]
+
+[node name="map_chunked_0402" parent="." instance=ExtResource("40_4kkqg")]
+
+[node name="map_chunked_0412" parent="." instance=ExtResource("41_xhpmw")]
+
+[node name="map_chunked_0422" parent="." instance=ExtResource("42_0gt0m")]
+
+[node name="map_chunked_0432" parent="." instance=ExtResource("43_rfkum")]
+
+[node name="map_chunked_0442" parent="." instance=ExtResource("44_d0yp0")]
+
+[node name="map_chunked_0452" parent="." instance=ExtResource("45_8vqsv")]
+
+[node name="map_chunked_0462" parent="." instance=ExtResource("46_7hqik")]
+
+[node name="map_chunked_0472" parent="." instance=ExtResource("47_wctsc")]
+
+[node name="map_chunked_0482" parent="." instance=ExtResource("48_m42ur")]
+
+[node name="map_chunked_0492" parent="." instance=ExtResource("49_ddcep")]
+
+[node name="map_chunked_0502" parent="." instance=ExtResource("50_6ubl0")]
+
+[node name="map_chunked_0512" parent="." instance=ExtResource("51_j62ia")]
+
+[node name="map_chunked_0522" parent="." instance=ExtResource("52_52pkb")]
+
+[node name="map_chunked_0532" parent="." instance=ExtResource("53_tbgm6")]
+
+[node name="map_chunked_0542" parent="." instance=ExtResource("54_ilq3t")]
+
+[node name="map_chunked_0552" parent="." instance=ExtResource("55_qqkfu")]
+
+[node name="map_chunked_0562" parent="." instance=ExtResource("56_hkpgk")]
+
+[node name="map_chunked_0572" parent="." instance=ExtResource("57_2fgyn")]
+
+[node name="map_chunked_0582" parent="." instance=ExtResource("58_kdt45")]
+
+[node name="map_chunked_0592" parent="." instance=ExtResource("59_p8io4")]
+
+[node name="map_chunked_0602" parent="." instance=ExtResource("60_ruv7x")]
+
+[node name="map_chunked_0612" parent="." instance=ExtResource("61_o33ef")]
+
+[node name="map_chunked_0622" parent="." instance=ExtResource("62_y3nk5")]
+
+[node name="map_chunked_0632" parent="." instance=ExtResource("63_cumxo")]
+
+[node name="map_chunked_0642" parent="." instance=ExtResource("64_kf37h")]
