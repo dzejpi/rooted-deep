@@ -136,7 +136,15 @@ offset_top = 64.0
 offset_right = 1216.0
 offset_bottom = 528.0
 theme = ExtResource("13_ul2ti")
-text = "Credits text here."
+text = "Made by DzejPi for Ludum Dare #57!
+This was not easy at all.
+
+Thank you all for your continuous support.
+I couldn't do it without you.
+
+You know who you are.
+
+As always, love you, mom."
 horizontal_alignment = 1
 vertical_alignment = 1
 
