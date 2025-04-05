@@ -36,7 +36,7 @@ var debug: bool = true
 var last_looked_at: String = ""
 
 var current_currency: int = 0
-var current_oxygen: float = 10
+var current_oxygen: float = 50
 var is_gaining_oxygen: bool = false
 
 var oxygen_down_rate: float = 1

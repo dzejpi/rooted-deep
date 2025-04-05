@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxo3ugtqgmpdq"]
+
+[ext_resource type="PackedScene" uid="uid://45vjvk8wh0w0" path="res://assets/objects/exported/buildings/safe_zone.gltf" id="1_qghux"]
+[ext_resource type="Script" path="res://scripts/objects/buildings/safe_zone.gd" id="2_u53l1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqbqj"]
+size = Vector3(4, 3.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mwx4"]
+size = Vector3(4, 3, 4)
+
+[node name="SafeZone" instance=ExtResource("1_qghux")]
+script = ExtResource("2_u53l1")
+
+[node name="SafeZoneStaticBody" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZoneStaticBody" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.9)
+shape = SubResource("BoxShape3D_kqbqj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SafeZoneStaticBody" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.9)
+shape = SubResource("BoxShape3D_kqbqj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="SafeZoneStaticBody" index="2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9, 1.5, 0)
+shape = SubResource("BoxShape3D_kqbqj")
+
+[node name="SafeZoneArea" type="Area3D" parent="." index="2"]
+
+[node name="SafeZone" type="CollisionShape3D" parent="SafeZoneArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_3mwx4")
+
+[connection signal="body_entered" from="SafeZoneArea" to="." method="_on_safe_zone_area_body_entered"]
+[connection signal="body_exited" from="SafeZoneArea" to="." method="_on_safe_zone_area_body_exited"]

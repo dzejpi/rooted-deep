@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=8 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_5lbu1"]
 [ext_resource type="PackedScene" uid="uid://5w17t4cy1s3a" path="res://scenes/player/player_floating_scene.tscn" id="2_1xo2h"]
 [ext_resource type="PackedScene" uid="uid://b10lmyx64o6t" path="res://scenes/terrain/terrain_scene.tscn" id="3_blcsq"]
+[ext_resource type="PackedScene" uid="uid://cxo3ugtqgmpdq" path="res://scenes/objects/buildings/safe_zone.tscn" id="4_dm4rb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psv6s"]
 
@@ -27,6 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.2792, 0)
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
 [node name="Objects" type="Node3D" parent="."]
+
+[node name="SafeZone" parent="Objects" node_paths=PackedStringArray("player_node") instance=ExtResource("4_dm4rb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 9, 9, 0)
+player_node = NodePath("../../Player/FloatingPlayerScene")
 
 [node name="Npcs" type="Node3D" parent="."]
 
