@@ -101,8 +101,6 @@ func _input(event: InputEvent) -> void:
 			if is_pot_placeable and is_placing_plant:
 				print("Placing pot")
 				place_plant_pot()
-			else:
-				try_to_collect_fruit()
 		
 		if event.is_action_pressed("computer_up"):
 			try_to_access_computer()
@@ -150,6 +148,10 @@ func _process(delta: float) -> void:
 	
 	if not GlobalVar.is_game_active:
 		return
+	
+	# Check continuously
+	if Input.is_action_pressed("interact"):
+		try_to_collect_fruit()
 	
 	update_oxygen_level(delta)
 	
