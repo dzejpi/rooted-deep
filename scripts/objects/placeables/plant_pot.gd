@@ -8,6 +8,7 @@ extends Node3D
 @export var current_fruit_growth: float = 0.0
 
 @onready var plant_body: Node3D = $PlantBody
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var is_autocollecting = false
 
@@ -50,6 +51,8 @@ func _process(delta: float) -> void:
 
 
 func set_plant(fruit_number: int):
+	animation_player.play("place")
+	
 	# Instantiate PLANT
 	match(fruit_number):
 		0:

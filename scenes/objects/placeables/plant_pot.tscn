@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8rk7wlmop2xt"]
+[gd_scene load_steps=9 format=3 uid="uid://b8rk7wlmop2xt"]
 
 [ext_resource type="PackedScene" uid="uid://s14f85u35c8o" path="res://assets/objects/exported/placeables/plant_pot.gltf" id="1_01okc"]
 [ext_resource type="Material" uid="uid://tdd4tgsp7niq" path="res://materials/items_basic_texture.tres" id="2_lgftr"]
@@ -7,6 +7,43 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhahx"]
 size = Vector3(2, 0.400269, 2)
+
+[sub_resource type="Animation" id="Animation_dq65p"]
+resource_name = "place"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plant_pot:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2, 2, 2), Vector3(1.5, 1.5, 1.5), Vector3(2, 2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_v50tp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plant_pot:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxvtp"]
+_data = {
+"RESET": SubResource("Animation_v50tp"),
+"place": SubResource("Animation_dq65p")
+}
 
 [node name="PlantPot" groups=["pots"] instance=ExtResource("1_01okc")]
 script = ExtResource("2_q1c0b")
@@ -54,3 +91,8 @@ shape = SubResource("BoxShape3D_bhahx")
 [node name="PlantAutocollect" parent="." index="4" instance=ExtResource("4_dcaoq")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_wxvtp")
+}
