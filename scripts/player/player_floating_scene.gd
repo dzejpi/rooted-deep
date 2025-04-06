@@ -64,6 +64,8 @@ var is_placing_plant: bool = true
 var snapped_position: Vector3
 var is_pot_placeable: bool = false
 
+var current_tooltip = ""
+
 
 func _ready() -> void:
 	GlobalVar.reset_game()
@@ -154,12 +156,16 @@ func adjust_camera(delta: float) -> void:
 
 func process_collisions() -> void:
 	if ray_cast.is_colliding():
-		var collision_object: String = ray_cast.get_collider().name
+		var collider = ray_cast.get_collider()
+		var collision_object = ray_cast.get_collider().name
+		manage_tooltip(collider, collision_object)
+		
 		if collision_object != last_looked_at:
 			last_looked_at = collision_object
 			if debug:
 				print("Player is looking at: " + collision_object + ".")
 	else:
+		dismiss_tooltip()
 		if last_looked_at != "nothing":
 			last_looked_at = "nothing"
 			if debug:
@@ -241,6 +247,9 @@ func update_pot_preview() -> void:
 			preview_instance.global_transform = transform
 			
 			is_pot_placeable = true
+			
+			current_tooltip = "Place pot"
+			player_tooltip.display_tooltip(current_tooltip, false)
 		else:
 			is_pot_placeable = false 
 			
@@ -294,3 +303,23 @@ func try_to_collect_fruit() -> void:
 					fruits_d += 1
 			
 			print("Collected fruit of type: " + str(result))
+
+
+func manage_tooltip(ray_object: Object, object_name: String) -> void:
+	if ray_object == null or object_name == "nothing":
+		dismiss_tooltip()
+		return
+	
+	match(object_name):
+		"FruitBody":
+			if ray_object.get_parent().has_method("collect_fruit"):
+				if ray_object.get_parent().is_collectable:
+					current_tooltip = "Collect fruit"
+					player_tooltip.display_tooltip(current_tooltip, false)
+				else:
+					current_tooltip = "Fruit is growing"
+					player_tooltip.display_tooltip(current_tooltip, false)
+
+
+func dismiss_tooltip() -> void:
+	player_tooltip.dismiss_tooltip()
