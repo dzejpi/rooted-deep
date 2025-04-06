@@ -26,7 +26,7 @@ script = ExtResource("1_5lbu1")
 [node name="Player" type="Node3D" parent="."]
 
 [node name="FloatingPlayerScene" parent="Player" node_paths=PackedStringArray("placeable_objects") instance=ExtResource("2_1xo2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.35177, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.8124, 4.54113, 0)
 placeable_objects = NodePath("../../Objects")
 
 [node name="Terrain" type="Node3D" parent="."]
@@ -38,14 +38,14 @@ metadata/_edit_lock_ = true
 [node name="Objects" type="Node3D" parent="."]
 
 [node name="SafeZone" parent="Objects" node_paths=PackedStringArray("player_node") instance=ExtResource("4_dm4rb")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 4.4, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 4.02746, 0)
 player_node = NodePath("../../Player/FloatingPlayerScene")
 
 [node name="Computer" parent="Objects" instance=ExtResource("5_86f4c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, -3.61623)
+transform = Transform3D(0.951024, 0, -0.309117, 0, 1, 0, 0.309117, 0, 0.951024, 9.01757, 4.53242, -3.01111)
 
 [node name="Elevator" parent="Objects" instance=ExtResource("6_pyfh6")]
-transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 1, 8, 4, 2)
+transform = Transform3D(0.375383, 0, 0.92687, 0, 8, 0, -0.92687, 0, 0.375383, 7.19594, 4, -3.71458)
 
 [node name="Npcs" type="Node3D" parent="."]
 

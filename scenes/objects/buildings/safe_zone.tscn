@@ -4,10 +4,11 @@
 [ext_resource type="Script" path="res://scripts/objects/buildings/safe_zone.gd" id="2_u53l1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqbqj"]
-size = Vector3(4, 3.5, 0.2)
+size = Vector3(0.992432, 2, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3mwx4"]
-size = Vector3(4, 3, 4)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_afnwy"]
+height = 1.59775
+radius = 1.39919
 
 [node name="SafeZone" instance=ExtResource("1_qghux")]
 script = ExtResource("2_u53l1")
@@ -15,22 +16,34 @@ script = ExtResource("2_u53l1")
 [node name="SafeZoneStaticBody" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZoneStaticBody" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.9)
+transform = Transform3D(0.850481, 0, 0.526006, 0, 1, 0, -0.526006, 0, 0.850481, -0.536743, 1, -1.29148)
 shape = SubResource("BoxShape3D_kqbqj")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SafeZoneStaticBody" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.9)
+transform = Transform3D(0.905384, 0, -0.424594, 0, 1, 0, 0.424594, 0, 0.905384, 0.556381, 1, -1.2242)
 shape = SubResource("BoxShape3D_kqbqj")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SafeZoneStaticBody" index="2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9, 1.5, 0)
+transform = Transform3D(0.447837, 0, -0.894115, 0, 1, 0, 0.894115, 0, 0.447837, 1.25689, 1, -0.526765)
+shape = SubResource("BoxShape3D_kqbqj")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="SafeZoneStaticBody" index="3"]
+transform = Transform3D(-0.439453, 0, -0.898265, 0, 1, 0, 0.898265, 0, -0.439453, 1.28338, 1, 0.558855)
+shape = SubResource("BoxShape3D_kqbqj")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="SafeZoneStaticBody" index="4"]
+transform = Transform3D(-0.888585, 0, -0.458712, 0, 1, 0, 0.458712, 0, -0.888585, 0.502128, 1, 1.26775)
+shape = SubResource("BoxShape3D_kqbqj")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="SafeZoneStaticBody" index="5"]
+transform = Transform3D(-0.877682, 0, 0.479243, 0, 1, 0, -0.479243, 0, -0.877682, -0.465384, 1, 1.30026)
 shape = SubResource("BoxShape3D_kqbqj")
 
 [node name="SafeZoneArea" type="Area3D" parent="." index="2"]
 
 [node name="SafeZone" type="CollisionShape3D" parent="SafeZoneArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("BoxShape3D_3mwx4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.797822, 0)
+shape = SubResource("CylinderShape3D_afnwy")
 
 [connection signal="body_entered" from="SafeZoneArea" to="." method="_on_safe_zone_area_body_entered"]
 [connection signal="body_exited" from="SafeZoneArea" to="." method="_on_safe_zone_area_body_exited"]

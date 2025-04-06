@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpra72cpdddnv"]
+
+[ext_resource type="PackedScene" uid="uid://bmpy65ad200mc" path="res://assets/objects/exported/plants/background_plant_a.gltf" id="1_ofluv"]
+
+[node name="BackgroundPlantA" instance=ExtResource("1_ofluv")]
