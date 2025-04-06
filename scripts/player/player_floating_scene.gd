@@ -503,6 +503,7 @@ func auto_collect_fruit(fruit_index: int) -> void:
 		3:
 			fruits_d += 1
 	
+	GlobalVar.play_sound("fruit_grab")
 	update_seed_count_ui()
 
 
