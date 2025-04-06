@@ -112,34 +112,30 @@ func _input(event: InputEvent) -> void:
 				dismiss_plant_placing()
 		
 		if event.is_action_pressed("fruit_a"): 
-			if not is_placing_plant:
-				if plant_a_seeds > 0:
-					currently_selected_plant = 0
-					start_plant_placing()
+			if not is_placing_plant and plant_a_seeds > 0:
+				currently_selected_plant = 0
+				start_plant_placing()
 			else:
 				dismiss_plant_placing()
 		
 		if event.is_action_pressed("fruit_b"):
-			if not is_placing_plant:
-				if plant_b_seeds > 0:
-					currently_selected_plant = 1
-					start_plant_placing()
+			if not is_placing_plant and plant_b_seeds > 0:
+				currently_selected_plant = 1
+				start_plant_placing()
 			else:
 				dismiss_plant_placing()
 		
 		if event.is_action_pressed("fruit_c"):
-			if not is_placing_plant:
-				if plant_c_seeds > 0:
-					currently_selected_plant = 2
-					start_plant_placing()
+			if not is_placing_plant and plant_c_seeds > 0:
+				currently_selected_plant = 2
+				start_plant_placing()
 			else:
 				dismiss_plant_placing()
 		
 		if event.is_action_pressed("fruit_d"):
-			if not is_placing_plant:
-				if plant_d_seeds > 0:
-					currently_selected_plant = 3
-					start_plant_placing()
+			if not is_placing_plant and plant_d_seeds > 0:
+				currently_selected_plant = 3
+				start_plant_placing()
 			else:
 				dismiss_plant_placing()
 
