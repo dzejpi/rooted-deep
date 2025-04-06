@@ -510,18 +510,18 @@ func auto_collect_fruit(fruit_index: int) -> void:
 func process_tutorial() -> void:
 	match(current_tutorial_step):
 		0:
-			player_tooltip.display_tooltip("WASD - Move", false)
+			player_tooltip.display_tooltip("MOVE: Press WASD", false)
 			if Input.is_action_pressed("move_up"):
 				current_tutorial_step += 1
 		1:
-			player_tooltip.display_tooltip("Space - Swim up", false)
+			player_tooltip.display_tooltip("SWIM UP: Press Space", false)
 			if Input.is_action_pressed("move_jump"):
 				current_tutorial_step += 1
 		2:
-			player_tooltip.display_tooltip("Q/C - Swim down", false)
+			player_tooltip.display_tooltip("SWIM DOWN: Press Q/C", false)
 			if Input.is_action_pressed("move_crouch"):
 				current_tutorial_step += 1
 		3:
-			player_tooltip.display_tooltip("Press 1 and plant pot on the ground", false)
+			player_tooltip.display_tooltip("PLANT POT: Press 1", false)
 			if Input.is_action_pressed("fruit_a"):
 				is_tutorial_finished = true
