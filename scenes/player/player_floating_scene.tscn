@@ -39,7 +39,7 @@ plant_pot_scene = ExtResource("3_saadm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64966, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="PlayerHead/Camera"]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -6)
 collision_mask = 3
 
 [node name="CameraShader" type="MeshInstance3D" parent="PlayerHead/Camera"]
