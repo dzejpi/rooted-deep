@@ -493,7 +493,7 @@ func _on_upgrade_b_pressed() -> void:
 	var upgrade_price = upgrade_b_price
 	if not upgrade_b_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
-			increase_speed(1.05)
+			increase_speed(0.05)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_b_unlocked = true
 			update_coins()
@@ -517,7 +517,7 @@ func _on_upgrade_d_pressed() -> void:
 	var upgrade_price = upgrade_d_price
 	if not upgrade_d_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
-			increase_speed(1.20)
+			increase_speed(0.20)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_d_unlocked = true
 			update_coins()
@@ -541,7 +541,7 @@ func _on_upgrade_f_pressed() -> void:
 	var upgrade_price = upgrade_f_price
 	if not upgrade_f_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
-			increase_speed(1.25)
+			increase_speed(0.25)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_f_unlocked = true
 			update_coins()
@@ -589,7 +589,7 @@ func _on_upgrade_j_pressed() -> void:
 	var upgrade_price = upgrade_j_price
 	if not upgrade_j_unlocked:
 		if floating_player_scene.current_currency >= upgrade_price:
-			increase_speed(1.5)
+			increase_speed(0.5)
 			floating_player_scene.current_currency -= upgrade_price
 			upgrade_j_unlocked = true
 			update_coins()
@@ -626,7 +626,7 @@ func increase_oxygen(increase: int) -> void:
 
 
 func increase_speed(increase: int) -> void:
-	floating_player_scene.current_speed += floating_player_scene.current_speed * increase
+	floating_player_scene.speed_multiplier += increase
 
 
 func increase_profit(increase: int) -> void:

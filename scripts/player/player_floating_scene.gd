@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 
 var current_speed: float = 5.0
+var speed_multiplier: float = 1.0
 const FLOAT_VELOCITY: float = 75
 
 @onready var player_camera: Camera3D = $PlayerHead/Camera
@@ -182,13 +183,13 @@ func _physics_process(delta: float) -> void:
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	# Sprinting
-	var speed_multiplier: float = 1.0
+	var sprint_speed_multiplier: float = 1.0
 	if Input.is_action_pressed("move_sprint"):
-		speed_multiplier = 2.0
+		sprint_speed_multiplier = 2.0
 	
 	# Final horizontal velocity
-	velocity.x = move_toward(velocity.x, direction.x * current_speed * speed_multiplier, current_speed * delta)
-	velocity.z = move_toward(velocity.z, direction.z * current_speed * speed_multiplier, current_speed * delta)
+	velocity.x = move_toward(velocity.x, direction.x * current_speed * speed_multiplier * sprint_speed_multiplier, current_speed * delta)
+	velocity.z = move_toward(velocity.z, direction.z * current_speed * speed_multiplier * sprint_speed_multiplier, current_speed * delta)
 	
 	move_and_slide()
 	process_collisions()
