@@ -15,7 +15,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"plant_a"
+			"name":"plant_c"
 		}
 	],
 	"materials":[
@@ -32,7 +32,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Cube.005",
+			"name":"Cube.013",
 			"primitives":[
 				{
 					"attributes":{
@@ -63,61 +63,61 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":112,
+			"count":360,
 			"max":[
-				0.24438706040382385,
-				0.9277820587158203,
-				0.22772671282291412
+				0.1661633551120758,
+				0.7605552673339844,
+				0.22991135716438293
 			],
 			"min":[
-				-0.23880381882190704,
-				0,
-				-0.18580268323421478
+				-0.3485674560070038,
+				-0.01213863492012024,
+				-0.2880897521972656
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":112,
+			"count":360,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":112,
+			"count":360,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":168,
+			"count":600,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":1344,
+			"byteLength":4320,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1344,
-			"byteOffset":1344,
+			"byteLength":4320,
+			"byteOffset":4320,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":896,
-			"byteOffset":2688,
+			"byteLength":2880,
+			"byteOffset":8640,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":336,
-			"byteOffset":3584,
+			"byteLength":1200,
+			"byteOffset":11520,
 			"target":34963
 		}
 	],
@@ -129,8 +129,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":3920,
-			"uri":"plant_a.bin"
+			"byteLength":12720,
+			"uri":"plant_c.bin"
 		}
 	]
 }

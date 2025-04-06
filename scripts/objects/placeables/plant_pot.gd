@@ -11,15 +11,15 @@ extends Node3D
 
 # PLANT models TODO adjust once models exist
 const PLANT_A = preload("res://scenes/objects/plants/plant_a.tscn")
-const PLANT_B = preload("res://scenes/objects/plants/plant_a.tscn")
-const PLANT_C = preload("res://scenes/objects/plants/plant_a.tscn")
-const PLANT_D = preload("res://scenes/objects/plants/plant_a.tscn")
+const PLANT_B = preload("res://scenes/objects/plants/plant_b.tscn")
+const PLANT_C = preload("res://scenes/objects/plants/plant_c.tscn")
+const PLANT_D = preload("res://scenes/objects/plants/plant_d.tscn")
 
 # FRUIT models, TODO adjust once models exist
 const FRUIT_A = preload("res://scenes/objects/fruits/fruit_a.tscn")
-const FRUIT_B = preload("res://scenes/objects/fruits/fruit_a.tscn")
-const FRUIT_C = preload("res://scenes/objects/fruits/fruit_a.tscn")
-const FRUIT_D = preload("res://scenes/objects/fruits/fruit_a.tscn")
+const FRUIT_B = preload("res://scenes/objects/fruits/fruit_b.tscn")
+const FRUIT_C = preload("res://scenes/objects/fruits/fruit_c.tscn")
+const FRUIT_D = preload("res://scenes/objects/fruits/fruit_d.tscn")
 
 @onready var fruit_points: Node3D = $FruitPoints
 @onready var point_a: Node3D = $FruitPoints/PointA
@@ -55,13 +55,13 @@ func set_plant(fruit_number: int):
 			var plant_a = PLANT_A.instantiate()
 			plant_body.add_child(plant_a)
 		1:
-			var plant_b = PLANT_A.instantiate()
+			var plant_b = PLANT_B.instantiate()
 			plant_body.add_child(plant_b)
 		2:
-			var plant_c = PLANT_A.instantiate()
+			var plant_c = PLANT_C.instantiate()
 			plant_body.add_child(plant_c)
 		3:
-			var plant_d = PLANT_A.instantiate()
+			var plant_d = PLANT_D.instantiate()
 			plant_body.add_child(plant_d)
 	
 	# Instantiate its FRUITS

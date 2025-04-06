@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b846j8scnrhmi"]
+
+[ext_resource type="PackedScene" uid="uid://bmkoqss12vsm0" path="res://assets/objects/exported/fruits/fruit_b.gltf" id="1_irhhv"]
+[ext_resource type="Script" path="res://scripts/objects/fruits/fruit_scene.gd" id="2_jmvge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_awgns"]
+size = Vector3(0.2, 0.4, 0.2)
+
+[node name="FruitB" groups=["fruits"] instance=ExtResource("1_irhhv")]
+script = ExtResource("2_jmvge")
+
+[node name="FruitBody" type="StaticBody3D" parent="." index="1" groups=["fruit_collision"]]
+
+[node name="FruitCollisionShape" type="CollisionShape3D" parent="FruitBody" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_awgns")
