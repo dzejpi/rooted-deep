@@ -64,7 +64,7 @@ var debug: bool = true
 # Last collider player looked at
 var last_looked_at: String = ""
 
-var current_currency: int = 600
+var current_currency: int = 0
 var max_oxygen: float = 100.0
 var current_oxygen: float = 100.0
 var is_gaining_oxygen: bool = false
@@ -331,6 +331,7 @@ func place_plant_pot() -> void:
 		3:
 			plant_d_seeds -= 1
 	
+	dismiss_tooltip()
 	update_seed_count_ui()
 	
 	# Remove pot rotation
