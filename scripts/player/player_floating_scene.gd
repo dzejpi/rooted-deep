@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 var current_speed: float = 5.0
-const FLOAT_VELOCITY: float = 50
+const FLOAT_VELOCITY: float = 75
 
 @onready var player_camera: Camera3D = $PlayerHead/Camera
 @onready var ray_cast: RayCast3D = $PlayerHead/Camera/RayCast3D
@@ -44,9 +44,9 @@ var fruits_c: int = 0
 var fruits_d: int = 0
 
 var plant_a_seeds: int = 1
-var plant_b_seeds: int = 1
-var plant_c_seeds: int = 1
-var plant_d_seeds: int = 1
+var plant_b_seeds: int = 0
+var plant_c_seeds: int = 0
+var plant_d_seeds: int = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -59,14 +59,14 @@ var mouse_delta: Vector2 = Vector2.ZERO
 var is_pulled_down: bool = true
 
 # Debug for console info
-var debug: bool = true
+var debug: bool = false
 
 # Last collider player looked at
 var last_looked_at: String = ""
 
-var current_currency: int = 50000
+var current_currency: int = 0
 var max_oxygen: float = 100.0
-var current_oxygen: float = 50
+var current_oxygen: float = 100.0
 var is_gaining_oxygen: bool = false
 
 var oxygen_down_rate: float = 1
@@ -364,7 +364,8 @@ func try_to_collect_fruit() -> void:
 					fruits_d += 1
 			
 			update_seed_count_ui()
-			print("Collected fruit of type: " + str(result))
+			if debug:
+				print("Collected fruit of type: " + str(result))
 
 
 func try_to_access_computer() -> void:
