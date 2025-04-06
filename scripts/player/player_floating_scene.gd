@@ -263,8 +263,10 @@ func update_coins(amount: int) -> void:
 func toggle_ui() -> void:
 	if GlobalVar.is_game_active:
 		player_ui.show()
+		update_coins(0)
 	else:
 		player_ui.hide()
+		update_coins(0)
 
 
 func start_plant_placing() -> void:
@@ -387,9 +389,9 @@ func try_to_upgrade_pot() -> void:
 	var collider = ray_cast.get_collider()
 	print("Collider parent is: " + str(collider))
 	if collider_name == "PlantStaticBody" and not collider.get_parent().is_autocollecting:
-		if current_currency >= 500:
+		if current_currency >= 250:
 			collider.get_parent().buy_auto_collection()
-			update_coins(-500)
+			update_coins(-250)
 			dismiss_tooltip()
 
 
