@@ -369,6 +369,7 @@ func try_to_collect_fruit() -> void:
 					fruits_d += 1
 			
 			update_seed_count_ui()
+			dismiss_tooltip()
 			if debug:
 				print("Collected fruit of type: " + str(result))
 
