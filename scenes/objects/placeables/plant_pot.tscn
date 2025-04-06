@@ -6,19 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://d3nj0sef8m7lg" path="res://scenes/objects/plants/plant_autocollect.tscn" id="4_dcaoq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhahx"]
-size = Vector3(1, 0.2, 1)
+size = Vector3(2, 0.400269, 2)
 
 [node name="PlantPot" groups=["pots"] instance=ExtResource("1_01okc")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("2_q1c0b")
 
 [node name="plant_pot" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_lgftr")
 
 [node name="PlantBody" type="Node3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.2, 0)
 
 [node name="FruitPoints" type="Node3D" parent="." index="2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="PointA" type="Node3D" parent="FruitPoints" index="0"]
 transform = Transform3D(-0.431721, 0.431721, 0.791981, -0.707107, -0.707107, 0, 0.560015, -0.560015, 0.610546, 0.147439, 0.758269, 0.14951)
@@ -47,8 +48,9 @@ transform = Transform3D(0.980495, -0.153469, -0.122789, 0, -0.624739, 0.780834, 
 [node name="PlantStaticBody" type="StaticBody3D" parent="." index="3" groups=["pots"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlantStaticBody" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100067, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("BoxShape3D_bhahx")
 
 [node name="PlantAutocollect" parent="." index="4" instance=ExtResource("4_dcaoq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false

@@ -6,6 +6,8 @@
 size = Vector3(2, 64, 2)
 
 [node name="Elevator" instance=ExtResource("1_k065a")]
+
+[node name="elevator" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="ElevatorBody" type="StaticBody3D" parent="." index="1"]
