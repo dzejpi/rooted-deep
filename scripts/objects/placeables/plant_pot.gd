@@ -9,13 +9,15 @@ extends Node3D
 
 @onready var plant_body: Node3D = $PlantBody
 
-# PLANT models TODO adjust once models exist
+var is_autocollecting = false
+
+# PLANT models 
 const PLANT_A = preload("res://scenes/objects/plants/plant_a.tscn")
 const PLANT_B = preload("res://scenes/objects/plants/plant_b.tscn")
 const PLANT_C = preload("res://scenes/objects/plants/plant_c.tscn")
 const PLANT_D = preload("res://scenes/objects/plants/plant_d.tscn")
 
-# FRUIT models, TODO adjust once models exist
+# FRUIT models
 const FRUIT_A = preload("res://scenes/objects/fruits/fruit_a.tscn")
 const FRUIT_B = preload("res://scenes/objects/fruits/fruit_b.tscn")
 const FRUIT_C = preload("res://scenes/objects/fruits/fruit_c.tscn")
@@ -129,3 +131,10 @@ func manage_growth(delta: float) -> void:
 func signal_growth(delta: float) -> void:
 	for fruit in get_tree().get_nodes_in_group("fruits"):
 		fruit.increase_fruit(delta)
+
+
+func buy_auto_collection() -> void:
+	print("Autocollecting now")
+	is_autocollecting = true
+	for fruit in get_tree().get_nodes_in_group("fruits"):
+		fruit.is_autocollecting = true

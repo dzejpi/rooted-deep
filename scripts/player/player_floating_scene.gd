@@ -59,17 +59,17 @@ var mouse_delta: Vector2 = Vector2.ZERO
 var is_pulled_down: bool = true
 
 # Debug for console info
-var debug: bool = false
+var debug: bool = true
 
 # Last collider player looked at
 var last_looked_at: String = ""
 
-var current_currency: int = 0
+var current_currency: int = 600
 var max_oxygen: float = 100.0
 var current_oxygen: float = 100.0
 var is_gaining_oxygen: bool = false
 
-var oxygen_down_rate: float = 1
+var oxygen_down_rate: float = 2
 var oxygen_up_rate: float = 8
 
 var is_placing_plant: bool = false
@@ -105,6 +105,7 @@ func _input(event: InputEvent) -> void:
 		
 		if event.is_action_pressed("computer_up"):
 			try_to_access_computer()
+			try_to_upgrade_pot()
 		
 		if event.is_action_pressed("dismiss_placement"):
 			if is_placing_plant:
@@ -376,6 +377,17 @@ func try_to_access_computer() -> void:
 		dismiss_tooltip()
 
 
+func try_to_upgrade_pot() -> void:
+	var collider_name = ray_cast.get_collider().name
+	var collider = ray_cast.get_collider()
+	print("Collider parent is: " + str(collider))
+	if collider_name == "PlantStaticBody" and not collider.get_parent().is_autocollecting:
+		if current_currency >= 500:
+			collider.get_parent().buy_auto_collection()
+			update_coins(-500)
+			dismiss_tooltip()
+
+
 func manage_tooltip(ray_object: Object, object_name: String) -> void:
 	if ray_object == null or object_name == "nothing":
 		dismiss_tooltip()
@@ -387,12 +399,17 @@ func manage_tooltip(ray_object: Object, object_name: String) -> void:
 				if ray_object.get_parent().is_collectable:
 					current_tooltip = "Collect fruit"
 					player_tooltip.display_tooltip(current_tooltip, false)
-				else:
-					current_tooltip = "Fruit is growing"
-					player_tooltip.display_tooltip(current_tooltip, false)
+				# Useless
+				#else:
+				#	current_tooltip = "Fruit is growing"
+				#	player_tooltip.display_tooltip(current_tooltip, false)
 		"ComputerBody":
 			if not manage_ui.visible:
 				current_tooltip = "E to access computer"
+				player_tooltip.display_tooltip(current_tooltip, false)
+		"PlantStaticBody":
+			if current_currency >= 500 and not ray_object.get_parent().is_autocollecting:
+				current_tooltip = "E to buy autocollect (# 500)"
 				player_tooltip.display_tooltip(current_tooltip, false)
 
 
@@ -410,3 +427,17 @@ func update_seed_count_ui() -> void:
 	fruit_b_label.text = "Ribin fruits: " + str(fruits_b)
 	fruit_c_label.text = "Velu fruits: " + str(fruits_c)
 	fruit_d_label.text = "Droqua fruits: " + str(fruits_d)
+
+
+func auto_collect_fruit(fruit_index: int) -> void:
+	match(fruit_index):
+		0:
+			fruits_a += 1
+		1:
+			fruits_b += 1
+		2:
+			fruits_c += 1
+		3:
+			fruits_d += 1
+	
+	update_seed_count_ui()

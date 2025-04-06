@@ -2,9 +2,10 @@ extends Node3D
 
 
 @export var fruit_type: int = 0
-var grow_speed: float = 1
+@export var grow_speed: float = 0.1
 
 var is_collectable: bool = false
+var is_autocollecting: bool = false
 
 var empty_scale: Vector3 = Vector3(0.01, 0.01, 0.01)
 var target_scale: Vector3 = Vector3(0.5, 0.5, 0.5)
@@ -34,6 +35,13 @@ func increase_fruit(delta: float) -> void:
 		# Fruit grown, stop growing
 		if current_scale >= target_scale:
 			is_collectable = true
+			
+			if is_autocollecting:
+				var player_nodes = get_tree().get_nodes_in_group("player_group")
+				if player_nodes.size() > 0:
+					player_nodes[0].auto_collect_fruit(fruit_type)
+					current_scale = empty_scale
+					is_collectable = false
 
 
 # Collecting just resets the scale

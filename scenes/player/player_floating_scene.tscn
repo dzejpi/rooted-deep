@@ -28,7 +28,7 @@ shader = ExtResource("3_0ubpt")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_votpe"]
 
-[node name="FloatingPlayerScene" type="CharacterBody3D"]
+[node name="FloatingPlayerScene" type="CharacterBody3D" groups=["player_group"]]
 script = ExtResource("1_bkq84")
 plant_pot_preview = ExtResource("2_bm321")
 plant_pot_scene = ExtResource("3_saadm")
