@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=24 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://86c0wvxvogwi" path="res://assets/sprites/menu_buttons/menu_btn_pressed.png" id="11_x3sxh"]
 [ext_resource type="Texture2D" uid="uid://o2ae16nyih81" path="res://assets/sprites/menu_buttons/menu_btn_normal_fruit.png" id="12_04s87"]
 [ext_resource type="Texture2D" uid="uid://d137crrs2egx8" path="res://assets/sprites/menu_buttons/menu_btn_hover.png" id="12_8kcqu"]
+[ext_resource type="Texture2D" uid="uid://cw4orwvyr3hsd" path="res://assets/sprites/ui/spr_reticle.png" id="12_sitou"]
 [ext_resource type="Texture2D" uid="uid://bvjqteitujpy" path="res://assets/sprites/menu_buttons/menu_btn_disabled.png" id="13_6q6ee"]
 [ext_resource type="Texture2D" uid="uid://bdhyu3xv0bhb5" path="res://assets/sprites/menu_buttons/menu_btn_focused.png" id="14_bndbm"]
 [ext_resource type="Theme" uid="uid://dqprbmxa1phvc" path="res://themes/upgrade_text_theme.tres" id="16_ukamg"]
@@ -102,6 +103,10 @@ offset_bottom = 48.0
 theme = ExtResource("16_ukamg")
 text = "Oxygen: 100 %"
 vertical_alignment = 1
+
+[node name="Reticle" type="Sprite2D" parent="PlayerUI/PlayerUi"]
+position = Vector2(640, 360)
+texture = ExtResource("12_sitou")
 
 [node name="FruitA" type="Node2D" parent="PlayerUI/PlayerUi"]
 position = Vector2(200, 624)
