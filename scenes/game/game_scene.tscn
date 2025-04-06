@@ -42,7 +42,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 4.02746, 0)
 player_node = NodePath("../../Player/FloatingPlayerScene")
 
 [node name="Computer" parent="Objects" instance=ExtResource("5_86f4c")]
-transform = Transform3D(0.951024, 0, -0.309117, 0, 1, 0, 0.309117, 0, 0.951024, 9.01757, 4.53242, -3.01111)
+transform = Transform3D(0.87671, 0, 0.481019, 0, 1, 0, -0.481019, 0, 0.87671, 7.92299, 4.49081, -2.481)
 
 [node name="Elevator" parent="Objects" instance=ExtResource("6_pyfh6")]
 transform = Transform3D(0.375383, 0, 0.92687, 0, 8, 0, -0.92687, 0, 0.375383, 7.19594, 4, -3.71458)

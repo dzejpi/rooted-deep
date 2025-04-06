@@ -406,6 +406,7 @@ func manage_tooltip(ray_object: Object, object_name: String) -> void:
 				if ray_object.get_parent().is_collectable:
 					current_tooltip = "Collect fruit"
 					player_tooltip.display_tooltip(current_tooltip, false)
+					return
 				# Useless
 				#else:
 				#	current_tooltip = "Fruit is growing"
@@ -414,10 +415,14 @@ func manage_tooltip(ray_object: Object, object_name: String) -> void:
 			if not manage_ui.visible:
 				current_tooltip = "E to access computer"
 				player_tooltip.display_tooltip(current_tooltip, false)
+				return
 		"PlantStaticBody":
 			if current_currency >= 250 and not ray_object.get_parent().is_autocollecting:
 				current_tooltip = "E to buy autocollect (# 250)"
 				player_tooltip.display_tooltip(current_tooltip, false)
+				return
+		
+	dismiss_tooltip()
 
 
 func dismiss_tooltip() -> void:
