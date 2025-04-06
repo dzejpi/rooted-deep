@@ -67,17 +67,53 @@ func set_plant(fruit_number: int):
 	# Instantiate its FRUITS
 	match(fruit_number):
 		0:
-			var fruit_a = FRUIT_A.instantiate()
-			point_a.add_child(fruit_a)
+			var fruit_a_a = FRUIT_A.instantiate()
+			point_a.add_child(fruit_a_a)
+			
+			var fruit_a_b = FRUIT_A.instantiate()
+			point_c.add_child(fruit_a_b)
+			
+			var fruit_a_c = FRUIT_A.instantiate()
+			point_h.add_child(fruit_a_c)
 		1:
-			var fruit_b = FRUIT_B.instantiate()
-			point_b.add_child(fruit_b)
+			var fruit_b_a = FRUIT_B.instantiate()
+			point_b.add_child(fruit_b_a)
+			
+			var fruit_b_b = FRUIT_B.instantiate()
+			point_c.add_child(fruit_b_b)
+			
+			var fruit_b_c = FRUIT_B.instantiate()
+			point_d.add_child(fruit_b_c)
+			
+			var fruit_b_d = FRUIT_B.instantiate()
+			point_g.add_child(fruit_b_d)
 		2:
-			var fruit_c = FRUIT_C.instantiate()
-			point_c.add_child(fruit_c)
+			var fruit_c_a = FRUIT_C.instantiate()
+			point_b.add_child(fruit_c_a)
+			
+			var fruit_c_b = FRUIT_C.instantiate()
+			point_c.add_child(fruit_c_b)
+			
+			var fruit_c_c = FRUIT_C.instantiate()
+			point_e.add_child(fruit_c_c)
+			
+			var fruit_c_d = FRUIT_C.instantiate()
+			point_f.add_child(fruit_c_d)
+			
+			var fruit_c_e = FRUIT_C.instantiate()
+			point_h.add_child(fruit_c_e)
 		3:
-			var fruit_d = FRUIT_D.instantiate()
-			point_d.add_child(fruit_d)
+			var fruit_d_a = FRUIT_D.instantiate()
+			point_b.add_child(fruit_d_a)
+			
+			var fruit_d_b = FRUIT_D.instantiate()
+			point_c.add_child(fruit_d_b)
+			
+			var fruit_d_c = FRUIT_D.instantiate()
+			point_e.add_child(fruit_d_c)
+			
+			var fruit_d_d = FRUIT_D.instantiate()
+			point_g.add_child(fruit_d_d)
 	
 	is_plant_set = true
 
