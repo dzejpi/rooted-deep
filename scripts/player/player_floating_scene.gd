@@ -85,6 +85,11 @@ var warned_fifty: bool = false
 var warned_twenty_five: bool = false
 var warned_zero: bool = false
 
+var is_tutorial_finished: bool = false
+var current_tutorial_step: int = 0
+
+var is_oxygen_warning_shown: bool = false
+
 
 func _ready() -> void:
 	GlobalVar.reset_game()
@@ -165,6 +170,9 @@ func _process(delta: float) -> void:
 	update_oxygen_level(delta)
 	
 	update_pot_preview()
+	
+	if not is_tutorial_finished:
+		process_tutorial()
 
 
 func _physics_process(delta: float) -> void:
@@ -464,7 +472,7 @@ func manage_tooltip(ray_object: Object, object_name: String) -> void:
 				current_tooltip = "E to buy autocollect (# 250)"
 				player_tooltip.display_tooltip(current_tooltip, false)
 				return
-		
+	
 	dismiss_tooltip()
 
 
@@ -496,3 +504,23 @@ func auto_collect_fruit(fruit_index: int) -> void:
 			fruits_d += 1
 	
 	update_seed_count_ui()
+
+
+func process_tutorial() -> void:
+	match(current_tutorial_step):
+		0:
+			player_tooltip.display_tooltip("WASD - Move", false)
+			if Input.is_action_pressed("move_up"):
+				current_tutorial_step += 1
+		1:
+			player_tooltip.display_tooltip("Space - Swim up", false)
+			if Input.is_action_pressed("move_jump"):
+				current_tutorial_step += 1
+		2:
+			player_tooltip.display_tooltip("Q/C - Swim down", false)
+			if Input.is_action_pressed("move_crouch"):
+				current_tutorial_step += 1
+		3:
+			player_tooltip.display_tooltip("Press 1 and plant pot on the ground", false)
+			if Input.is_action_pressed("fruit_a"):
+				is_tutorial_finished = true
