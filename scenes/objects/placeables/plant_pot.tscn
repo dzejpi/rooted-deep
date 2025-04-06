@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8rk7wlmop2xt"]
+[gd_scene load_steps=5 format=3 uid="uid://b8rk7wlmop2xt"]
 
 [ext_resource type="PackedScene" uid="uid://s14f85u35c8o" path="res://assets/objects/exported/placeables/plant_pot.gltf" id="1_01okc"]
 [ext_resource type="Material" uid="uid://tdd4tgsp7niq" path="res://materials/items_basic_texture.tres" id="2_lgftr"]
 [ext_resource type="Script" path="res://scripts/objects/placeables/plant_pot.gd" id="2_q1c0b"]
 
-[node name="PlantPot" instance=ExtResource("1_01okc")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhahx"]
+size = Vector3(1, 0.2, 1)
+
+[node name="PlantPot" groups=["pots"] instance=ExtResource("1_01okc")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("2_q1c0b")
 
@@ -31,3 +34,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 [node name="PointG" type="Node3D" parent="FruitPoints" index="6"]
 
 [node name="PointH" type="Node3D" parent="FruitPoints" index="7"]
+
+[node name="PlantStaticBody" type="StaticBody3D" parent="." index="3" groups=["pots"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantStaticBody" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100067, 0)
+shape = SubResource("BoxShape3D_bhahx")

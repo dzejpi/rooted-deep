@@ -116,6 +116,7 @@ func _physics_process(delta: float) -> void:
 	var vertical_velocity: float = 0.0
 	if Input.is_action_pressed("move_jump"):
 		vertical_velocity += FLOAT_VELOCITY * delta
+		start_plant_placing()
 	elif Input.is_action_pressed("move_crouch"):
 		vertical_velocity -= FLOAT_VELOCITY * delta
 	
@@ -219,7 +220,7 @@ func dismiss_plant_placing() -> void:
 
 func update_pot_preview() -> void:
 	if is_placing_plant:
-		if ray_cast.is_colliding() and ray_cast.get_collider().is_in_group("ground"):
+		if ray_cast.is_colliding() and ray_cast.get_collider().is_in_group("ground") and not ray_cast.get_collider().is_in_group("pots"):
 			var collision_point = ray_cast.get_collision_point()
 			
 			snapped_position = Vector3(snappedf(collision_point.x, 2.0), collision_point.y, snappedf(collision_point.z, 2.0))
