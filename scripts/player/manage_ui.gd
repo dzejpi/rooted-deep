@@ -194,6 +194,7 @@ func sell(flower_index: int, gainz: int) -> void:
 		3:
 			floating_player_scene.fruits_d -= 1
 	
+	floating_player_scene.update_seed_count_ui()
 	update_coins()
 	update_eligibility()
 	update_amounts()
@@ -222,6 +223,7 @@ func sell_max(flower_index: int, gainz: int) -> void:
 			floating_player_scene.current_currency += int(gainz * profit_increase * fruit_amount)
 			GlobalVar.current_profits += int(gainz * profit_increase * fruit_amount)
 	
+	floating_player_scene.update_seed_count_ui()
 	update_coins()
 	update_eligibility()
 	update_amounts()

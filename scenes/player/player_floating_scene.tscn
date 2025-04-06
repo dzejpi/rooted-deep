@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=23 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
@@ -12,6 +12,7 @@
 [ext_resource type="Theme" uid="uid://5cp3idadbxgk" path="res://themes/regular_text_theme.tres" id="7_gyubv"]
 [ext_resource type="Script" path="res://scripts/player/manage_ui.gd" id="10_f0106"]
 [ext_resource type="Texture2D" uid="uid://dacbuha8ns5jn" path="res://assets/sprites/menu_buttons/menu_btn_normal.png" id="10_sdfuo"]
+[ext_resource type="Texture2D" uid="uid://wbp3tugpa36q" path="res://assets/sprites/menu_buttons/menu_btn_normal_ui.png" id="10_xo5qn"]
 [ext_resource type="Texture2D" uid="uid://86c0wvxvogwi" path="res://assets/sprites/menu_buttons/menu_btn_pressed.png" id="11_x3sxh"]
 [ext_resource type="Texture2D" uid="uid://o2ae16nyih81" path="res://assets/sprites/menu_buttons/menu_btn_normal_fruit.png" id="12_04s87"]
 [ext_resource type="Texture2D" uid="uid://d137crrs2egx8" path="res://assets/sprites/menu_buttons/menu_btn_hover.png" id="12_8kcqu"]
@@ -77,19 +78,19 @@ position = Vector2(0, 392)
 [node name="PlayerUi" type="Node2D" parent="PlayerUI"]
 
 [node name="OxygenBackground" type="Sprite2D" parent="PlayerUI/PlayerUi"]
-position = Vector2(144, 48)
-texture = ExtResource("10_sdfuo")
+position = Vector2(144, 32)
+texture = ExtResource("10_xo5qn")
 
 [node name="CurrencyBackground" type="Sprite2D" parent="PlayerUI/PlayerUi"]
-position = Vector2(144, 112)
-texture = ExtResource("10_sdfuo")
+position = Vector2(144, 64)
+texture = ExtResource("10_xo5qn")
 
 [node name="CurrencyLabel" type="Label" parent="PlayerUI/PlayerUi"]
 offset_left = 32.0
-offset_top = 80.0
+offset_top = 49.0
 offset_right = 272.0
-offset_bottom = 144.0
-theme = ExtResource("7_gyubv")
+offset_bottom = 80.0
+theme = ExtResource("16_ukamg")
 text = "500 #"
 vertical_alignment = 1
 
@@ -97,8 +98,8 @@ vertical_alignment = 1
 offset_left = 32.0
 offset_top = 16.0
 offset_right = 272.0
-offset_bottom = 80.0
-theme = ExtResource("7_gyubv")
+offset_bottom = 48.0
+theme = ExtResource("16_ukamg")
 text = "Oxygen: 100 %"
 vertical_alignment = 1
 
@@ -109,13 +110,22 @@ position = Vector2(200, 624)
 position = Vector2(144, 48)
 texture = ExtResource("12_04s87")
 
-[node name="FruitALabel" type="Label" parent="PlayerUI/PlayerUi/FruitA"]
+[node name="FruitSeedALabel" type="Label" parent="PlayerUI/PlayerUi/FruitA"]
 offset_left = 68.0
 offset_top = 16.0
 offset_right = 272.0
-offset_bottom = 80.0
+offset_bottom = 48.0
 theme = ExtResource("16_ukamg")
 text = "Lunara seeds:"
+vertical_alignment = 1
+
+[node name="FruitALabel" type="Label" parent="PlayerUI/PlayerUi/FruitA"]
+offset_left = 68.0
+offset_top = 48.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme = ExtResource("16_ukamg")
+text = "Lunara fruits:"
 vertical_alignment = 1
 
 [node name="FruitAKeyLabel" type="Label" parent="PlayerUI/PlayerUi/FruitA"]
@@ -135,13 +145,22 @@ position = Vector2(464, 624)
 position = Vector2(144, 48)
 texture = ExtResource("12_04s87")
 
-[node name="FruitBLabel" type="Label" parent="PlayerUI/PlayerUi/FruitB"]
+[node name="FruitSeedBLabel" type="Label" parent="PlayerUI/PlayerUi/FruitB"]
 offset_left = 68.0
 offset_top = 16.0
 offset_right = 272.0
-offset_bottom = 80.0
+offset_bottom = 48.0
 theme = ExtResource("16_ukamg")
 text = "Ribin seeds:"
+vertical_alignment = 1
+
+[node name="FruitBLabel" type="Label" parent="PlayerUI/PlayerUi/FruitB"]
+offset_left = 68.0
+offset_top = 48.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme = ExtResource("16_ukamg")
+text = "Ribin fruits:"
 vertical_alignment = 1
 
 [node name="FruitBKeyLabel" type="Label" parent="PlayerUI/PlayerUi/FruitB"]
@@ -161,13 +180,22 @@ position = Vector2(728, 624)
 position = Vector2(144, 48)
 texture = ExtResource("12_04s87")
 
-[node name="FruitCLabel" type="Label" parent="PlayerUI/PlayerUi/FruitC"]
+[node name="FruitSeedCLabel" type="Label" parent="PlayerUI/PlayerUi/FruitC"]
 offset_left = 68.0
 offset_top = 16.0
 offset_right = 272.0
-offset_bottom = 80.0
+offset_bottom = 48.0
 theme = ExtResource("16_ukamg")
 text = "Velu seeds:"
+vertical_alignment = 1
+
+[node name="FruitCLabel" type="Label" parent="PlayerUI/PlayerUi/FruitC"]
+offset_left = 68.0
+offset_top = 48.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme = ExtResource("16_ukamg")
+text = "Velu fruits:"
 vertical_alignment = 1
 
 [node name="FruitCKeyLabel" type="Label" parent="PlayerUI/PlayerUi/FruitC"]
@@ -187,13 +215,22 @@ position = Vector2(992, 624)
 position = Vector2(144, 48)
 texture = ExtResource("12_04s87")
 
-[node name="FruitDLabel" type="Label" parent="PlayerUI/PlayerUi/FruitD"]
+[node name="FruitSeedDLabel" type="Label" parent="PlayerUI/PlayerUi/FruitD"]
 offset_left = 68.0
 offset_top = 16.0
 offset_right = 272.0
-offset_bottom = 80.0
+offset_bottom = 48.0
 theme = ExtResource("16_ukamg")
 text = "Droqua seeds:"
+vertical_alignment = 1
+
+[node name="FruitDLabel" type="Label" parent="PlayerUI/PlayerUi/FruitD"]
+offset_left = 68.0
+offset_top = 48.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme = ExtResource("16_ukamg")
+text = "Droqua fruits:"
 vertical_alignment = 1
 
 [node name="FruitDKeyLabel" type="Label" parent="PlayerUI/PlayerUi/FruitD"]

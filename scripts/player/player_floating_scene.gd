@@ -20,6 +20,11 @@ const FLOAT_VELOCITY: float = 50
 
 @onready var manage_ui: Node2D = $PlayerUI/ManageUi
 
+@onready var fruit_seed_a_label: Label = $PlayerUI/PlayerUi/FruitA/FruitSeedALabel
+@onready var fruit_seed_b_label: Label = $PlayerUI/PlayerUi/FruitB/FruitSeedBLabel
+@onready var fruit_seed_c_label: Label = $PlayerUI/PlayerUi/FruitC/FruitSeedCLabel
+@onready var fruit_seed_d_label: Label = $PlayerUI/PlayerUi/FruitD/FruitSeedDLabel
+
 @onready var fruit_a_label: Label = $PlayerUI/PlayerUi/FruitA/FruitALabel
 @onready var fruit_b_label: Label = $PlayerUI/PlayerUi/FruitB/FruitBLabel
 @onready var fruit_c_label: Label = $PlayerUI/PlayerUi/FruitC/FruitCLabel
@@ -358,6 +363,7 @@ func try_to_collect_fruit() -> void:
 				3:
 					fruits_d += 1
 			
+			update_seed_count_ui()
 			print("Collected fruit of type: " + str(result))
 
 
@@ -394,7 +400,12 @@ func dismiss_tooltip() -> void:
 
 
 func update_seed_count_ui() -> void:
-	fruit_a_label.text = "Lunara seeds: " + str(plant_a_seeds)
-	fruit_b_label.text = "Ribin seeds: " + str(plant_b_seeds)
-	fruit_c_label.text = "Velu seeds: " + str(plant_c_seeds)
-	fruit_d_label.text = "Droqua seeds: " + str(plant_d_seeds)
+	fruit_seed_a_label.text = "Lunara seeds: " + str(plant_a_seeds)
+	fruit_seed_b_label.text = "Ribin seeds: " + str(plant_b_seeds)
+	fruit_seed_c_label.text = "Velu seeds: " + str(plant_c_seeds)
+	fruit_seed_d_label.text = "Droqua seeds: " + str(plant_d_seeds)
+	
+	fruit_a_label.text = "Lunara fruits: " + str(fruits_a)
+	fruit_b_label.text = "Ribin fruits: " + str(fruits_b)
+	fruit_c_label.text = "Velu fruits: " + str(fruits_c)
+	fruit_d_label.text = "Droqua fruits: " + str(fruits_d)
