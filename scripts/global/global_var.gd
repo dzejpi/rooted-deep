@@ -30,6 +30,8 @@ var is_game_active: bool = true
 var current_profits = 0
 var highest_profits = 0
 
+var current_playtime: float = 0.0
+
 
 func _ready() -> void:
 	play_music()

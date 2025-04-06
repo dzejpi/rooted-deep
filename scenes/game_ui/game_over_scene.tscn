@@ -47,6 +47,15 @@ text = "You generated % profits for your shareholders."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Time" type="Label" parent="."]
+offset_top = 322.0
+offset_right = 1280.0
+offset_bottom = 450.0
+theme = ExtResource("2_3vq61")
+text = "It only took you to drown."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GameOverButtons" type="Node2D" parent="."]
 position = Vector2(640, 486)
 

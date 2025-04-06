@@ -100,6 +100,7 @@ func _ready() -> void:
 	# Reset label
 	update_coins(0)
 	update_seed_count_ui()
+	GlobalVar.current_playtime = 0.0
 
 
 func _input(event: InputEvent) -> void:
@@ -155,6 +156,8 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	toggle_ui()
+	# Increase play time
+	GlobalVar.current_playtime += delta
 	
 	# More satisfying - gain oxygen even when paused 
 	if not GlobalVar.is_game_active:
