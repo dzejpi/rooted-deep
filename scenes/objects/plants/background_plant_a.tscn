@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://bmpy65ad200mc" path="res://assets/objects/exported/plants/background_plant_a.gltf" id="1_ofluv"]
 
 [node name="BackgroundPlantA" instance=ExtResource("1_ofluv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=11 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_5lbu1"]
 [ext_resource type="PackedScene" uid="uid://5w17t4cy1s3a" path="res://scenes/player/player_floating_scene.tscn" id="2_1xo2h"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxo3ugtqgmpdq" path="res://scenes/objects/buildings/safe_zone.tscn" id="4_dm4rb"]
 [ext_resource type="PackedScene" uid="uid://c72xac4wa0xym" path="res://scenes/objects/buildings/computer.tscn" id="5_86f4c"]
 [ext_resource type="PackedScene" uid="uid://22dhtb2yfpwm" path="res://scenes/objects/buildings/elevator.tscn" id="6_pyfh6"]
+[ext_resource type="PackedScene" uid="uid://dpra72cpdddnv" path="res://scenes/objects/plants/background_plant_a.tscn" id="7_rmr3p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psv6s"]
 
@@ -46,6 +47,200 @@ transform = Transform3D(0.87671, 0, 0.481019, 0, 1, 0, -0.481019, 0, 0.87671, 7.
 
 [node name="Elevator" parent="Objects" instance=ExtResource("6_pyfh6")]
 transform = Transform3D(0.893583, 0, -0.448898, 0, 1, 0, 0.448898, 0, 0.893583, 10.81, 3.94684, -6.79893)
+
+[node name="BackgroundObjects" type="Node3D" parent="Objects"]
+
+[node name="BackgroundPlantA" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4, 0)
+
+[node name="BackgroundPlantA2" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 4, -6)
+
+[node name="BackgroundPlantA3" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -4.09808, 4, -23.9019)
+
+[node name="BackgroundPlantA4" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -1.90192, 4, -32.0981)
+
+[node name="BackgroundPlantA5" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 35, 4, 0)
+
+[node name="BackgroundPlantA6" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 29, 4, -6)
+
+[node name="BackgroundPlantA7" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, 30.9019, 4, -23.9019)
+
+[node name="BackgroundPlantA8" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, 33.0981, 4, -32.0981)
+
+[node name="BackgroundPlantA9" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4, 43)
+
+[node name="BackgroundPlantA10" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 4, 37)
+
+[node name="BackgroundPlantA11" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -4.09808, 4, 19.0981)
+
+[node name="BackgroundPlantA12" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -1.90192, 4, 10.9019)
+
+[node name="BackgroundPlantA13" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 35, 4, 43)
+
+[node name="BackgroundPlantA14" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 29, 4, 37)
+
+[node name="BackgroundPlantA15" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, 30.9019, 4, 19.0981)
+
+[node name="BackgroundPlantA16" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, 33.0981, 4, 10.9019)
+
+[node name="BackgroundPlantA17" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -55.0564, 4, 0)
+
+[node name="BackgroundPlantA18" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -61.0564, 4, -6)
+
+[node name="BackgroundPlantA19" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -59.1544, 4, -23.9019)
+
+[node name="BackgroundPlantA20" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -56.9583, 4, -32.0981)
+
+[node name="BackgroundPlantA21" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20.0564, 4, 0)
+
+[node name="BackgroundPlantA22" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26.0564, 4, -6)
+
+[node name="BackgroundPlantA23" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -24.1544, 4, -23.9019)
+
+[node name="BackgroundPlantA24" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -21.9583, 4, -32.0981)
+
+[node name="BackgroundPlantA25" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -55.0564, 4, 43)
+
+[node name="BackgroundPlantA26" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -61.0564, 4, 37)
+
+[node name="BackgroundPlantA27" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -59.1544, 4, 19.0981)
+
+[node name="BackgroundPlantA28" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -56.9583, 4, 10.9019)
+
+[node name="BackgroundPlantA29" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20.0564, 4, 43)
+
+[node name="BackgroundPlantA30" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26.0564, 4, 37)
+
+[node name="BackgroundPlantA31" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -24.1544, 4, 19.0981)
+
+[node name="BackgroundPlantA32" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, -21.9583, 4, 10.9019)
+
+[node name="BackgroundPlantA33" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -41.2776, 4, 94.0192)
+
+[node name="BackgroundPlantA34" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -41.4692, 4, 85.5361)
+
+[node name="BackgroundPlantA35" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -27.7248, 4, 73.909)
+
+[node name="BackgroundPlantA36" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -20.474, 4, 69.5015)
+
+[node name="BackgroundPlantA37" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -15.9762, 4, 118.203)
+
+[node name="BackgroundPlantA38" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -16.1679, 4, 109.72)
+
+[node name="BackgroundPlantA39" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -2.42349, 4, 98.0926)
+
+[node name="BackgroundPlantA40" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, 4.8273, 4, 93.6851)
+
+[node name="BackgroundPlantA41" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -70.9888, 4, 125.104)
+
+[node name="BackgroundPlantA42" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -71.1804, 4, 116.621)
+
+[node name="BackgroundPlantA43" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -57.436, 4, 104.994)
+
+[node name="BackgroundPlantA44" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -50.1852, 4, 100.586)
+
+[node name="BackgroundPlantA45" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -45.6874, 4, 149.287)
+
+[node name="BackgroundPlantA46" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -45.8791, 4, 140.804)
+
+[node name="BackgroundPlantA47" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -32.1347, 4, 129.177)
+
+[node name="BackgroundPlantA48" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -24.8839, 4, 124.77)
+
+[node name="BackgroundPlantA49" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -81.0775, 4, 55.9776)
+
+[node name="BackgroundPlantA50" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -81.2691, 4, 47.4945)
+
+[node name="BackgroundPlantA51" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -67.5248, 4, 35.8674)
+
+[node name="BackgroundPlantA52" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -60.274, 4, 31.4599)
+
+[node name="BackgroundPlantA53" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -55.7762, 4, 80.1611)
+
+[node name="BackgroundPlantA54" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -55.9678, 4, 71.678)
+
+[node name="BackgroundPlantA55" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -42.2234, 4, 60.0509)
+
+[node name="BackgroundPlantA56" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -34.9727, 4, 55.6434)
+
+[node name="BackgroundPlantA57" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -110.789, 4, 87.0621)
+
+[node name="BackgroundPlantA58" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -110.98, 4, 78.5789)
+
+[node name="BackgroundPlantA59" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -97.236, 4, 66.9519)
+
+[node name="BackgroundPlantA60" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -89.9852, 4, 62.5444)
+
+[node name="BackgroundPlantA61" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -85.4874, 4, 111.246)
+
+[node name="BackgroundPlantA62" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(1.44579, 0, -1.38192, 0, 2, 0, 1.38192, 0, 1.44579, -85.679, 4, 102.762)
+
+[node name="BackgroundPlantA63" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -71.9347, 4, 91.1354)
+
+[node name="BackgroundPlantA64" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
+transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -64.6839, 4, 86.7279)
 
 [node name="Npcs" type="Node3D" parent="."]
 
