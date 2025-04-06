@@ -115,7 +115,7 @@ position = Vector2(640, 360)
 texture = ExtResource("12_sitou")
 
 [node name="FruitA" type="Node2D" parent="PlayerUI/PlayerUi"]
-position = Vector2(200, 624)
+position = Vector2(992, 408)
 
 [node name="FruitABackground" type="Sprite2D" parent="PlayerUI/PlayerUi/FruitA"]
 position = Vector2(144, 48)
@@ -150,7 +150,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FruitB" type="Node2D" parent="PlayerUI/PlayerUi"]
-position = Vector2(464, 624)
+position = Vector2(992, 480)
 
 [node name="FruitABackground" type="Sprite2D" parent="PlayerUI/PlayerUi/FruitB"]
 position = Vector2(144, 48)
@@ -185,7 +185,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FruitC" type="Node2D" parent="PlayerUI/PlayerUi"]
-position = Vector2(728, 624)
+position = Vector2(992, 552)
 
 [node name="FruitCBackground" type="Sprite2D" parent="PlayerUI/PlayerUi/FruitC"]
 position = Vector2(144, 48)
@@ -255,6 +255,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ManageUi" type="Node2D" parent="PlayerUI"]
+visible = false
 script = ExtResource("10_f0106")
 
 [node name="Background" type="Sprite2D" parent="PlayerUI/ManageUi"]
