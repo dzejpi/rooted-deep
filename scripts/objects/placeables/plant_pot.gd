@@ -131,13 +131,18 @@ func manage_growth(delta: float) -> void:
 
 
 func signal_growth(delta: float) -> void:
-	for fruit in get_tree().get_nodes_in_group("fruits"):
-		fruit.increase_fruit(delta)
+	for point in fruit_points.get_children():
+		for fruit in point.get_children():
+			if fruit.is_in_group("fruits"):
+				fruit.increase_fruit(delta)
 
 
 func buy_auto_collection() -> void:
 	print("Autocollecting now")
 	is_autocollecting = true
 	plant_autocollect.show()
-	for fruit in get_tree().get_nodes_in_group("fruits"):
-		fruit.is_autocollecting = true
+	
+	for point in fruit_points.get_children():
+		for fruit in point.get_children():
+			if fruit.is_in_group("fruits"):
+				fruit.is_autocollecting = true
