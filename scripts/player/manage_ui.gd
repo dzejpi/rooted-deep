@@ -47,15 +47,15 @@ extends Node2D
 @onready var upgrade_k: TextureButton = $UpgradeUi/UpgradeK
 @onready var upgrade_l: TextureButton = $UpgradeUi/UpgradeL
 
-var fruit_a_sell_price: int = 100
-var fruit_b_sell_price: int = 200
-var fruit_c_sell_price: int = 300
-var fruit_d_sell_price: int = 400
+var fruit_a_sell_price: int = 10
+var fruit_b_sell_price: int = 20
+var fruit_c_sell_price: int = 30
+var fruit_d_sell_price: int = 40
 
-var seed_a_buy_price: int = 200
-var seed_b_buy_price: int = 400
-var seed_c_buy_price: int = 600
-var seed_d_buy_price: int = 800
+var seed_a_buy_price: int = 20
+var seed_b_buy_price: int = 40
+var seed_c_buy_price: int = 60
+var seed_d_buy_price: int = 80
 
 var selected_section: int = 0
 
@@ -226,6 +226,7 @@ func buy(flower_index: int, cost: int) -> void:
 		3:
 			floating_player_scene.plant_d_seeds += 1
 	
+	floating_player_scene.update_seed_count_ui()
 	update_coins()
 	update_eligibility()
 
@@ -246,12 +247,13 @@ func buy_max(flower_index: int, cost: int) -> void:
 		3:
 			floating_player_scene.plant_d_seeds += max_amount
 	
+	floating_player_scene.update_seed_count_ui()
 	update_coins()
 	update_eligibility()
 
 
 func update_coins() -> void:
-	label_coins.text = "∅: " + str(floating_player_scene.current_currency)
+	label_coins.text = "#: " + str(floating_player_scene.current_currency)
 
 
 func update_eligibility() -> void:

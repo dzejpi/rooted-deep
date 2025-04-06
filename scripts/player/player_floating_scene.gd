@@ -20,6 +20,12 @@ const FLOAT_VELOCITY: float = 50
 
 @onready var manage_ui: Node2D = $PlayerUI/ManageUi
 
+@onready var fruit_a_label: Label = $PlayerUI/PlayerUi/FruitA/FruitALabel
+@onready var fruit_b_label: Label = $PlayerUI/PlayerUi/FruitB/FruitBLabel
+@onready var fruit_c_label: Label = $PlayerUI/PlayerUi/FruitC/FruitCLabel
+@onready var fruit_d_label: Label = $PlayerUI/PlayerUi/FruitD/FruitDLabel
+
+
 @export var placeable_objects: Node3D
 @export var plant_pot_preview: PackedScene
 var preview_instance: Node3D
@@ -242,7 +248,7 @@ func update_coins(amount: int) -> void:
 	# Corporation always makes money 
 	GlobalVar.current_profits += abs(amount)
 	
-	currency_label.text = "∅: " + str(current_currency)
+	currency_label.text = "#: " + str(current_currency)
 
 
 func toggle_ui() -> void:
@@ -318,6 +324,8 @@ func place_plant_pot() -> void:
 		3:
 			plant_d_seeds -= 1
 	
+	update_seed_count_ui()
+	
 	# Remove pot rotation
 	var transform = new_pot.global_transform
 	transform.basis = Basis()
@@ -382,3 +390,10 @@ func manage_tooltip(ray_object: Object, object_name: String) -> void:
 
 func dismiss_tooltip() -> void:
 	player_tooltip.dismiss_tooltip()
+
+
+func update_seed_count_ui() -> void:
+	fruit_a_label.text = "Lunara seeds: " + str(plant_a_seeds)
+	fruit_b_label.text = "Ribin seeds: " + str(plant_b_seeds)
+	fruit_c_label.text = "Velu seeds: " + str(plant_c_seeds)
+	fruit_d_label.text = "Droqua seeds: " + str(plant_d_seeds)
