@@ -81,6 +81,10 @@ var is_pot_placeable: bool = false
 
 var current_tooltip = ""
 
+var warned_fifty: bool = false
+var warned_twenty_five: bool = false
+var warned_zero: bool = false
+
 
 func _ready() -> void:
 	GlobalVar.reset_game()
@@ -265,6 +269,27 @@ func update_oxygen_level(delta: float) -> void:
 	var new_color = oxygen_sprite.modulate
 	new_color.a = alpha
 	oxygen_sprite.modulate = new_color
+	
+	# Sounds of struggling
+	if current_oxygen <= 50 and not warned_fifty:
+		GlobalVar.play_sound("oxygen_breathing")
+		warned_fifty = true
+	
+	if current_oxygen <= 25 and not warned_twenty_five:
+		GlobalVar.play_sound("oxygen_struggle")
+		warned_twenty_five = true
+	
+	if current_oxygen <= 5 and not warned_zero:
+		GlobalVar.play_sound("oxygen_death")
+		warned_zero = true
+	
+	# Reset
+	if current_oxygen > 50:
+		warned_fifty = false
+	if current_oxygen > 25:
+		warned_twenty_five = false
+	if current_oxygen > 10:
+		warned_zero = false
 
 
 func update_coins(amount: int) -> void:
