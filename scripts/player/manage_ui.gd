@@ -58,6 +58,20 @@ extends Node2D
 @onready var buy_fruit_c_label: Label = $BuyUi/FruitC/BuyFruitCLabel
 @onready var buy_fruit_d_label: Label = $BuyUi/FruitD/BuyFruitDLabel
 
+@onready var upgrade_a_label: Label = $UpgradeUi/UpgradeA/UpgradeALabel
+@onready var upgrade_b_label: Label = $UpgradeUi/UpgradeB/UpgradeBLabel
+@onready var upgrade_c_label: Label = $UpgradeUi/UpgradeC/UpgradeCLabel
+@onready var upgrade_d_label: Label = $UpgradeUi/UpgradeD/UpgradeDLabel
+@onready var upgrade_e_label: Label = $UpgradeUi/UpgradeE/UpgradeELabel
+@onready var upgrade_f_label: Label = $UpgradeUi/UpgradeF/UpgradeFLabel
+@onready var upgrade_g_label: Label = $UpgradeUi/UpgradeG/UpgradeGLabel
+@onready var upgrade_h_label: Label = $UpgradeUi/UpgradeH/UpgradeHLabel
+@onready var upgrade_i_label: Label = $UpgradeUi/UpgradeI/UpgradeILabel
+@onready var upgrade_j_label: Label = $UpgradeUi/UpgradeJ/UpgradeJLabel
+@onready var upgrade_k_label: Label = $UpgradeUi/UpgradeK/UpgradeKLabel
+@onready var upgrade_l_label: Label = $UpgradeUi/UpgradeL/UpgradeLLabel
+
+
 var fruit_a_sell_price: int = 10
 var fruit_b_sell_price: int = 20
 var fruit_c_sell_price: int = 30
@@ -487,6 +501,7 @@ func _on_upgrade_a_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_a_label.text = "Upgraded"
 
 
 func _on_upgrade_b_pressed() -> void:
@@ -499,6 +514,7 @@ func _on_upgrade_b_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_b_label.text = "Upgraded"
 
 
 func _on_upgrade_c_pressed() -> void:
@@ -510,7 +526,7 @@ func _on_upgrade_c_pressed() -> void:
 			upgrade_c_unlocked = true
 			update_coins()
 			update_eligibility()
-			update_amounts()
+			upgrade_c_label.text = "Upgraded"
 
 
 func _on_upgrade_d_pressed() -> void:
@@ -523,6 +539,7 @@ func _on_upgrade_d_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_d_label.text = "Upgraded"
 
 
 func _on_upgrade_e_pressed() -> void:
@@ -535,6 +552,7 @@ func _on_upgrade_e_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_e_label.text = "Upgraded"
 
 
 func _on_upgrade_f_pressed() -> void:
@@ -547,6 +565,7 @@ func _on_upgrade_f_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_f_label.text = "Upgraded"
 
 
 func _on_upgrade_g_pressed() -> void:
@@ -559,6 +578,7 @@ func _on_upgrade_g_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_g_label.text = "Upgraded"
 
 
 func _on_upgrade_h_pressed() -> void:
@@ -571,6 +591,7 @@ func _on_upgrade_h_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_h_label.text = "Upgraded"
 
 
 func _on_upgrade_i_pressed() -> void:
@@ -583,6 +604,7 @@ func _on_upgrade_i_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_i_label.text = "Upgraded"
 
 
 func _on_upgrade_j_pressed() -> void:
@@ -595,6 +617,7 @@ func _on_upgrade_j_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_j_label.text = "Upgraded"
 
 
 func _on_upgrade_k_pressed() -> void:
@@ -607,6 +630,7 @@ func _on_upgrade_k_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_k_label.text = "Upgraded"
 
 
 func _on_upgrade_l_pressed() -> void:
@@ -619,6 +643,7 @@ func _on_upgrade_l_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			update_amounts()
+			upgrade_l_label.text = "Upgraded"
 
 
 func increase_oxygen(increase: int) -> void:

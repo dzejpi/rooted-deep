@@ -747,7 +747,7 @@ texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
 texture_focused = ExtResource("13_6q6ee")
 
-[node name="UpgradeALabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeC"]
+[node name="UpgradeCLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeC"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
@@ -767,7 +767,7 @@ texture_hover = ExtResource("12_8kcqu")
 texture_disabled = ExtResource("13_6q6ee")
 texture_focused = ExtResource("13_6q6ee")
 
-[node name="UpgradeBLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeD"]
+[node name="UpgradeDLabel" type="Label" parent="PlayerUI/ManageUi/UpgradeUi/UpgradeD"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
