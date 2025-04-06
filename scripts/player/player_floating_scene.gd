@@ -410,8 +410,8 @@ func manage_tooltip(ray_object: Object, object_name: String) -> void:
 				current_tooltip = "E to access computer"
 				player_tooltip.display_tooltip(current_tooltip, false)
 		"PlantStaticBody":
-			if current_currency >= 500 and not ray_object.get_parent().is_autocollecting:
-				current_tooltip = "E to buy autocollect (# 500)"
+			if current_currency >= 250 and not ray_object.get_parent().is_autocollecting:
+				current_tooltip = "E to buy autocollect (# 250)"
 				player_tooltip.display_tooltip(current_tooltip, false)
 
 

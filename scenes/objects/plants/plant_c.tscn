@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://dyqnrrpom050i" path="res://assets/objects/exported/plants/plant_c.gltf" id="1_20b0l"]
 
 [node name="PlantC" instance=ExtResource("1_20b0l")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
