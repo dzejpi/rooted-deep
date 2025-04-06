@@ -30,7 +30,7 @@ var fruits_b: int = 0
 var fruits_c: int = 0
 var fruits_d: int = 0
 
-var plant_a_seeds: int = 0
+var plant_a_seeds: int = 1
 var plant_b_seeds: int = 0
 var plant_c_seeds: int = 0
 var plant_d_seeds: int = 0
@@ -59,7 +59,7 @@ var is_gaining_oxygen: bool = false
 var oxygen_down_rate: float = 1
 var oxygen_up_rate: float = 8
 
-var is_placing_plant: bool = true
+var is_placing_plant: bool = false
 
 var snapped_position: Vector3
 var is_pot_placeable: bool = false
@@ -75,7 +75,6 @@ func _ready() -> void:
 	GlobalVar.current_profits = 0
 	# Reset label
 	update_coins(0)
-	start_plant_placing()
 
 
 func _input(event: InputEvent) -> void:
@@ -92,6 +91,38 @@ func _input(event: InputEvent) -> void:
 		
 		if event.is_action_pressed("dismiss_placement"):
 			if is_placing_plant:
+				dismiss_plant_placing()
+		
+		if event.is_action_pressed("fruit_a"): 
+			if not is_placing_plant:
+				if plant_a_seeds > 0:
+					currently_selected_plant = 0
+					start_plant_placing()
+			else:
+				dismiss_plant_placing()
+		
+		if event.is_action_pressed("fruit_b"):
+			if not is_placing_plant:
+				if plant_b_seeds > 0:
+					currently_selected_plant = 1
+					start_plant_placing()
+			else:
+				dismiss_plant_placing()
+		
+		if event.is_action_pressed("fruit_c"):
+			if not is_placing_plant:
+				if plant_c_seeds > 0:
+					currently_selected_plant = 2
+					start_plant_placing()
+			else:
+				dismiss_plant_placing()
+		
+		if event.is_action_pressed("fruit_d"):
+			if not is_placing_plant:
+				if plant_d_seeds > 0:
+					currently_selected_plant = 3
+					start_plant_placing()
+			else:
 				dismiss_plant_placing()
 
 
@@ -222,6 +253,7 @@ func start_plant_placing() -> void:
 
 func dismiss_plant_placing() -> void:
 	is_placing_plant = false
+	dismiss_tooltip()
 
 
 func update_pot_preview() -> void:
@@ -270,6 +302,16 @@ func place_plant_pot() -> void:
 	
 	new_pot.global_transform.origin = snapped_position
 	new_pot.set_plant(currently_selected_plant)
+	
+	match(currently_selected_plant):
+		0:
+			plant_a_seeds -= 1
+		1:
+			plant_b_seeds -= 1
+		2:
+			plant_c_seeds -= 1
+		3:
+			plant_d_seeds -= 1
 	
 	# Remove pot rotation
 	var transform = new_pot.global_transform
