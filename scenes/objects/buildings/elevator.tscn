@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://22dhtb2yfpwm"]
+
+[ext_resource type="PackedScene" uid="uid://d30k80r4rdif5" path="res://assets/objects/exported/buildings/elevator.gltf" id="1_k065a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0v5b8"]
+size = Vector3(2, 64, 2)
+
+[node name="Elevator" instance=ExtResource("1_k065a")]
+transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ElevatorBody" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorBody" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 32, 3)
+shape = SubResource("BoxShape3D_0v5b8")

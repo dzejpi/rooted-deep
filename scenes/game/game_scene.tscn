@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=10 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_5lbu1"]
 [ext_resource type="PackedScene" uid="uid://5w17t4cy1s3a" path="res://scenes/player/player_floating_scene.tscn" id="2_1xo2h"]
 [ext_resource type="PackedScene" uid="uid://b10lmyx64o6t" path="res://scenes/terrain/terrain_scene.tscn" id="3_blcsq"]
 [ext_resource type="PackedScene" uid="uid://cxo3ugtqgmpdq" path="res://scenes/objects/buildings/safe_zone.tscn" id="4_dm4rb"]
+[ext_resource type="PackedScene" uid="uid://c72xac4wa0xym" path="res://scenes/objects/buildings/computer.tscn" id="5_86f4c"]
+[ext_resource type="PackedScene" uid="uid://22dhtb2yfpwm" path="res://scenes/objects/buildings/elevator.tscn" id="6_pyfh6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psv6s"]
 
@@ -38,6 +40,12 @@ metadata/_edit_lock_ = true
 [node name="SafeZone" parent="Objects" node_paths=PackedStringArray("player_node") instance=ExtResource("4_dm4rb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 4.4, 0)
 player_node = NodePath("../../Player/FloatingPlayerScene")
+
+[node name="Computer" parent="Objects" instance=ExtResource("5_86f4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, -3.61623)
+
+[node name="Elevator" parent="Objects" instance=ExtResource("6_pyfh6")]
+transform = Transform3D(1, 0, 0, 0, 8, 0, 0, 0, 1, 8, 4, 2)
 
 [node name="Npcs" type="Node3D" parent="."]
 

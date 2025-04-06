@@ -41,7 +41,6 @@ target_position = Vector3(0, 0, -3)
 
 [node name="CameraShader" type="MeshInstance3D" parent="PlayerHead/Camera"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.85)
-visible = false
 mesh = SubResource("QuadMesh_k6e0w")
 surface_material_override/0 = SubResource("ShaderMaterial_tcjgv")
 
