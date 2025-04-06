@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 var current_speed: float = 5.0
 var speed_multiplier: float = 1.0
-const FLOAT_VELOCITY: float = 75
+const FLOAT_VELOCITY: float = 100
 
 @onready var player_camera: Camera3D = $PlayerHead/Camera
 @onready var ray_cast: RayCast3D = $PlayerHead/Camera/RayCast3D
@@ -30,7 +30,6 @@ const FLOAT_VELOCITY: float = 75
 @onready var fruit_b_label: Label = $PlayerUI/PlayerUi/FruitB/FruitBLabel
 @onready var fruit_c_label: Label = $PlayerUI/PlayerUi/FruitC/FruitCLabel
 @onready var fruit_d_label: Label = $PlayerUI/PlayerUi/FruitD/FruitDLabel
-
 
 @export var placeable_objects: Node3D
 @export var plant_pot_preview: PackedScene
@@ -60,7 +59,7 @@ var mouse_delta: Vector2 = Vector2.ZERO
 var is_pulled_down: bool = true
 
 # Debug for console info
-var debug: bool = true
+var debug: bool = false
 
 # Last collider player looked at
 var last_looked_at: String = ""
