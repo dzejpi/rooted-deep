@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3nj0sef8m7lg"]
+
+[ext_resource type="PackedScene" uid="uid://bkb617oveqgnv" path="res://assets/objects/exported/placeables/plant_autocollect.gltf" id="1_a720d"]
+
+[node name="PlantAutocollect" instance=ExtResource("1_a720d")]

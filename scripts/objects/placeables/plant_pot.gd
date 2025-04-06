@@ -33,6 +33,8 @@ const FRUIT_D = preload("res://scenes/objects/fruits/fruit_d.tscn")
 @onready var point_g: Node3D = $FruitPoints/PointG
 @onready var point_h: Node3D = $FruitPoints/PointH
 
+@onready var plant_autocollect: Node3D = $PlantAutocollect
+
 var is_plant_set = false
 
 
@@ -136,5 +138,6 @@ func signal_growth(delta: float) -> void:
 func buy_auto_collection() -> void:
 	print("Autocollecting now")
 	is_autocollecting = true
+	plant_autocollect.show()
 	for fruit in get_tree().get_nodes_in_group("fruits"):
 		fruit.is_autocollecting = true
