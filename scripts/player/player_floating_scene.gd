@@ -70,7 +70,7 @@ var max_oxygen: float = 100.0
 var current_oxygen: float = 100.0
 var is_gaining_oxygen: bool = false
 
-var oxygen_down_rate: float = 2
+var oxygen_down_rate: float = 4
 var oxygen_up_rate: float = 8
 
 var is_placing_plant: bool = false
