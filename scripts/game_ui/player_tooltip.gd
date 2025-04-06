@@ -47,7 +47,11 @@ func _input(_event) -> void:
 
 # Displays tooltip. Optional flashing, action (from Input map) to press and time to automatically disappear
 func display_tooltip(tooltip_text: String, tooltip_flashing: bool, action_to_dismiss: String = "", duration: float = 0.0) -> void:
-	tooltip_label.text = tooltip_text
+	# Skip if tooltip is displayed already with same text
+	if tooltip_label.text == tooltip_text and is_tooltip_visible:
+		return
+	else:
+		tooltip_label.text = tooltip_text
 	
 	is_flashing = tooltip_flashing
 	if tooltip_flashing:
