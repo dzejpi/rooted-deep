@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj0tpisi4yngg"]
+
+[ext_resource type="PackedScene" uid="uid://d4kwo7xrtvwdd" path="res://assets/objects/exported/items/rubber_duck.gltf" id="1_qr8un"]
+
+[node name="RubberDuck" instance=ExtResource("1_qr8un")]

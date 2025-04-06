@@ -28,7 +28,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcjgv"]
 render_priority = 0
 shader = ExtResource("3_0ubpt")
-shader_parameter/time = null
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_votpe"]
 

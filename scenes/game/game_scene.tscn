@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=12 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_5lbu1"]
 [ext_resource type="PackedScene" uid="uid://5w17t4cy1s3a" path="res://scenes/player/player_floating_scene.tscn" id="2_1xo2h"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c72xac4wa0xym" path="res://scenes/objects/buildings/computer.tscn" id="5_86f4c"]
 [ext_resource type="PackedScene" uid="uid://22dhtb2yfpwm" path="res://scenes/objects/buildings/elevator.tscn" id="6_pyfh6"]
 [ext_resource type="PackedScene" uid="uid://dpra72cpdddnv" path="res://scenes/objects/plants/background_plant_a.tscn" id="7_rmr3p"]
+[ext_resource type="PackedScene" uid="uid://bj0tpisi4yngg" path="res://scenes/objects/items/rubber_duck.tscn" id="8_qk3f7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psv6s"]
 
@@ -241,6 +242,9 @@ transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -7
 
 [node name="BackgroundPlantA64" parent="Objects/BackgroundObjects" instance=ExtResource("7_rmr3p")]
 transform = Transform3D(-0.47388, 0, -1.94305, 0, 2, 0, 1.94305, 0, -0.47388, -64.6839, 4, 86.7279)
+
+[node name="RubberDuck" parent="Objects/BackgroundObjects" instance=ExtResource("8_qk3f7")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 83, 4, 29)
 
 [node name="Npcs" type="Node3D" parent="."]
 
