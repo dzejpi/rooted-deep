@@ -6,4 +6,5 @@ extends TextureButton
 
 func _on_pressed() -> void:
 	main_menu_scene.current_focus = "main_menu"
+	GlobalVar.play_sound("select_a")
 	release_focus()

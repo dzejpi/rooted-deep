@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds8q1y31xj1qm"]
+[gd_scene load_steps=3 format=3 uid="uid://ds8q1y31xj1qm"]
 
 [ext_resource type="Script" path="res://scripts/global/global_var.gd" id="1_2byic"]
+[ext_resource type="AudioStream" uid="uid://teruve0s337v" path="res://assets/music/sfx_ambience.mp3" id="2_13u2a"]
 
 [node name="GlobalScene" type="Node"]
 script = ExtResource("1_2byic")
+music_game_music = ExtResource("2_13u2a")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Music"

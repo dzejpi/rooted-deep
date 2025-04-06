@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://5w17t4cy1s3a"]
+[gd_scene load_steps=26 format=3 uid="uid://5w17t4cy1s3a"]
 
 [ext_resource type="Script" path="res://scripts/player/player_floating_scene.gd" id="1_bkq84"]
 [ext_resource type="PackedScene" uid="uid://dysyj150kk535" path="res://scenes/objects/placeables/plant_pot_preview.tscn" id="2_bm321"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d0k77qlot24nc" path="res://scenes/game_ui/typewriter_dialog_scene.tscn" id="5_pf534"]
 [ext_resource type="PackedScene" uid="uid://uqsnfk54cjss" path="res://scenes/game_ui/player_tooltip.tscn" id="6_utufl"]
 [ext_resource type="Theme" uid="uid://5cp3idadbxgk" path="res://themes/regular_text_theme.tres" id="7_gyubv"]
+[ext_resource type="Texture2D" uid="uid://cegase78lr865" path="res://assets/sprites/ui/oxygen_ui.png" id="10_dvey0"]
 [ext_resource type="Script" path="res://scripts/player/manage_ui.gd" id="10_f0106"]
 [ext_resource type="Texture2D" uid="uid://dacbuha8ns5jn" path="res://assets/sprites/menu_buttons/menu_btn_normal.png" id="10_sdfuo"]
 [ext_resource type="Texture2D" uid="uid://wbp3tugpa36q" path="res://assets/sprites/menu_buttons/menu_btn_normal_ui.png" id="10_xo5qn"]
@@ -78,6 +79,10 @@ visible = false
 position = Vector2(0, 392)
 
 [node name="PlayerUi" type="Node2D" parent="PlayerUI"]
+
+[node name="OxygenSprite" type="Sprite2D" parent="PlayerUI/PlayerUi"]
+texture = ExtResource("10_dvey0")
+offset = Vector2(640, 360)
 
 [node name="OxygenBackground" type="Sprite2D" parent="PlayerUI/PlayerUi"]
 position = Vector2(114, 32)

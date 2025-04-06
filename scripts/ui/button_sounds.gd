@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	is_sound_on = not is_sound_on
+	GlobalVar.play_sound("select_a")
 	update_sound_state()
 
 

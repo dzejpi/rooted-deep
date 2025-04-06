@@ -10,7 +10,13 @@ extends Node
 # Replace null with a proper preload("res://...")
 # Or delete fully and set everything through Inspector
 @export var sfx_sounds: Dictionary = {
-	"placeholder": null
+	"fruit_grab": preload("res://assets/sfx/sfx_fruit_grab.mp3"),
+	"oxygen_breathing": preload("res://assets/sfx/sfx_oxygen_breathing.mp3"),
+	"oxygen_death": preload("res://assets/sfx/sfx_oxygen_death.mp3"),
+	"oxygen_struggle": preload("res://assets/sfx/sfx_oxygen_struggle.mp3"),
+	"plant": preload("res://assets/sfx/sfx_plant.mp3"),
+	"select_a": preload("res://assets/sfx/sfx_select.mp3"),
+	"select_b": preload("res://assets/sfx/sfx_select_b.mp3"),
 }
 
 var is_game_paused: bool = false
@@ -23,6 +29,10 @@ var is_game_active: bool = true
 
 var current_profits = 0
 var highest_profits = 0
+
+
+func _ready() -> void:
+	play_music()
 
 
 func play_music() -> void:

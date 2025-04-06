@@ -177,21 +177,25 @@ func change_selection(new_selection: int) -> void:
 
 func _on_quit_pressed() -> void:
 	GlobalVar.toggle_manage_ui()
+	GlobalVar.play_sound("select_b")
 	update_manage_state()
 
 
 func _on_sell_button_pressed() -> void:
 	selected_section = 0
+	GlobalVar.play_sound("select_b")
 	switch_section(selected_section)
 
 
 func _on_buy_button_pressed() -> void:
 	selected_section = 1
+	GlobalVar.play_sound("select_b")
 	switch_section(selected_section)
 
 
 func _on_upgrade_pressed() -> void:
 	selected_section = 2
+	GlobalVar.play_sound("select_b")
 	switch_section(selected_section)
 
 
@@ -414,81 +418,97 @@ func update_eligibility() -> void:
 func _on_sell_a_button_pressed() -> void:
 	if floating_player_scene.fruits_a > 0:
 		sell(0, fruit_a_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_sell_all_a_button_pressed() -> void:
 	if floating_player_scene.fruits_a > 0:
 		sell_max(0, fruit_a_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_sell_b_button_pressed() -> void:
 	if floating_player_scene.fruits_b > 0:
 		sell(1, fruit_b_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_sell_all_b_button_pressed() -> void:
 	if floating_player_scene.fruits_b > 0:
 		sell_max(1, fruit_b_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_sell_c_button_pressed() -> void:
 	if floating_player_scene.fruits_c > 0:
 		sell(2, fruit_c_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_sell_all_c_button_pressed() -> void:
 	if floating_player_scene.fruits_c > 0:
 		sell_max(2, fruit_c_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_sell_d_button_pressed() -> void:
 	if floating_player_scene.fruits_d > 0:
 		sell(3, fruit_d_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_sell_all_d_button_pressed() -> void:
 	if floating_player_scene.fruits_d > 0:
 		sell_max(3, fruit_d_sell_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_a_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_a_buy_price:
 		buy(0, seed_a_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_all_a_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_a_buy_price:
 		buy_max(0, seed_a_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_b_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_b_buy_price:
 		buy(1, seed_b_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_all_b_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_b_buy_price:
 		buy_max(1, seed_b_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_c_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_c_buy_price:
 		buy(2, seed_c_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_all_c_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_c_buy_price:
 		buy_max(2, seed_c_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_d_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_d_buy_price:
 		buy(3, seed_d_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_buy_all_d_button_pressed() -> void:
 	if floating_player_scene.current_currency >= seed_d_buy_price:
 		buy_max(3, seed_d_buy_price)
+		GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_a_pressed() -> void:
@@ -502,6 +522,7 @@ func _on_upgrade_a_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_a_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_b_pressed() -> void:
@@ -515,6 +536,7 @@ func _on_upgrade_b_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_b_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_c_pressed() -> void:
@@ -527,6 +549,7 @@ func _on_upgrade_c_pressed() -> void:
 			update_coins()
 			update_eligibility()
 			upgrade_c_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_d_pressed() -> void:
@@ -540,6 +563,7 @@ func _on_upgrade_d_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_d_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_e_pressed() -> void:
@@ -553,6 +577,7 @@ func _on_upgrade_e_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_e_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_f_pressed() -> void:
@@ -566,6 +591,7 @@ func _on_upgrade_f_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_f_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_g_pressed() -> void:
@@ -579,6 +605,7 @@ func _on_upgrade_g_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_g_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_h_pressed() -> void:
@@ -592,6 +619,7 @@ func _on_upgrade_h_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_h_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_i_pressed() -> void:
@@ -605,6 +633,7 @@ func _on_upgrade_i_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_i_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_j_pressed() -> void:
@@ -618,6 +647,7 @@ func _on_upgrade_j_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_j_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_k_pressed() -> void:
@@ -631,6 +661,7 @@ func _on_upgrade_k_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_k_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func _on_upgrade_l_pressed() -> void:
@@ -644,6 +675,7 @@ func _on_upgrade_l_pressed() -> void:
 			update_eligibility()
 			update_amounts()
 			upgrade_l_label.text = "Upgraded"
+			GlobalVar.play_sound("select_b")
 
 
 func increase_oxygen(increase: int) -> void:

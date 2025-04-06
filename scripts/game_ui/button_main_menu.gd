@@ -11,4 +11,5 @@ func _process(_delta: float) -> void:
 
 func _on_pressed() -> void:
 	is_button_pressed = true
+	GlobalVar.play_sound("select_a")
 	TransitionOverlay.fade_in()

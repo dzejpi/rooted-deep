@@ -31,6 +31,8 @@ const FLOAT_VELOCITY: float = 100
 @onready var fruit_c_label: Label = $PlayerUI/PlayerUi/FruitC/FruitCLabel
 @onready var fruit_d_label: Label = $PlayerUI/PlayerUi/FruitD/FruitDLabel
 
+@onready var oxygen_sprite: Sprite2D = $PlayerUI/PlayerUi/OxygenSprite
+
 @export var placeable_objects: Node3D
 @export var plant_pot_preview: PackedScene
 var preview_instance: Node3D
@@ -252,6 +254,17 @@ func update_oxygen_level(delta: float) -> void:
 			trigger_game_over()
 	
 	oxygen_label.text = "Oxygen: " + str(int(current_oxygen)) + "%"
+	
+	# Adjusting sprite
+	var alpha = 0.0
+	if current_oxygen < 50:
+		alpha = lerp(0.0, 1.0, 1.0 - (current_oxygen / 50.0))
+	else:
+		alpha = 0.0
+	
+	var new_color = oxygen_sprite.modulate
+	new_color.a = alpha
+	oxygen_sprite.modulate = new_color
 
 
 func update_coins(amount: int) -> void:
@@ -339,6 +352,7 @@ func place_plant_pot() -> void:
 		3:
 			plant_d_seeds -= 1
 	
+	GlobalVar.play_sound("plant")
 	dismiss_tooltip()
 	update_seed_count_ui()
 	
@@ -375,6 +389,7 @@ func try_to_collect_fruit() -> void:
 			
 			update_seed_count_ui()
 			dismiss_tooltip()
+			GlobalVar.play_sound("fruit_grab")
 			if debug:
 				print("Collected fruit of type: " + str(result))
 
