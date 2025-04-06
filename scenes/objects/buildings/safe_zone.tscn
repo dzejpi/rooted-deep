@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxo3ugtqgmpdq"]
+[gd_scene load_steps=6 format=3 uid="uid://cxo3ugtqgmpdq"]
 
 [ext_resource type="PackedScene" uid="uid://45vjvk8wh0w0" path="res://assets/objects/exported/buildings/safe_zone.gltf" id="1_qghux"]
 [ext_resource type="Script" path="res://scripts/objects/buildings/safe_zone.gd" id="2_u53l1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqbqj"]
 size = Vector3(0.992432, 2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cid08"]
+size = Vector3(2.28363, 0.246094, 2.78589)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_afnwy"]
 height = 1.59775
@@ -38,6 +41,10 @@ shape = SubResource("BoxShape3D_kqbqj")
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="SafeZoneStaticBody" index="5"]
 transform = Transform3D(-0.877682, 0, 0.479243, 0, 1, 0, -0.479243, 0, -0.877682, -0.465384, 1, 1.30026)
 shape = SubResource("BoxShape3D_kqbqj")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="SafeZoneStaticBody" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234039, 1.87364, 0.136841)
+shape = SubResource("BoxShape3D_cid08")
 
 [node name="SafeZoneArea" type="Area3D" parent="." index="2"]
 
