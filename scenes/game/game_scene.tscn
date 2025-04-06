@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=8 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/game_scene.gd" id="1_5lbu1"]
 [ext_resource type="PackedScene" uid="uid://5w17t4cy1s3a" path="res://scenes/player/player_floating_scene.tscn" id="2_1xo2h"]
-[ext_resource type="PackedScene" uid="uid://b8rk7wlmop2xt" path="res://scenes/objects/placeables/plant_pot.tscn" id="3_8k2m7"]
 [ext_resource type="PackedScene" uid="uid://b10lmyx64o6t" path="res://scenes/terrain/terrain_scene.tscn" id="3_blcsq"]
 [ext_resource type="PackedScene" uid="uid://cxo3ugtqgmpdq" path="res://scenes/objects/buildings/safe_zone.tscn" id="4_dm4rb"]
 
@@ -27,7 +26,6 @@ script = ExtResource("1_5lbu1")
 [node name="FloatingPlayerScene" parent="Player" node_paths=PackedStringArray("placeable_objects") instance=ExtResource("2_1xo2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.35177, 0)
 placeable_objects = NodePath("../../Objects")
-plant_pot_scene = ExtResource("3_8k2m7")
 
 [node name="Terrain" type="Node3D" parent="."]
 

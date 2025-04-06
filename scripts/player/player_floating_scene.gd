@@ -222,7 +222,7 @@ func update_pot_preview() -> void:
 		if ray_cast.is_colliding() and ray_cast.get_collider().is_in_group("ground"):
 			var collision_point = ray_cast.get_collision_point()
 			
-			snapped_position = Vector3(snappedf(collision_point.x, 1.0), collision_point.y, snappedf(collision_point.z, 1.0))
+			snapped_position = Vector3(snappedf(collision_point.x, 2.0), collision_point.y, snappedf(collision_point.z, 2.0))
 			
 			# If preview is not displayed yet
 			if preview_instance == null:
