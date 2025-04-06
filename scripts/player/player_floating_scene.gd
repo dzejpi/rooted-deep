@@ -145,7 +145,11 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	toggle_ui()
 	
+	# More satisfying - gain oxygen even when paused 
 	if not GlobalVar.is_game_active:
+		if is_gaining_oxygen:
+			update_oxygen_level(delta)
+		
 		return
 	
 	# Check continuously

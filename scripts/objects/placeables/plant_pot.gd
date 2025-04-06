@@ -44,10 +44,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	# Not processing at all if the game isn't active
-	if not GlobalVar.is_game_active:
-		return
-	
+	# More forgiving - plants grow even when game is paused
 	if is_plant_set:
 		manage_growth(delta)
 
