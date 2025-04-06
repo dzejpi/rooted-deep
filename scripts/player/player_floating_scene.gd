@@ -83,6 +83,7 @@ func _ready() -> void:
 	GlobalVar.current_profits = 0
 	# Reset label
 	update_coins(0)
+	update_seed_count_ui()
 
 
 func _input(event: InputEvent) -> void:

@@ -210,7 +210,6 @@ vertical_alignment = 1
 script = ExtResource("10_f0106")
 
 [node name="SellUi" type="Node2D" parent="PlayerUI/ManageUi"]
-visible = false
 position = Vector2(640, 296)
 
 [node name="FruitA" type="Node2D" parent="PlayerUI/ManageUi/SellUi"]
@@ -220,7 +219,7 @@ position = Vector2(0, -64)
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitALabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitA"]
+[node name="SellFruitALabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitA"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
@@ -276,7 +275,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitBLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitB"]
+[node name="SellFruitBLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitB"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
@@ -328,7 +327,7 @@ position = Vector2(0, 64)
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitCLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitC"]
+[node name="SellFruitCLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitC"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
@@ -385,7 +384,7 @@ position = Vector2(0, 128)
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitDLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitD"]
+[node name="SellFruitDLabel" type="Label" parent="PlayerUI/ManageUi/SellUi/FruitD"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
@@ -431,6 +430,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuyUi" type="Node2D" parent="PlayerUI/ManageUi"]
+visible = false
 position = Vector2(640, 296)
 
 [node name="FruitA" type="Node2D" parent="PlayerUI/ManageUi/BuyUi"]
@@ -440,11 +440,11 @@ position = Vector2(0, -64)
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitALabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitA"]
+[node name="BuyFruitALabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitA"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
-text = "Lunara seed: 20 #"
+text = "Lunara seeds: 20"
 horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -463,7 +463,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy one"
+text = "Buy one (20 #)"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -494,11 +494,11 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitBLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitB"]
+[node name="BuyFruitBLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitB"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
-text = "Ribin seed: 40 #"
+text = "Ribin seeds: 1"
 horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -517,7 +517,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy one"
+text = "Buy one (40 #)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -547,11 +547,11 @@ position = Vector2(0, 64)
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitCLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitC"]
+[node name="BuyFruitCLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitC"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
-text = "Velu seed: 60 #"
+text = "Velu seeds: 2"
 horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -571,7 +571,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy one"
+text = "Buy one (60 #)"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -604,11 +604,11 @@ position = Vector2(0, 128)
 position = Vector2(-128, -32)
 texture = ExtResource("10_sdfuo")
 
-[node name="FruitDLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitD"]
+[node name="BuyFruitDLabel" type="Label" parent="PlayerUI/ManageUi/BuyUi/FruitD"]
 offset_left = -256.0
 offset_top = -64.0
 theme = ExtResource("7_gyubv")
-text = "Droqua seed: 80 #"
+text = "Droqua seeds: 4"
 horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -627,7 +627,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 64.0
 theme = ExtResource("7_gyubv")
-text = "Buy one"
+text = "Buy one (80 #)"
 horizontal_alignment = 1
 vertical_alignment = 1
 

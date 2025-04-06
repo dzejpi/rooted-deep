@@ -47,6 +47,17 @@ extends Node2D
 @onready var upgrade_k: TextureButton = $UpgradeUi/UpgradeK
 @onready var upgrade_l: TextureButton = $UpgradeUi/UpgradeL
 
+# Labels
+@onready var sell_fruit_a_label: Label = $SellUi/FruitA/SellFruitALabel
+@onready var sell_fruit_b_label: Label = $SellUi/FruitB/SellFruitBLabel
+@onready var sell_fruit_c_label: Label = $SellUi/FruitC/SellFruitCLabel
+@onready var sell_fruit_d_label: Label = $SellUi/FruitD/SellFruitDLabel
+
+@onready var buy_fruit_a_label: Label = $BuyUi/FruitA/BuyFruitALabel
+@onready var buy_fruit_b_label: Label = $BuyUi/FruitB/BuyFruitBLabel
+@onready var buy_fruit_c_label: Label = $BuyUi/FruitC/BuyFruitCLabel
+@onready var buy_fruit_d_label: Label = $BuyUi/FruitD/BuyFruitDLabel
+
 var fruit_a_sell_price: int = 10
 var fruit_b_sell_price: int = 20
 var fruit_c_sell_price: int = 30
@@ -109,6 +120,7 @@ func _input(_event) -> void:
 func display_manage_ui() -> void:
 	GlobalVar.toggle_manage_ui()
 	update_manage_state()
+	update_amounts()
 	switch_section(selected_section)
 	
 	selected_section = 0
@@ -184,6 +196,7 @@ func sell(flower_index: int, gainz: int) -> void:
 	
 	update_coins()
 	update_eligibility()
+	update_amounts()
 
 
 func sell_max(flower_index: int, gainz: int) -> void:
@@ -211,6 +224,7 @@ func sell_max(flower_index: int, gainz: int) -> void:
 	
 	update_coins()
 	update_eligibility()
+	update_amounts()
 
 
 func buy(flower_index: int, cost: int) -> void:
@@ -229,6 +243,7 @@ func buy(flower_index: int, cost: int) -> void:
 	floating_player_scene.update_seed_count_ui()
 	update_coins()
 	update_eligibility()
+	update_amounts()
 
 
 func buy_max(flower_index: int, cost: int) -> void:
@@ -250,6 +265,7 @@ func buy_max(flower_index: int, cost: int) -> void:
 	floating_player_scene.update_seed_count_ui()
 	update_coins()
 	update_eligibility()
+	update_amounts()
 
 
 func update_coins() -> void:
@@ -468,6 +484,7 @@ func _on_upgrade_a_pressed() -> void:
 			upgrade_a_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_b_pressed() -> void:
@@ -479,6 +496,7 @@ func _on_upgrade_b_pressed() -> void:
 			upgrade_b_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_c_pressed() -> void:
@@ -490,6 +508,7 @@ func _on_upgrade_c_pressed() -> void:
 			upgrade_c_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_d_pressed() -> void:
@@ -501,6 +520,7 @@ func _on_upgrade_d_pressed() -> void:
 			upgrade_d_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_e_pressed() -> void:
@@ -512,6 +532,7 @@ func _on_upgrade_e_pressed() -> void:
 			upgrade_e_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_f_pressed() -> void:
@@ -523,6 +544,7 @@ func _on_upgrade_f_pressed() -> void:
 			upgrade_f_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_g_pressed() -> void:
@@ -534,6 +556,7 @@ func _on_upgrade_g_pressed() -> void:
 			upgrade_g_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_h_pressed() -> void:
@@ -545,6 +568,7 @@ func _on_upgrade_h_pressed() -> void:
 			upgrade_h_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_i_pressed() -> void:
@@ -556,6 +580,7 @@ func _on_upgrade_i_pressed() -> void:
 			upgrade_i_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_j_pressed() -> void:
@@ -567,6 +592,7 @@ func _on_upgrade_j_pressed() -> void:
 			upgrade_j_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_k_pressed() -> void:
@@ -578,6 +604,7 @@ func _on_upgrade_k_pressed() -> void:
 			upgrade_k_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func _on_upgrade_l_pressed() -> void:
@@ -589,6 +616,7 @@ func _on_upgrade_l_pressed() -> void:
 			upgrade_l_unlocked = true
 			update_coins()
 			update_eligibility()
+			update_amounts()
 
 
 func increase_oxygen(increase: int) -> void:
@@ -607,3 +635,15 @@ func win_game() -> void:
 	GlobalVar.toggle_manage_ui()
 	update_manage_state()
 	floating_player_scene.trigger_game_won()
+
+
+func update_amounts() -> void:
+	sell_fruit_a_label.text = "Lunara fruits: " + str(floating_player_scene.fruits_a)
+	sell_fruit_b_label.text = "Ribin fruits: " + str(floating_player_scene.fruits_b)
+	sell_fruit_c_label.text = "Velu fruits: " + str(floating_player_scene.fruits_c)
+	sell_fruit_d_label.text = "Droqua fruits: " + str(floating_player_scene.fruits_d)
+	
+	buy_fruit_a_label.text = "Lunara seeds: " + str(floating_player_scene.plant_a_seeds)
+	buy_fruit_b_label.text = "Ribin seeds: " + str(floating_player_scene.plant_b_seeds)
+	buy_fruit_c_label.text = "Velu seeds: " + str(floating_player_scene.plant_c_seeds)
+	buy_fruit_d_label.text = "Droqua seeds: " + str(floating_player_scene.plant_d_seeds)
