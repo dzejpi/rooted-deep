@@ -94,16 +94,22 @@ func _ready() -> void:
 
 
 func _input(_event) -> void:
-	if Input.is_action_just_pressed("game_manager"):
-		GlobalVar.toggle_manage_ui()
-		update_manage_state()
-		switch_section(selected_section)
-		
+	#if Input.is_action_just_pressed("game_manager"):
+	#	GlobalVar.toggle_manage_ui()
+	#	update_manage_state()
+	#	switch_section(selected_section)
+	
 	if Input.is_action_just_pressed("game_pause"):
 		if self.visible:
 			GlobalVar.toggle_manage_ui()
 			update_manage_state()
 			switch_section(selected_section)
+
+
+func display_manage_ui() -> void:
+	GlobalVar.toggle_manage_ui()
+	update_manage_state()
+	switch_section(selected_section)
 
 
 func switch_section(new_section: int) -> void:

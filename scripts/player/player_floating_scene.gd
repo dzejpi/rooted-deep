@@ -18,6 +18,8 @@ const FLOAT_VELOCITY: float = 50
 @onready var currency_label: Label = $PlayerUI/PlayerUi/CurrencyLabel
 @onready var oxygen_label: Label = $PlayerUI/PlayerUi/OxygenLabel
 
+@onready var manage_ui: Node2D = $PlayerUI/ManageUi
+
 @export var placeable_objects: Node3D
 @export var plant_pot_preview: PackedScene
 var preview_instance: Node3D
@@ -88,6 +90,9 @@ func _input(event: InputEvent) -> void:
 				place_plant_pot()
 			else:
 				try_to_collect_fruit()
+		
+		if event.is_action_pressed("computer_up"):
+			try_to_access_computer()
 		
 		if event.is_action_pressed("dismiss_placement"):
 			if is_placing_plant:
@@ -347,6 +352,14 @@ func try_to_collect_fruit() -> void:
 			print("Collected fruit of type: " + str(result))
 
 
+func try_to_access_computer() -> void:
+	var collider = ray_cast.get_collider().name
+	if collider == "ComputerBody":
+		print("Trying to display computer")
+		manage_ui.display_manage_ui()
+		dismiss_tooltip()
+
+
 func manage_tooltip(ray_object: Object, object_name: String) -> void:
 	if ray_object == null or object_name == "nothing":
 		dismiss_tooltip()
@@ -361,6 +374,10 @@ func manage_tooltip(ray_object: Object, object_name: String) -> void:
 				else:
 					current_tooltip = "Fruit is growing"
 					player_tooltip.display_tooltip(current_tooltip, false)
+		"ComputerBody":
+			if not manage_ui.visible:
+				current_tooltip = "E to access computer"
+				player_tooltip.display_tooltip(current_tooltip, false)
 
 
 func dismiss_tooltip() -> void:

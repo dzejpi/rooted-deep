@@ -5,9 +5,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_24tlq"]
 size = Vector3(1, 1, 0.1)
 
-[node name="Computer" instance=ExtResource("1_ecfkk")]
+[node name="Computer" groups=["computer"] instance=ExtResource("1_ecfkk")]
 
-[node name="ComputerBody" type="StaticBody3D" parent="." index="1"]
+[node name="ComputerBody" type="StaticBody3D" parent="." index="1" groups=["computer"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ComputerBody" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23184, 0.0423584)
