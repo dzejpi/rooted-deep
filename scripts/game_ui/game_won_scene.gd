@@ -15,4 +15,4 @@ func show_game_won() -> void:
 
 
 func update_game_over_label() -> void:
-	score.text = "You generated " + str(GlobalVar.current_profits) + "∅ of profits for your shareholders."
+	score.text = "You generated " + str(GlobalVar.current_profits) + "# of profits for your shareholders."
