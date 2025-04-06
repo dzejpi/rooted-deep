@@ -44,7 +44,7 @@ target_position = Vector3(0, 0, -6)
 collision_mask = 3
 
 [node name="CameraShader" type="MeshInstance3D" parent="PlayerHead/Camera"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.85)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -0.85)
 mesh = SubResource("QuadMesh_k6e0w")
 surface_material_override/0 = SubResource("ShaderMaterial_tcjgv")
 
