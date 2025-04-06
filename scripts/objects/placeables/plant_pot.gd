@@ -145,4 +145,4 @@ func buy_auto_collection() -> void:
 	for point in fruit_points.get_children():
 		for fruit in point.get_children():
 			if fruit.is_in_group("fruits"):
-				fruit.is_autocollecting = true
+				fruit.set_autocollectable()

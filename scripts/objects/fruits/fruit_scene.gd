@@ -52,3 +52,10 @@ func collect_fruit() -> int:
 		return fruit_type
 	else:
 		return -1
+
+
+func set_autocollectable() -> void:
+	# Forces the instant harvest when fruit is grown
+	is_collectable = false
+	is_autocollecting = true
+	
