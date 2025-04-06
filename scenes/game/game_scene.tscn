@@ -45,7 +45,7 @@ player_node = NodePath("../../Player/FloatingPlayerScene")
 transform = Transform3D(0.87671, 0, 0.481019, 0, 1, 0, -0.481019, 0, 0.87671, 7.92299, 4.49081, -2.481)
 
 [node name="Elevator" parent="Objects" instance=ExtResource("6_pyfh6")]
-transform = Transform3D(0.375383, 0, 0.92687, 0, 8, 0, -0.92687, 0, 0.375383, 7.19594, 4, -3.71458)
+transform = Transform3D(0.893583, 0, -0.448898, 0, 1, 0, 0.448898, 0, 0.893583, 10.81, 3.94684, -6.79893)
 
 [node name="Npcs" type="Node3D" parent="."]
 
