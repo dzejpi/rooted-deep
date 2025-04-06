@@ -110,6 +110,9 @@ func display_manage_ui() -> void:
 	GlobalVar.toggle_manage_ui()
 	update_manage_state()
 	switch_section(selected_section)
+	
+	selected_section = 0
+	switch_section(selected_section)
 
 
 func switch_section(new_section: int) -> void:
@@ -122,13 +125,13 @@ func switch_section(new_section: int) -> void:
 	match(new_section):
 		0:
 			sell_ui.show()
-			sell_button.pressed
+			sell_button.grab_focus()
 		1:
 			buy_ui.show()
-			buy_button.pressed
+			buy_button.grab_focus()
 		2:
 			upgrade_ui.show()
-			upgrade_button.pressed
+			upgrade_button.grab_focus()
 
 
 func update_manage_state() -> void:
