@@ -7,8 +7,9 @@ var grow_speed: float = 1
 var is_collectable: bool = false
 
 var empty_scale: Vector3 = Vector3(0.01, 0.01, 0.01)
-var target_scale: Vector3 = Vector3(1, 1, 1)
+var target_scale: Vector3 = Vector3(0.5, 0.5, 0.5)
 var current_scale: Vector3 = empty_scale
+
 
 func _ready() -> void:
 	current_scale = empty_scale

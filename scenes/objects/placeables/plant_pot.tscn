@@ -20,20 +20,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 [node name="FruitPoints" type="Node3D" parent="." index="2"]
 
 [node name="PointA" type="Node3D" parent="FruitPoints" index="0"]
+transform = Transform3D(-0.431721, 0.431721, 0.791981, -0.707107, -0.707107, 0, 0.560015, -0.560015, 0.610546, 0.147439, 0.758269, 0.14951)
 
 [node name="PointB" type="Node3D" parent="FruitPoints" index="1"]
+transform = Transform3D(0.917852, -0.280667, -0.280667, 0, -0.707107, 0.707107, -0.396924, -0.649019, -0.649019, 0, 0.5, -0.0118977)
 
 [node name="PointC" type="Node3D" parent="FruitPoints" index="2"]
+transform = Transform3D(-0.419225, -0.809044, 0.411944, 0.88788, -0.460076, 0, 0.189525, 0.365756, 0.911209, 0, 0.74169, 0)
 
 [node name="PointD" type="Node3D" parent="FruitPoints" index="3"]
+transform = Transform3D(0.424342, 0.840875, -0.335952, 2.18965e-09, -0.371011, -0.928628, -0.905502, 0.394056, -0.157436, 0.228156, 0.609211, 0.157097)
 
 [node name="PointE" type="Node3D" parent="FruitPoints" index="4"]
+transform = Transform3D(-0.298639, 0.428615, -0.852704, -0.820481, -0.571673, -6.38462e-09, -0.487468, 0.699628, 0.522394, 0, 0.961104, 0)
 
 [node name="PointF" type="Node3D" parent="FruitPoints" index="5"]
+transform = Transform3D(-0.0959031, -0.357915, 0.928816, 0.965926, -0.258819, 0, 0.240395, 0.897167, 0.370541, -0.0956974, 0.407703, 0.140748)
 
 [node name="PointG" type="Node3D" parent="FruitPoints" index="6"]
+transform = Transform3D(0.649183, -0.566511, -0.50757, 0, -0.6673, 0.744789, -0.760633, -0.483504, -0.433199, -0.135431, 0.711299, -0.172562)
 
 [node name="PointH" type="Node3D" parent="FruitPoints" index="7"]
+transform = Transform3D(0.980495, -0.153469, -0.122789, 0, -0.624739, 0.780834, -0.196545, -0.765604, -0.612553, 0, 0.917781, 0)
 
 [node name="PlantStaticBody" type="StaticBody3D" parent="." index="3" groups=["pots"]]
 
