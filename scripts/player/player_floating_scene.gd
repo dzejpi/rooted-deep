@@ -44,9 +44,9 @@ var fruits_c: int = 0
 var fruits_d: int = 0
 
 var plant_a_seeds: int = 1
-var plant_b_seeds: int = 1
-var plant_c_seeds: int = 1
-var plant_d_seeds: int = 1
+var plant_b_seeds: int = 0
+var plant_c_seeds: int = 0
+var plant_d_seeds: int = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
