@@ -31,6 +31,7 @@ placeable_objects = NodePath("../../Objects")
 
 [node name="TerrainScene" parent="Terrain" instance=ExtResource("3_blcsq")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="Objects" type="Node3D" parent="."]
 
