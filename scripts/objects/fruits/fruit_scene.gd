@@ -1,7 +1,7 @@
 extends Node3D
 
 
-var fruit_type: int = 0
+@export var fruit_type: int = 0
 var grow_speed: float = 1
 
 var is_collectable: bool = false
