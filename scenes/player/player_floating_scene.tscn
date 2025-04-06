@@ -78,17 +78,17 @@ position = Vector2(0, 392)
 [node name="PlayerUi" type="Node2D" parent="PlayerUI"]
 
 [node name="OxygenBackground" type="Sprite2D" parent="PlayerUI/PlayerUi"]
-position = Vector2(144, 32)
+position = Vector2(114, 32)
 texture = ExtResource("10_xo5qn")
 
 [node name="CurrencyBackground" type="Sprite2D" parent="PlayerUI/PlayerUi"]
-position = Vector2(144, 64)
+position = Vector2(114, 64)
 texture = ExtResource("10_xo5qn")
 
 [node name="CurrencyLabel" type="Label" parent="PlayerUI/PlayerUi"]
 offset_left = 32.0
 offset_top = 49.0
-offset_right = 272.0
+offset_right = 212.0
 offset_bottom = 80.0
 theme = ExtResource("16_ukamg")
 text = "500 #"
@@ -97,7 +97,7 @@ vertical_alignment = 1
 [node name="OxygenLabel" type="Label" parent="PlayerUI/PlayerUi"]
 offset_left = 32.0
 offset_top = 16.0
-offset_right = 272.0
+offset_right = 212.0
 offset_bottom = 48.0
 theme = ExtResource("16_ukamg")
 text = "Oxygen: 100 %"
